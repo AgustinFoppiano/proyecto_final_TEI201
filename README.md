@@ -1,20 +1,20 @@
 ### Información del Equipo
 - **Integrantes:**
-  - Nombre 1 - Rol 1
-  - Nombre 2 - Rol 2
-  - Nombre 3 - Rol 3
-  - Nombre 4 - Rol 4
+  - Benjamín Barrionuevo
+  - Francisca Borne
+  - Agustín Foppiano
+  - Isidora Herrera
+  - Luciano Vera
   
-- **ODS Seleccionado:** [Número y nombre]
-- **Problema a resolver:** [Descripción breve]
-
+- **ODS Seleccionado:** 10. Reducción de las desigualdades
+- **Problema a resolver:** Las personas con discapacidad auditiva tienen dificultad para usar alarmas convencionales.
 ### Descripción del Proyecto
-[Breve descripción de la solución IoT propuesta]
+Una alarma que vibre en vez de generar ruido, se colocaría debajo de la almohada y se programaría la hora deseada desde el celular.
 
 ### Estado del Proyecto
-- **Versión actual:** v3.0
-- **Última actualización:** [Fecha]
-- **Estado:** Prototipo final
+- **Versión actual:** v1.0
+- **Última actualización:** 
+- **Estado:** Prototipo inicial
 
 ---
 
