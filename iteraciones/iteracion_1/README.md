@@ -36,7 +36,9 @@ Alarma tipo despertador para personas con algun grado de discapacidad auditiva, 
 
 ### Software
 - IDE: Arduino IDE
-- Librerías: [Lista]
+- Librerías:
+  - ESP32 Arduino Core(Expressif Systems) - Versión3.3.12
+  - 
 - Versión código: v1.0
 
 ---
