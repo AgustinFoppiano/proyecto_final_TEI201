@@ -20,15 +20,17 @@ Documentación técnica del software
 
 **Plataforma:** Arduino / ESP32  
 **Lenguaje:** C/C++  
-**IDE:** Arduino IDE 2.x  
-**Librerías principales:**
-ESP32 Arduino Core (Espressif Systems) - Versión 3.3.12
-AsyncTCP (ESP32Async) - Versión 3.5.0
-ESPAsyncWebServer (ESP32Async) - Versión 3.12.1
-WiFi.h - Incluida en ESP32 Core 3.3.12
-DNSServer.h - Incluida en ESP32 Core 3.3.12
-Preferences.h - Incluida en ESP32 Core 3.3.12
-esp_wifi.h - Incluida en ESP32 Core 3.3.12
+**IDE:** Arduino IDE 2.x 
+
+## Librerías principales
+- **ESP32 Arduino Core (Espressif Systems)** - Versión **3.3.12**
+- **AsyncTCP (ESP32Async)** - Versión **3.5.0**
+- **ESPAsyncWebServer (ESP32Async)** - Versión **3.12.1**
+- **WiFi.h** - Incluida en **ESP32 Core 3.3.12**
+- **DNSServer.h** - Incluida en **ESP32 Core 3.3.12**
+- **Preferences.h** - Incluida en **ESP32 Core 3.3.12**
+- **esp_wifi.h** - Incluida en **ESP32 Core 3.3.12**
+- **Arduino.h** - Incluida en **ESP32 Core 3.3.12**
 ---
 
 ## Instalación y Configuración
