@@ -19,18 +19,30 @@ Fotografías de alta resolución del prototipo ensamblado
 ## Instrucciones de Ensamble
 
 ### Componentes Principales
-1. [Componente 1] - Función
-2. [Componente 2] - Función
-3. [Componente 3] - Función
+1. **ESP32:** Microcontrolador principal encargado de procesar la información y controlar los componentes electrónicos del sistema.
+2. **Pantalla OLED:** Dispositivo utilizado para visualizar información y mensajes del sistema.
+3. **Buzzer:** Componente encargado de emitir señales sonoras de alerta.
+4. **Motor vibrador:** Módulo que genera vibraciones para proporcionar alertas físicas al usuario.
+5. **Protoboard:** Base utilizada para montar y conectar los componentes electrónicos sin necesidad de soldadura.
+6. **Cables Dupont:** Permiten realizar las conexiones eléctricas entre la ESP32 y los componentes.
+7. **Cable USB:** Utilizado para alimentar y programar la ESP32 desde un computador.
 
 ### Pasos de Ensamblaje
-1. [Paso 1]
-2. [Paso 2]
-3. [Paso 3]
+1. Colocar la placa ESP32 sobre la protoboard, dejando espacio para los demás componentes.
+2. Instalar la pantalla OLED sobre la protoboard.
+3. Colocar el buzzer en la protoboard.
+4. Conectar el módulo de vibración utilizando cables Dupont.
+5. Realizar las conexiones de alimentación, tierra y señales entre la ESP32 y los componentes, siguiendo el esquema eléctrico del proyecto.
+6. Conectar la ESP32 al computador mediante un cable USB.
+7. Cargar el programa desarrollado para el sistema.
+8. Verificar el funcionamiento de la pantalla OLED, el buzzer y el motor vibrador.
 
 ### Precauciones
-- ⚠️ [Precaución 1]
-- ⚠️ [Precaución 2]
+- ⚠️ Verificar las conexiones eléctricas antes de alimentar el circuito.
+- ⚠️ Respetar los voltajes de funcionamiento de cada componente.
+- ⚠️ No conectar cargas que superen la capacidad de corriente de los pines de la ESP32.
+- ⚠️ Desconectar la alimentación antes de modificar las conexiones.
+- ⚠️ Manipular cuidadosamente los componentes para evitar daños en sus conexiones.
 
 ---
 
