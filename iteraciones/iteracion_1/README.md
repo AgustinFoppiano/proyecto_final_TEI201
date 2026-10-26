@@ -2,7 +2,7 @@
 
 ## Información General
 
-**Fecha:** [XX/XX/2025]  
+**Fecha:** [28/08/2026]  
 **Versión:** v1.0  
 **Estado:** Prototipo alpha - Prueba de concepto  
 **Avance asociado:** Planificación inicial / Avance #1
@@ -11,7 +11,7 @@
 
 ## Descripción
 
-Primera versión del prototipo, enfocada en validar la factibilidad técnica del concepto.
+Alarma tipo despertador para personas con algun grado de discapacidad auditiva, se coloca bajo la almhoada y vibra cuando se activa la alarma
 
 **Objetivo de esta iteración:**
 - Probar conexión de sensores básicos
@@ -24,13 +24,15 @@ Primera versión del prototipo, enfocada en validar la factibilidad técnica del
 ## Componentes Utilizados
 
 ### Hardware
-- Microcontrolador: [Modelo]
+- Microcontrolador: ESP32 Devkit V1 30 Pines MicroUSB
 - Sensores:
-  - [Sensor 1]
-  - [Sensor 2]
+ - 
 - Actuadores:
-  - [Actuador 1]
-- Otros: [Lista]
+  - Motor Vibrador PWM Switch DC
+  - Buzzer Pasivo
+- Otros: 
+- Cable Micro-USD
+- Cables Puente
 
 ### Software
 - IDE: Arduino IDE
