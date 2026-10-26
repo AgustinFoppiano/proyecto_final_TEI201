@@ -2,7 +2,7 @@
 
 ## Información General
 
-**Fecha:** [28/08/2026]  
+**Fecha:** [23/10/2026]  
 **Versión:** v1.0  
 **Estado:** Prototipo alpha - Prueba de concepto  
 **Avance asociado:** Planificación inicial / Avance #1
@@ -11,7 +11,7 @@
 
 ## Descripción
 
-Alarma tipo despertador para personas con algun grado de discapacidad auditiva, se coloca bajo la almhoada y vibra cuando se activa la alarma
+Alarma tipo despertador para personas con algun grado de discapacidad auditiva, se coloca bajo la almohada y vibra cuando se activa la alarma
 
 **Objetivo de esta iteración:**
 - Probar conexión de sensores básicos
@@ -61,9 +61,9 @@ Incluir en esta carpeta:
 ## Resultados de Testing Inicial
 
 ### Funcionalidad Lograda
-✅ [Función 1]  
-✅ [Función 2]  
-❌ [Función 3 - no funcionó]
+✅ Conexión de sensores básicos y correcta comunicación con el microcontrolador Esp32. 
+✅ [Codigo corriendo, actuadores funcionando]  
+❌ [Vibración demasiado debil del motor vibrador PWM Switch DC]
 
 ### Problemas Identificados
 
