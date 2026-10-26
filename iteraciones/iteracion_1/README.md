@@ -25,8 +25,6 @@ Alarma tipo despertador para personas con algun grado de discapacidad auditiva, 
 
 ### Hardware
 - Microcontrolador: ESP32 Devkit V1 30 Pines MicroUSB
-- Sensores:
- - 
 - Actuadores:
   - Motor Vibrador PWM Switch DC
   - Buzzer Pasivo
@@ -51,10 +49,8 @@ Alarma tipo despertador para personas con algun grado de discapacidad auditiva, 
 
 ## Fotos del Prototipo
 
-Incluir en esta carpeta:
-- `v1_circuito_protoboard.jpg`
-- `v1_vista_general.jpg`
-- `v1_detalle_conexiones.jpg`
+<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/fdb5e378-60b1-4130-97ee-3a5fad0a3f21" />
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/8a02f3ee-5bd1-467e-bb11-0e2da8048a70" />
 
 ---
 
@@ -62,20 +58,22 @@ Incluir en esta carpeta:
 
 ### Funcionalidad Lograda
 ✅ Conexión de sensores básicos y correcta comunicación con el microcontrolador Esp32. 
-✅ [Codigo corriendo, actuadores funcionando]  
-❌ [Vibración demasiado debil del motor vibrador PWM Switch DC]
+
+✅ Codigo corriendo, actuadores funcionando.
+
+❌ Vibración demasiado debil del motor vibrador PWM Switch DC.
 
 ### Problemas Identificados
 
 1. **Problema 1:**
-   - Descripción: [Detalles]
-   - Causa probable: [Análisis]
-   - Solución propuesta: [Plan]
+   - Descripción: Vibración del motor vibrador PWM Switch DC demasiado debil para lo que se espera del prototipo final.
+   - Causa probable: Modelo (PWM Switch DC), simplemente no tiene una potencia de vibración lo suficientemente fuerte para lo que esperamos como grupo
+   - Solución propuesta: Comprar un modelo de vibrador con una potencia bastante mayor a la que se tiene actualmente.
 
 2. **Problema 2:**
-   - Descripción: [Detalles]
-   - Causa probable: [Análisis]
-   - Solución propuesta: [Plan]
+   - Descripción: Conexiones muy propensas a soltarse a un minimo movimiento del prototipo,
+   - Causa probable: Orden mal distribuído de los cables, pero principalmente el hecho de que se encuentre todo en un protoboard y no en una placa perforada.
+   - Solución propuesta: Fijar microcontrolador, actuadores y cables a una placa perforada (soldar).
 
 ---
 
