@@ -50,16 +50,19 @@ Cada carpeta debe incluir:
 ## Evolución del Diseño
 
 ### Versión 1 (Iteración 1) - Concepto Inicial
-**Fecha:** [XX/XX/2025]  
+**Fecha:** [28/08/2026]  
 **Estado:** Prototipo alpha - Prueba de concepto
 
 **Características:**
-- [Descripción breve]
-- Problemas principales identificados
-- Aprendizajes clave
+- Reloj de muñeca con alarma vibradora
+- Problemas principales identificados:
+  1. Arduino, sensores y conexiones demasiado compactas debido al reducido espacio que tiene el reloj.
+  2. Incomodidad del usuario a la hora de querer usar el reloj como alarma tipo despertador (dormir con él puesto = incomodo).
+- Aprendizajes clave:
+  Se debe tener espacio suficiente y comodidad a la hora de montar el dispositivo, ademas de que es importante que sea comodo para el usuario.
 
 ### Versión 2 (Iteración 2) - Primera Mejora
-**Fecha:** [XX/XX/2025]  
+**Fecha:** [23/10/2026]  
 **Estado:** Prototipo funcional mejorado
 
 **Mejoras implementadas:**
