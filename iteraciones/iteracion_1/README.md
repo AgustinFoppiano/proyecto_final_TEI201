@@ -38,7 +38,13 @@ Alarma tipo despertador para personas con algun grado de discapacidad auditiva, 
 - IDE: Arduino IDE
 - Librerías:
   - ESP32 Arduino Core(Expressif Systems) - Versión3.3.12
-  - 
+  - AsyncTCP (ESP32Async) - Versión 3.5.0
+  - ESPAsyncWebServer (ESP32Async) - Versión 3.12.1
+  - WiFi.h - Incluida en ESP32 Core 3.3.12
+  - DNSServer.h - Incluida en ESP32 Core 3.3.12
+  - Preferences.h - Incluida en ESP32 Core 3.3.12
+  - esp_wifi.h - Incluida en ESP32 Core 3.3.12
+  - Arduino.h - Incluida en ESP32 Core 3.3.12
 - Versión código: v1.0
 
 ---
