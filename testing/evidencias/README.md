@@ -40,7 +40,7 @@
 - Calidad mínima: 720p
 
 #### Video de Funcionamiento en Contexto
-`funcionamiento_contexto.mp4`
+[Ver video de funcionamiento](https://drive.google.com/file/d/1kgygymFtD1YWlV5p6cyE6izTAz5sUehA/view?usp=sharing)
 
 **Contenido:**
 - Duración: 1-3 minutos
