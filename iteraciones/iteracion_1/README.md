@@ -43,7 +43,7 @@ Alarma tipo despertador para personas con algun grado de discapacidad auditiva, 
   - Preferences.h - Incluida en ESP32 Core 3.3.12
   - esp_wifi.h - Incluida en ESP32 Core 3.3.12
   - Arduino.h - Incluida en ESP32 Core 3.3.12
-- Versión código: v1.0
+- Versión código: v3.5
 
 ---
 
