@@ -48,9 +48,9 @@ Fotografías de alta resolución del prototipo ensamblado
 
 ## Especificaciones Técnicas
 
-**Alimentación:** [Voltaje y corriente]  
+**Alimentación:** 5 V
 **Consumo:** [Watts/mA]  
-**Dimensiones:** [mm x mm x mm]  
+**Dimensiones:** 160x160x
 **Peso:** [gramos]
 
 ---
@@ -59,5 +59,5 @@ Fotografías de alta resolución del prototipo ensamblado
 
 | Problema | Posible Causa | Solución |
 |----------|---------------|----------|
-| [Problema 1] | [Causa] | [Solución] |
-| [Problema 2] | [Causa] | [Solución] |
+| Baja vibración | Motor de vibración demasiado débil | Reemplazar el motor por uno más potente |
+| Muy dependiente al celular | Solo poder detener la alarma con el celular | Implementar un botón físico |
