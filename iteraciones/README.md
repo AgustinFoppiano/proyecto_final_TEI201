@@ -54,12 +54,22 @@ Cada carpeta debe incluir:
 **Estado:** Prototipo alpha - Prueba de concepto
 
 **Características:**
-- Reloj de muñeca con alarma vibradora
-- Problemas principales identificados:
-  1. Arduino, sensores y conexiones demasiado compactas debido al reducido espacio que tiene el reloj.
-  2. Incomodidad del usuario a la hora de querer usar el reloj como alarma tipo despertador (dormir con él puesto = incomodo).
-- Aprendizajes clave:
-  Se debe tener espacio suficiente y comodidad a la hora de montar el dispositivo, ademas de que es importante que sea comodo para el usuario.
+-Alarma despertadora diseñada para personas con discapacidad auditiva, que se coloca debajo de la almohada y utiliza vibraciones para despertar al usuario.
+-Microcontrolador ESP32 DevKit V1 de 30 pines.
+-Motor vibrador PWM Switch DC y buzzer pasivo como actuadores.
+-Control de la alarma mediante celular.
+-Circuito inicial montado en protoboard, con conexiones mediante cables puente.
+-Programación mediante Arduino IDE y comunicación con la ESP32.
+
+Problemas principales identificados:
+-Vibración demasiado débil del motor vibrador utilizado, insuficiente para cumplir adecuadamente el objetivo del prototipo.
+-Conexiones eléctricas propensas a soltarse al mover el prototipo, debido al montaje en protoboard y la distribución de los cables.
+-Dependencia del celular para detener la alarma, debido a la ausencia de un botón físico de apagado.
+
+Aprendizajes clave:
+-La intensidad de vibración es fundamental para garantizar que la alarma pueda despertar al usuario.
+-Es necesario asegurar las conexiones eléctricas para evitar interrupciones en el funcionamiento del dispositivo.
+-La alarma debe poder controlarse de forma sencilla y accesible, sin depender exclusivamente de un celular.
 
 ### Versión 2 (Iteración 2) - Primera Mejora
 **Fecha:** [23/10/2026]  
