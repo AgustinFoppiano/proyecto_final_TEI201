@@ -80,12 +80,14 @@ Alarma tipo despertador para personas con algun grado de discapacidad auditiva, 
 ## Aprendizajes
 
 ### Técnicos
-- [Aprendizaje 1]
-- [Aprendizaje 2]
+-Se comprobó la comunicación entre la ESP32 y los actuadores, permitiendo ejecutar el código y activar el motor vibrador y el buzzer.
+-Se identificó que la potencia del motor vibrador utilizado es insuficiente para el objetivo del proyecto, por lo que se requiere un modelo más potente.
+-Se observó que las conexiones mediante protoboard y cables puente pueden soltarse fácilmente al mover el dispositivo, por lo que es necesario mejorar su fijación.
 
 ### De Diseño
-- [Aprendizaje 1]
-- [Aprendizaje 2]
+-La alarma debe generar vibraciones suficientemente intensas para que puedan percibirse al estar ubicada debajo de una almohada.
+-Es importante considerar un sistema de apagado físico para evitar que el usuario dependa exclusivamente del celular.
+-El encapsulado debe permitir organizar y proteger los componentes electrónicos, manteniendo un diseño adecuado para colocarlo debajo de la almohada.
 
 ---
 
@@ -94,12 +96,12 @@ Alarma tipo despertador para personas con algun grado de discapacidad auditiva, 
 ### Mejoras Planificadas
 
 **Hardware:**
-- [ ] [Mejora 1]
-- [ ] [Mejora 2]
-
+- [ ] Reemplazar el motor vibrador actual por uno de mayor potencia.
+- [ ] Implementar un botón físico para detener la alarma.
+- [ ] Fijar y soldar las conexiones en una placa perforada para evitar desconexiones.
 **Software:**
-- [ ] [Mejora 1]
-- [ ] [Mejora 2]
+- [ ] Incorporar al código la lectura del botón físico para detener la alarma.
+- [ ] Adaptar el control del motor vibrador al nuevo modelo seleccionado y comprobar su funcionamiento.
 
 **Diseño:**
 - [ ] Iniciar diseño de encapsulado
