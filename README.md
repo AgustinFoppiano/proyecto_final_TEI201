@@ -13,7 +13,7 @@ Una alarma que vibre en vez de generar ruido, se colocaría debajo de la almohad
 
 ### Estado del Proyecto
 - **Versión actual:** v1.0
-- **Última actualización:** 
+- **Última actualización:** 26/10
 - **Estado:** Prototipo inicial
 
 ---
@@ -35,13 +35,17 @@ Una alarma que vibre en vez de generar ruido, se colocaría debajo de la almohad
 ### Requisitos Previos
 - Arduino IDE 2.x
 - Fusion 360
-- [Otras herramientas necesarias]
+- Placa ESP32 DevKit V1.
+- ESP32 Arduino Core 3.3.12 (Espressif Systems).
+- Librería AsyncTCP 3.5.0 (ESP32Async).
+- Librería ESPAsyncWebServer 3.12.1 (ESP32Async).
+- Autodesk Fusion 360 para visualizar y editar el modelo 3D.
+- Cable USB compatible para conectar la ESP32 al computador.
 
 ### Instalación
 1. Clonar el repositorio
 2. Instalar librerías (ver `software/librerias/`)
 3. Cargar código en ESP32/Arduino
-4. [Pasos adicionales]
 
 ---
 
