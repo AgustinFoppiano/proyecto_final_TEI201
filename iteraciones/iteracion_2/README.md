@@ -54,14 +54,9 @@ Segunda versión de la alarma vibratoria para personas sordas o con discapacidad
 
 - Reducción de la dependencia del celular para controlar la alarma.
 
-**Bugs corregidos:**
-
-- No se han documentado correcciones específicas de software.
-
 ### Diseño mecánico
 
-- Diseño del encapsulado a cargo del integrante responsable del modelado 3D.
-- Estado de fabricación e integración pendiente de confirmar.
+...
 
 ---
 
@@ -79,7 +74,7 @@ Segunda versión de la alarma vibratoria para personas sordas o con discapacidad
 
 ✅ **Botones físicos:** Se comprobó el funcionamiento de los pulsadores para controlar la alarma.
 
-⚠️ **Sistema de alimentación:** Se produjo un cortocircuito y sobrecalentamiento del módulo portabaterías.
+⚠️ **Sistema de alimentación:** Se produjo un cortocircuito y sobrecalentamiento del módulo portabaterías despues de varios intentos.
 
 ---
 
