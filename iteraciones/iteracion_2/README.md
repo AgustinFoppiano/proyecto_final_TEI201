@@ -2,121 +2,97 @@
 
 ## Información General
 
-**Fecha:** [XX/XX/2025]  
+**Fecha:** [20/11/2025]  
 **Versión:** v2.0  
 **Estado:** Prototipo funcional mejorado  
 **Avance asociado:** Avance #2
 
 ---
 
-## Descripción
-
-Segunda versión del prototipo, incorporando feedback de la iteración 1 y del Avance #1. Incluye mejoras significativas en funcionalidad y primeros pasos en diseño de encapsulado.
-
-**Objetivos de esta iteración:**
-- Corregir problemas identificados en v1
-- Agregar funcionalidades adicionales
-- Iniciar diseño 3D del encapsulado
-- Realizar primeras pruebas con usuarios
 
 ---
+Iteración 2 – Mejoras del prototipo
 
-## Cambios Respecto a v1
+Descripción
 
-### Hardware
-**Agregado:**
-- [Componente nuevo 1]
-- [Componente nuevo 2]
+Segunda versión de la alarma vibratoria para personas sordas o con discapacidad auditiva, enfocada en aumentar la intensidad de vibración y mejorar la autonomía del usuario.
 
-**Modificado:**
-- [Cambio 1] - Razón: [Justificación]
-- [Cambio 2] - Razón: [Justificación]
+Objetivos de esta iteración:
 
-**Removido:**
-- [Componente removido] - Razón: [Justificación]
+Mejorar el sistema de vibración.
 
-### Software
-**Nuevas funcionalidades:**
-- [Feature 1]
-- [Feature 2]
+Incorporar controles físicos.
 
-**Optimizaciones:**
-- [Optimización 1]
-- [Optimización 2]
+Reducir la dependencia del celular.
 
-**Bugs corregidos:**
-- [Bug 1 de v1]
-- [Bug 2 de v1]
+Cambios respecto a v1
 
-### Diseño Mecánico
-- Primer diseño de encapsulado en Fusion 360
-- Prototipo impreso en 3D
-- Integración de componentes en carcasa
+Hardware
+
+Agregado:
+
+Dos motores vibratorios de 1,5–6 V y 3500 RPM.
+
+Dos pulsadores táctiles.
+
+Modificado:
+
+Sistema de activación de la alarma: incorporación de motores vibratorios para aumentar la intensidad del estímulo.
+
+Removido:
+
+Buzzer inicial, debido a su baja capacidad de vibración.
+
+Software
+
+Nuevas funcionalidades:
+
+Control del apagado mediante botones físicos.
+
+Adaptación de la lógica de activación para los motores vibratorios.
+
+Optimizaciones:
+
+Reducción de la dependencia del celular para controlar la alarma.
+
+Bugs corregidos:
+
+Pendiente de documentar las fallas de software efectivamente solucionadas.
+
+Diseño mecánico
+
+Diseño del encapsulado a cargo del integrante responsable del modelado 3D.
+
+Estado de fabricación e integración pendiente de confirmar.
+
+
 
 ---
 
 ## Fotos del Prototipo v2
 
 Incluir en esta carpeta:
-- `v2_prototipo_completo.jpg`
-- `v2_circuito_integrado.jpg`
-- `v2_encapsulado_inicial.jpg`
-- `v2_testing_usuario.jpg`
+<img width="1200" height="1600" alt="PHOTO-2026-11-21-21-47-17" src="https://github.com/user-attachments/assets/d2945ed1-0ebf-4ee3-84c4-bbba9afbd767" />
 
 ---
 
 ## Resultados de Testing
 
 ### Funcionalidad Lograda
-✅ [Función 1]  
-✅ [Función 2]  
-✅ [Función 3]  
-⚠️ [Función 4 - parcial]
+✅ [Función 1] vibracion notoriamente mas fuerte, botones funcionales 
+✅ [Función 2] vibracion notoriamente mas fuerte, botones funcionales 
+✅ [Función 3] vibracion notoriamente mas fuerte, botones funcionales 
+⚠️ [Función 4] se quemo el portapilas
 
-### Feedback del Avance #2
-
-**Comentarios del profesor/ayudante:**
-1. [Comentario 1]
-   - Acción: [Plan de mejora para v3]
-
-2. [Comentario 2]
-   - Acción: [Plan de mejora para v3]
-
-### Testing con Usuarios (2-3 personas)
-
-**Resultados cuantitativos:**
-- Facilidad de uso promedio: [X/5]
-- Satisfacción promedio: [X/5]
-
-**Feedback cualitativo:**
-- Positivo: [Comentarios]
-- A mejorar: [Comentarios]
 
 ---
 
 ## Problemas Pendientes
 
-1. **Problema 1:**
-   - Descripción: [Detalles]
-   - Prioridad: Alta/Media/Baja
-   - Plan para v3: [Solución propuesta]
-
-2. **Problema 2:**
-   - Descripción: [Detalles]
-   - Prioridad: Alta/Media/Baja
-   - Plan para v3: [Solución propuesta]
-
----
-
-## Comparación v1 vs v2
-
-| Aspecto | v1 | v2 | Mejora |
-|---------|----|----|--------|
-| Sensores funcionales | 2/3 | 3/3 | ✅ |
-| Tiempo de respuesta | 500ms | 200ms | ↓60% |
-| Consumo energético | 250mA | 180mA | ↓28% |
-| Encapsulado | ❌ | Prototipo | ✅ |
-| Usuarios testeados | 0 | 2 | ✅ |
+1. **Problema 1: Cortocircuito en el módulo portabaterías**
+   - **Descripción:** El módulo funcionaba correctamente hasta que se desprendió una conexión que debió ser soldada nuevamente. Posteriormente, al insertar las baterías, se produjo un cortocircuito y sobrecalentamiento. No se logró identificar la causa exacta.
+   - **Prioridad:** Alta.
+   - **Plan para v3:** Revisar las conexiones y soldaduras con un multímetro, identificar el origen de la falla y reemplazar el módulo si presenta daños, antes de volver a energizar el circuito.
 
 ---
 
