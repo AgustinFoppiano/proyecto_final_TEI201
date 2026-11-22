@@ -84,7 +84,7 @@ Segunda versión de la alarma vibratoria para personas sordas o con discapacidad
 
 - **Descripción:** El módulo funcionaba correctamente hasta que se desprendió una conexión que debió ser soldada nuevamente. Posteriormente, al insertar las baterías, se produjo un cortocircuito y sobrecalentamiento. No se logró identificar la causa exacta.
 - **Prioridad:** Alta.
-- **Plan para v3:** Revisar las conexiones y soldaduras con un multímetro, identificar el origen de la falla y reemplazar el módulo si presenta daños, antes de volver a energizar el circuito.
+- **Plan para v3:** Revisar las conexiones y soldaduras, identificar el origen de la falla y reemplazar el módulo si presenta daños, antes de volver a energizar el circuito.
 
 ---
 
@@ -105,7 +105,6 @@ Segunda versión de la alarma vibratoria para personas sordas o con discapacidad
 **Diseño:**
 
 - [ ] Refinar encapsulado.
-- [ ] Mejorar accesibilidad.
 - [ ] Finalizar sistema de montaje.
 
 **Testing:**
