@@ -1,162 +1,37 @@
-# Reporte Final del Proyecto
+# Resumen del proyecto
 
-## Formato del Documento
+## Problema y objetivo
 
-**Archivo:** `reporte_final_v3.pdf`
+Las alarmas convencionales dependen principalmente del sonido, lo que puede dificultar su uso para personas con discapacidad auditiva. El proyecto consiste en una alarma que utiliza vibración como aviso y también puede emitir sonido para una persona acompañante. Se relaciona con el ODS 10: Reducción de las desigualdades.
 
-**Especificaciones:**
-- Formato: PDF
-- Páginas: Máximo 15 páginas
-- Tamaño: A4
-- Márgenes: 2.5 cm todos los lados
-- Fuente: Arial o Times New Roman, 11-12 pt
-- Interlineado: 1.5
-- Incluir numeración de páginas
-- Incluir encabezado con nombre del proyecto
+**Integrantes:** Benjamín Barrionuevo, Francisca Borne, Agustín Foppiano, Isidora Herrera y Luciano Vera.
 
----
+## Funcionamiento
 
-## Estructura Sugerida
+La alarma utiliza un ESP32, una pantalla OLED, dos motores vibratorios, un buzzer, un relé y botones físicos. Desde un teléfono conectado a la red Wi-Fi creada por el ESP32 se puede configurar la hora, la melodía, la repetición y el modo de aviso: vibración, sonido o ambos.
 
-### Portada (1 página)
-- Título del proyecto
-- Logo Universidad/Curso
-- Integrantes del equipo
-- Profesor
-- Fecha
-- ODS Seleccionado
+Cuando se activa la alarma, la pantalla muestra una animación asociada a la melodía elegida. La alarma se puede detener con el botón físico o desde la página. Las configuraciones se guardan en la memoria del ESP32; después de reiniciarlo, se vuelve a sincronizar la hora al abrir la página desde el teléfono.
 
-### Resumen Ejecutivo (0.5 páginas)
-- Problema abordado
-- Solución desarrollada
-- Resultados principales
-- Conclusión clave
+El código principal es la [versión 4.1](../../software/src/alarma_final/alarma_final.ino). Las instrucciones de instalación y uso están en la [carpeta de software](../../software/README.md).
 
-### 1. Introducción (1 página)
-- Contexto general
-- Problemática ODS específica
-- Objetivos del proyecto
-- Alcance
+## Desarrollo y dificultades
 
-### 2. Marco Teórico/Estado del Arte (1-1.5 páginas)
-- ODS seleccionado - descripción
-- Problemática local/nacional
-- Soluciones existentes (breve revisión)
-- Justificación de la propuesta
+En las primeras pruebas, las conexiones realizadas en protoboard podían soltarse. La pantalla OLED a veces requería acomodar los cables para mostrar una animación y los cables de los motores podían desconectarse al vibrar. En el montaje posterior se soldaron las conexiones; la pantalla y los motores mantienen su funcionamiento al moverlos. Se consideró que el encapsulado debe ayudar a mantener los motores estables.
 
-### 3. Metodología (1 página)
-- Proceso de diseño seguido
-- Herramientas utilizadas
-- Enfoque de desarrollo
+Durante otra prueba, el portapilas se calentó incluso estando desconectado del resto del circuito. Ante la posibilidad de un cortocircuito en el portapilas, se decidió reemplazarlo. Las dificultades y sus evidencias se encuentran en el [reporte de pruebas](../../testing/reportes/README.md).
 
-### 4. Diseño y Desarrollo (3-4 páginas)
+## Pruebas y resultados
 
-#### 4.1 Arquitectura del Sistema
-- Diagrama de bloques general
-- Componentes principales
+El 21 de noviembre de 2026 se realizaron diez pruebas: tres en modo solo vibración, tres en modo solo sonido y cuatro con sonido y vibración. En cada caso se observó la respuesta correspondiente al modo elegido, se mostró la animación y la alarma se detuvo al presionar el botón.
 
-#### 4.2 Hardware
-- Esquema del circuito (imagen)
-- Componentes seleccionados y justificación
-- BOM (tabla resumida)
+Además, aproximadamente nueve personas sostuvieron los motores con las manos. Todas indicaron que percibían la vibración y que les parecía fuerte. No se midió la intensidad con instrumentos ni se realizó una prueba para determinar si la alarma despierta a una persona dormida.
 
-#### 4.3 Software
-- Arquitectura del software
-- Diagrama de flujo principal
-- Librerías utilizadas
+Los horarios, melodías y funciones revisadas están en la [ficha de pruebas](../../testing/datos/Ficha_pruebas_alarma.pdf). Los videos se encuentran en [evidencias](../../testing/evidencias/README.md).
 
-#### 4.4 Diseño Mecánico/3D
-- Renders del modelo (2-3 imágenes)
-- Consideraciones de diseño
-- Especificaciones
+## Diseño 3D
 
-### 5. Proceso de Iteraciones (2 páginas)
-- Versión 1: Concepto inicial
-- Versión 2: Primera iteración (Avance #2)
-- Versión 3: Versión final (Avance #3)
-- Tabla comparativa de mejoras
-- Justificación de cambios
+El repositorio contiene un [archivo de Fusion 360](../../diseno_3d/fusion360/), [dos renders](../../diseno_3d/renders/) y un [plano de conjunto](../../diseno_3d/planos/plano_conjunto_v1.pdf) correspondientes al diseño disponible.
 
-### 6. Testing y Validación (2-3 páginas)
+## Fuentes
 
-#### 6.1 Metodología de Testing
-- Protocolo aplicado
-- Perfil de usuarios
-
-#### 6.2 Resultados Cuantitativos
-- Tablas y gráficos
-- Análisis estadístico
-
-#### 6.3 Resultados Cualitativos
-- Feedback de usuarios
-- Observaciones
-
-#### 6.4 Validación de Impacto ODS
-- Métricas de impacto
-- Comparación baseline vs. resultado
-- Proyección de escalabilidad
-
-### 7. Conclusiones (1 página)
-- Logros alcanzados
-- Limitaciones identificadas
-- Aprendizajes del equipo
-- Trabajo futuro y mejoras potenciales
-
-### 8. Referencias (0.5 páginas)
-- Bibliografía
-- Datasheets consultados
-- Recursos web
-
-### Anexos (opcional, no cuenta para 15 páginas)
-- Código completo
-- Datos raw de testing
-- Documentación extendida
-
----
-
-## Calidad del Contenido
-
-### Texto
-- Redacción clara y profesional
-- Sin errores ortográficos ni gramaticales
-- Evitar lenguaje coloquial
-- Uso correcto de terminología técnica
-
-### Figuras y Tablas
-- Todas las figuras numeradas: "Figura 1: ..."
-- Todas las tablas numeradas: "Tabla 1: ..."
-- Alta resolución y legibles
-- Referencias en el texto: "como se muestra en la Figura 3..."
-
-### Referencias
-Formato APA o IEEE consistente:
-```
-[1] Apellido, N. (Año). Título. Editorial.
-[2] Autor. "Título del artículo". Revista, vol. X, pp. XX-XX, Año.
-```
-
----
-
-## Checklist de Calidad
-
-Antes de entregar, verificar:
-
-**Contenido:**
-- [ ] Todas las secciones completas
-- [ ] Figuras de alta calidad
-- [ ] Tablas con datos reales
-- [ ] Referencias correctamente citadas
-- [ ] Máximo 15 páginas (sin contar anexos)
-
-**Formato:**
-- [ ] PDF exportado correctamente
-- [ ] Numeración de páginas
-- [ ] Encabezados consistentes
-- [ ] Márgenes correctos
-- [ ] Sin imágenes pixeladas
-
-**Revisión:**
-- [ ] Sin errores ortográficos
-- [ ] Redacción clara y coherente
-- [ ] Todos los integrantes revisaron
-- [ ] Cumple con rúbrica de evaluación
+Las librerías, herramientas y recursos utilizados se detallan en [FUENTES.md](../../FUENTES.md).
