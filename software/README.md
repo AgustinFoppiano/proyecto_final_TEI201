@@ -254,6 +254,10 @@ En el equipo utilizado durante el desarrollo, el ESP32 fue detectado mediante un
 
 Abrir el archivo:
 
+[Uploading codigo final.ino…]()
+
+
+
 ```text
 src/pruebabuzzer_version_3_5.ino
 ```
