@@ -1,75 +1,29 @@
-# Reportes de Testing
+# Pruebas y dificultades del prototipo
 
-## Formato del Reporte Principal
+## Pruebas de funcionamiento
 
-### `reporte_testing_usuarios_v3.pdf`
+El 21 de noviembre de 2026 se realizaron diez pruebas con la versión 4.1 del código. Se utilizaron distintas melodías y los tres modos de funcionamiento: solo vibración, solo sonido, y sonido con vibración.
 
-**Estructura sugerida:**
+En los diez intentos se observó la respuesta correspondiente al modo seleccionado, se mostró una animación en la pantalla y la alarma se detuvo al presionar el botón de apagado. Los horarios, melodías y resultados están registrados en la [ficha de pruebas](../datos/Ficha_pruebas_alarma.pdf).
 
-1. **Introducción**
-   - Objetivo del testing
-   - Metodología utilizada
+Además, aproximadamente nueve personas sostuvieron los motores con las manos para comprobar si podían sentir la vibración. Todas indicaron que la percibieron y que les pareció fuerte. Esta prueba fue perceptiva y no incluyó una medición con instrumentos.
 
-2. **Descripción de Participantes**
-   - Perfil de usuarios
-   - Cantidad y demografía
+## Dificultades con las conexiones
 
-3. **Protocolo Aplicado**
-   - Pasos del testing
-   - Preguntas realizadas
-   - Métricas evaluadas
+Durante las primeras etapas, los componentes se probaron en una protoboard y algunas conexiones no estaban soldadas. Esto dificultaba mantener un contacto estable entre los cables, la pantalla OLED y el ESP32.
 
-4. **Resultados Cuantitativos**
-   - Tablas de datos
-   - Gráficos de resultados
-   - Análisis estadístico básico
+En ocasiones, la pantalla solo mostraba la animación después de acomodar sus conexiones. Para revisarla se utilizó la versión 3.7 del programa, que reproducía una animación en bucle. También se consultaron los mensajes del Monitor serie y se reinició el ESP32 para comprobar si la pantalla era detectada.
 
-5. **Resultados Cualitativos**
-   - Feedback de usuarios
-   - Observaciones del equipo
-   - Problemas identificados
+Los cables de los motores también podían soltarse por el movimiento producido al vibrar. Durante las pruebas fue necesario sujetarlos o volver a conectarlos para continuar.
 
-6. **Validación de Impacto ODS**
-   - Métricas de impacto medidas
-   - Comparación con situación inicial
-   - Proyección de escalabilidad
+En la versión final, los motores quedaron soldados y mantienen su conexión al vibrar. La pantalla también permanece funcionando al moverla. Los motores aún se desplazan por la vibración, por lo que se contempla sujetarlos dentro del encapsulado.
 
-7. **Conclusiones**
-   - Fortalezas del prototipo
-   - Limitaciones identificadas
-   - Recomendaciones para mejoras futuras
+## Falla del portapilas
 
-8. **Anexos**
-   - Formularios utilizados
-   - Consentimientos informados
-   - Datos raw
+Durante una prueba, un cable se soltó de su soldadura. Al volver a conectarlo, se produjo una falla en el portapilas y se observó calentamiento. Se revisaron las conexiones y la soldadura, pero el portapilas volvió a calentarse al insertar las pilas, incluso estando desconectado del resto del circuito.
 
----
+La causa de la falla no se ha identificado y el problema sigue pendiente de resolución. Se grabaron videos durante la revisión del portapilas.
 
-## Reportes Complementarios
+## Alcance
 
-### `analisis_metricas_ods.pdf`
-Enfoque específico en validación de impacto ODS
-
-### `feedback_usuarios.pdf`
-Compilación de comentarios y sugerencias
-
-### `comparativa_iteraciones.pdf`
-Evolución del desempeño entre versiones v1, v2, v3
-
----
-
-## Datos a Incluir
-
-### Tablas de Resultados
-Ejemplo de formato:
-
-| Usuario | Edad | Facilidad de Uso (1-5) | Satisfacción (1-5) | Comentarios |
-|---------|------|------------------------|-------------------|-------------|
-| U1 | [edad] | 4 | 5 | "Muy intuitivo" |
-| U2 | [edad] | 5 | 4 | "Funciona bien" |
-
-### Gráficos Recomendados
-- Gráfico de barras: Promedios por métrica
-- Gráfico de dispersión: Correlaciones
-- Gráfico de líneas: Evolución entre iteraciones
+Las pruebas permitieron revisar las funciones de la alarma y comprobar que la vibración podía percibirse al sostener los motores. No se midió la intensidad de la vibración y no se realizó una prueba para comprobar si la alarma logra despertar a una persona dormida.
