@@ -1,93 +1,36 @@
-# Testing y Validación
+# Pruebas de la alarma
 
-## Objetivo
-Validar el funcionamiento del prototipo con usuarios reales y medir el impacto cuantitativo en la problemática ODS seleccionada.
+El 21 de noviembre de 2026, Isidora Herrera realizó diez pruebas con la versión 4.1 del código para revisar los modos de aviso, las animaciones y el botón de apagado.
 
----
+## Procedimiento
 
-## 📁 Carpetas
+1. Conectar el teléfono a la red de la alarma y abrir la página de configuración.
+2. Configurar una alarma, seleccionando una hora, una melodía y un modo de aviso.
+3. Cuando se active, observar si suena, vibra y muestra la animación correspondiente.
+4. Detener la alarma con el botón de apagado y registrar lo observado.
+5. Repetir la prueba con los distintos modos y melodías.
 
-#### `reportes/`
-Documentos con resultados del testing
+Para considerar correcta cada prueba, el sonido y la vibración deben corresponder al modo elegido, la pantalla debe mostrar la animación y la alarma debe detenerse al presionar el botón.
 
-#### `evidencias/`
-Fotos y videos de sesiones con usuarios
+## Resultados
 
-#### `datos/`
-Datos cuantitativos recolectados
+| Modo | Pruebas | Resultado observado |
+| --- | --- | --- |
+| Solo vibración | 3 | En las tres pruebas vibró y no sonó. |
+| Solo sonido | 3 | En las tres pruebas sonó y no vibró. |
+| Sonido y vibración | 4 | En las cuatro pruebas sonó y vibró. |
 
----
+En las diez pruebas se mostró la animación y la alarma se detuvo al presionar el botón. También se comprobaron funciones de la página, la memoria de las alarmas y su activación con el teléfono desconectado. Los horarios y melodías están en la [ficha de pruebas](datos/Ficha_pruebas_alarma.pdf).
 
-## Metodología de Testing
+## Percepción de la vibración
 
-### Grupo Objetivo
-- **Perfil de usuarios:** [Descripción]
-- **Cantidad mínima:** 5 usuarios
-- **Ubicación:** [Contexto real de uso]
+Aproximadamente nueve personas sostuvieron los motores con las manos. Todas indicaron que sentían la vibración y que les parecía fuerte. Esta prueba fue perceptiva y no se midió la intensidad con instrumentos.
 
-### Protocolo de Testing
-1. **Briefing** (5 min)
-   - Explicar propósito del prototipo
-   - Contexto de uso
+Las pruebas muestran que la vibración puede percibirse al sostener los motores, pero no comprueban si la alarma logra despertar a una persona dormida.
 
-2. **Sesión de Uso** (15-20 min)
-   - Usuario interactúa con prototipo
-   - Observación sin intervención
-   - Toma de notas
+## Archivos de esta carpeta
 
-3. **Entrevista Post-Testing** (10 min)
-   - Preguntas sobre experiencia
-   - Feedback cualitativo
-   - Sugerencias de mejora
-
-4. **Encuesta Cuantitativa** (5 min)
-   - Escala Likert (1-5)
-   - Métricas específicas
-
----
-
-## Métricas de Evaluación
-
-### Usabilidad
-- Facilidad de uso (1-5)
-- Claridad de funcionamiento (1-5)
-- Satisfacción general (1-5)
-
-### Impacto ODS
-- [Métrica específica 1 relacionada con ODS]
-- [Métrica específica 2 relacionada con ODS]
-- [Métrica específica 3 relacionada con ODS]
-
-### Desempeño Técnico
-- Tiempo de respuesta del sistema
-- Tasa de errores
-- Confiabilidad
-
----
-
-## Análisis de Resultados
-
-### Cuantitativo
-- Promedios y desviaciones estándar
-- Gráficos de resultados
-- Comparación con baseline
-
-### Cualitativo
-- Temas recurrentes en feedback
-- Problemas identificados
-- Sugerencias de mejora
-
----
-
-## Validación de Impacto ODS
-
-**ODS Seleccionado:** [Número y nombre]
-
-**Meta específica del proyecto:** [Describir]
-
-**Indicadores de impacto:**
-1. [Indicador 1] - Baseline: [X], Meta: [Y], Alcanzado: [Z]
-2. [Indicador 2] - Baseline: [X], Meta: [Y], Alcanzado: [Z]
-
-**Proyección de impacto a escala:**
-[Si el prototipo se despliega en toda la ciudad/comunidad, cuál sería el impacto estimado]
+- [Datos y resultados](datos/README.md): resumen de las pruebas y sus límites.
+- [Ficha de pruebas](datos/Ficha_pruebas_alarma.pdf): horarios, melodías y comprobaciones de la interfaz.
+- [Reporte de pruebas y dificultades](reportes/README.md): resultados, conexiones y falla del portapilas.
+- [Evidencias](evidencias/README.md): videos de las pruebas y enlaces de descarga.
