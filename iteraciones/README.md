@@ -71,16 +71,22 @@ Aprendizajes clave:
 -La alarma debe poder controlarse de forma sencilla y accesible, sin depender exclusivamente de un celular.
 
 ### Versión 2 (Iteración 2) - Primera Mejora
-**Fecha:** [23/10/2026]  
+**Fecha:** [20/11/2026]  
 **Estado:** Prototipo funcional mejorado
 
-**Mejoras implementadas:**
-- [Mejora 1]
-- [Mejora 2]
 
-**Problemas pendientes:**
-- [Problema 1]
-- [Problema 2]
+**caracteristicas:**
+
+El dispositivo utiliza un **ESP32 DevKit V1** como controlador principal, una **pantalla OLED de 1,3 pulgadas** para visualizar la información, **dos motores vibratorios** para generar las vibraciones, un **módulo de relé de 5 V**, **dos botones pulsadores** y un **sistema de alimentación con baterías recargables de 3,7 V**.
+
+### Mejoras implementadas durante el desarrollo
+
+- **Mayor intensidad de vibración:** se reemplazó el buzzer inicial por motores vibratorios más potentes, buscando generar una vibración perceptible a través de la almohada.
+  
+- **Mayor autonomía:** se incorporaron dos botones físicos para controlar el apagado de la alarma directamente desde el dispositivo, eliminando la necesidad de utilizar un celular para esta función.
+  
+**Objetivo final:** desarrollar una solución accesible, práctica e independiente que contribuya a mejorar la autonomía de las personas con discapacidad auditiva en su vida cotidiana.
+
 
 ### Versión 3 (Iteración 3) - Versión Final
 **Fecha:** [XX/XX/2025]  
