@@ -22,7 +22,7 @@ En la versión final, los motores quedaron soldados y mantienen su conexión al 
 
 Durante una prueba, un cable se soltó de su soldadura. Al volver a conectarlo, se produjo una falla en el portapilas y se observó calentamiento. Se revisaron las conexiones y la soldadura, pero el portapilas volvió a calentarse al insertar las pilas, incluso estando desconectado del resto del circuito.
 
-La causa de la falla no se ha identificado y el problema sigue pendiente de resolución. Se grabaron videos durante la revisión del portapilas.
+El proyecto funcionó en las pruebas realizadas y el calentamiento se presentó en el portapilas. Se consideró que podía tratarse de un cortocircuito en ese componente y, como solución, se decidió reemplazarlo. Se grabaron videos durante la revisión del portapilas.
 
 ## Alcance
 
