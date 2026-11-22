@@ -1,12 +1,5 @@
 # Fotografías del Prototipo
 
-## Requisitos de las Fotos
-
-### Calidad
-- **Resolución mínima:** 1920x1080 px
-- **Formato:** JPG o PNG
-- **Iluminación:** Buena iluminación natural o artificial uniforme
-- **Fondo:** Neutro y sin distracciones
 
 ### Tomas Requeridas
 
@@ -15,9 +8,15 @@
 
 2. **Vista del circuito interno**
    - `02_circuito_interno.jpg`
+   
+     <img width="1200" height="1600" alt="PHOTO-2026-11-21-21-47-17" src="https://github.com/user-attachments/assets/3782c7af-993e-4c2f-bfdd-31497ee1d27e" />
+
 
 3. **Detalle de conexiones críticas**
    - `03_detalle_conexiones.jpg`
+
+<img width="1200" height="1600" alt="PHOTO-2026-11-21-21-47-16" src="https://github.com/user-attachments/assets/95773f40-e6b1-489f-bd74-94328f6020da" />
+
 
 4. **Vista de sensores montados**
    - `04_sensores.jpg`
