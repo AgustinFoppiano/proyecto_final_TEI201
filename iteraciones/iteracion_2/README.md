@@ -74,17 +74,17 @@ Segunda versión de la alarma vibratoria para personas sordas o con discapacidad
 
 ✅ **Botones físicos:** Se comprobó el funcionamiento de los pulsadores para controlar la alarma.
 
-⚠️ **Sistema de alimentación:** Se produjo un cortocircuito y sobrecalentamiento del módulo portabaterías despues de varios intentos.
+⚠️ **Sistema de alimentación:** Se observó calentamiento en el portapilas. Ante un posible cortocircuito, se decidió reemplazarlo.
 
 ---
 
-## Problemas Pendientes
+## Dificultad detectada
 
-### Problema 1: Cortocircuito en el módulo portabaterías
+### Problema 1: Calentamiento del portapilas
 
-- **Descripción:** El módulo funcionaba correctamente hasta que se desprendió una conexión que debió ser soldada nuevamente. Posteriormente, al insertar las baterías, se produjo un cortocircuito y sobrecalentamiento. No se logró identificar la causa exacta.
+- **Descripción:** Se desprendió una conexión que debió ser soldada nuevamente. Al colocar las pilas, el portapilas se calentó, incluso estando desconectado del resto del circuito.
 - **Prioridad:** Alta.
-- **Plan para v3:** Revisar las conexiones y soldaduras, identificar el origen de la falla y reemplazar el módulo si presenta daños, antes de volver a energizar el circuito.
+- **Acción definida:** Se decidió reemplazar el portapilas. El proyecto funcionó en las pruebas realizadas.
 
 ---
 
@@ -94,7 +94,7 @@ Segunda versión de la alarma vibratoria para personas sordas o con discapacidad
 
 **Hardware:**
 
-- [ ] Revisar y solucionar la falla del módulo portabaterías.
+- Se decidió reemplazar el portapilas.
 - [ ] Verificar la seguridad de las conexiones eléctricas.
 
 **Software:**
