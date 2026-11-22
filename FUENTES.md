@@ -125,5 +125,8 @@ Se adaptó un fragmento del video *Bad Apple* para reproducirlo en la pantalla O
 
 - **Herramienta:** ChatGPT (OpenAI).
 - **Uso:** estructuración y redacción del [catálogo técnico de componentes](hardware/componentes.md) usando las fotografías y descripciones aportadas por el equipo, y revisión de su ubicación respecto de la pauta TEI201 Avance #3.
-- **Imágenes:** creación de diez **ilustraciones SVG originales de referencia** en [hardware/imagenes_componentes/](hardware/imagenes_componentes/); no representan fotografías reales ni fichas exactas de los fabricantes.
 - **Control de exactitud:** características visuales corroboradas se distinguen de datos publicados por proveedores y de especificaciones pendientes de verificación. El equipo debe cotejar modelos, dimensiones, cableado, consumos y costos antes de presentar el prototipo como definitivo.
+
+## Referencias comerciales fotográficas (22 de noviembre de 2026)
+
+La documentación de hardware muestra fotografías reales de productos similares mediante enlaces externos, con atribución a las publicaciones correspondientes. El material se utiliza únicamente como referencia visual: **no implica que el equipo haya comprado esas marcas o modelos exactos**. Las fotografías y sus respectivas páginas se enumeran en [hardware/imagenes_componentes/README.md](hardware/imagenes_componentes/README.md).

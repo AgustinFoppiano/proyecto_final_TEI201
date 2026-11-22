@@ -4,8 +4,8 @@ El prototipo corresponde a una alarma accesible para personas sordas o con dific
 
 ## Documentos principales
 
-- **[Catálogo ilustrado de los componentes](componentes.md)**: identificación técnica, fotografías de origen descritas por el equipo, ilustraciones genéricas y datos pendientes.
-- **[Imágenes ilustrativas](imagenes_componentes/README.md)**: referencias visuales originales, no fotografías de las unidades.
+- **[Catálogo ilustrado de los componentes](componentes.md)**: identificación técnica, fotografías de origen descritas por el equipo, fotografías comerciales de referencia y datos pendientes.
+- **[Referencias fotográficas](imagenes_componentes/README.md)**: galería de fotos reales de productos similares, enlazadas a sus publicaciones originales.
 - **[BOM — lista de materiales](bom/README.md)**: cantidades y estructura de costos; el presupuesto todavía debe completarse con precios comprobables.
 - **[Esquemas](esquemas/README.md)**: circuito a documentar.
 - **[Fotografías reales](fotos/README.md)**: vistas del montaje y evidencia física.
