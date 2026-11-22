@@ -1,5 +1,8 @@
 # Presentación Final
 
+https://canva.link/9vdbaq7cbvbrvrb
+
+
 ## Formato de la Presentación
 
 **Archivo:** `presentacion_avance3.pdf` o `.pptx`
@@ -25,8 +28,6 @@
 - Descripción del ODS seleccionado
 - Datos de contexto (estadísticas, impacto)
 - Foto/imagen representativa
-
-**Slide 3: Problema Específico**
 - Problema local identificado
 - ¿Por qué es importante?
 - ¿A quiénes afecta?
