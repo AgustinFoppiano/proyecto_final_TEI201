@@ -104,6 +104,18 @@ El dispositivo utiliza un **ESP32 DevKit V1** como controlador principal, una **
 
 ## Justificación de Cambios
 
+
+### 1. Sustitución del buzzer
+- **Cambio:** Reemplazo del buzzer por dos motores vibratorios de 1,5–6 V y 3500 RPM.
+- **Razón:** La vibración del buzzer era insuficiente para transmitirse eficazmente para despertar a una persona.
+- **Impacto:** Incorporación de dos fuentes de vibración de mayor intensidad potencial, pendiente de validación cuantitativa.
+
+### 2. Incorporación de botones físicos
+- **Cambio:** Integración de dos pulsadores táctiles para controlar la alarma.
+- **Razón:** Reducir la dependencia del celular y permitir una interacción directa con el dispositivo.
+- **Impacto:** Incorporación de dos controles físicos, permitiendo operar el apagado sin necesidad de utilizar el celular.
+
+
 ### Hardware
 **De v1 a v2:**
 - Cambio: [Descripción]
