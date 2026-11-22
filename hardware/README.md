@@ -1,63 +1,35 @@
-# Hardware - Documentación
+# Hardware — documentación del prototipo
 
-## Contenido
-Esta carpeta contiene toda la documentación técnica del hardware del proyecto.
+El prototipo corresponde a una alarma accesible para personas sordas o con dificultades auditivas que combina **vibración, sonido y una pantalla OLED** con control central por ESP32.
 
-### 📁 Carpetas
+## Documentos principales
 
-#### `esquemas/`
-Diagramas de circuitos y esquemáticos del sistema
+- **[Catálogo ilustrado de los componentes](componentes.md)**: identificación técnica, fotografías de origen descritas por el equipo, ilustraciones genéricas y datos pendientes.
+- **[Imágenes ilustrativas](imagenes_componentes/README.md)**: referencias visuales originales, no fotografías de las unidades.
+- **[BOM — lista de materiales](bom/README.md)**: cantidades y estructura de costos; el presupuesto todavía debe completarse con precios comprobables.
+- **[Esquemas](esquemas/README.md)**: circuito a documentar.
+- **[Fotografías reales](fotos/README.md)**: vistas del montaje y evidencia física.
 
-#### `bom/`
-Bill of Materials (Lista de materiales)
+## Componentes previstos y cantidades
 
-#### `fotos/`
-Fotografías de alta resolución del prototipo ensamblado
+1 ESP32 DevKit V1 de 30 pines; 1 OLED I²C de 1,3″; 1 buzzer pasivo; 1 módulo relé Songle SRD-05VDC-SL-C; 2 motores de vibración DC; 1 portabaterías para 2 celdas; 2 baterías Li-ion de 3,7 V; 2 pulsadores (azul y blanco); **2 protoboards compactas de 400 puntos**; cables y conectores por contabilizar.
 
----
+## Montaje: confirmado frente a previsto
 
-## Instrucciones de Ensamble
+- **Montaje fotografiado:** ESP32 y buzzer en protoboard de pruebas grande; OLED cableada; relé; dos motores; portabaterías y pulsadores. Corresponde a la fase provisional del prototipo.
+- **Cambio previsto:** reemplazo de protoboards grandes por dos compactas **juntas** (83,5 × 54,5 × 8,5 mm por unidad, según ficha comercial).
+- **Encapsulado en revisión:** dos mitades circulares, curvadas por ambas caras; OLED visible desde arriba; pulsadores protegidos en los costados; los dos motores en un mismo costado; portabaterías desmontable y guía para el conector de carga verificado.
+- **Distribución propuesta:** ESP32 entre las dos protoboards, buzzer encima de una de ellas y relé próximo al buzzer. La posición prevista no equivale a una instalación física ya comprobada.
 
-### Componentes Principales
-1. **ESP32:** Microcontrolador principal encargado de procesar la información y controlar los componentes electrónicos del sistema.
-2. **Pantalla OLED:** Dispositivo utilizado para visualizar información y mensajes del sistema.
-3. **Buzzer:** Componente encargado de emitir señales sonoras de alerta.
-4. **Motor vibrador:** Módulo que genera vibraciones para proporcionar alertas físicas al usuario.
-5. **Protoboard:** Base utilizada para montar y conectar los componentes electrónicos sin necesidad de soldadura.
-6. **Cables Dupont:** Permiten realizar las conexiones eléctricas entre la ESP32 y los componentes.
-7. **Cable USB:** Utilizado para alimentar y programar la ESP32 desde un computador.
+## Verificaciones críticas antes de presentar el ensamble como terminado
 
-### Pasos de Ensamblaje
-1. Colocar la placa ESP32 sobre la protoboard, dejando espacio para los demás componentes.
-2. Instalar la pantalla OLED sobre la protoboard.
-3. Colocar el buzzer en la protoboard.
-4. Conectar el módulo de vibración utilizando cables Dupont.
-5. Realizar las conexiones de alimentación, tierra y señales entre la ESP32 y los componentes, siguiendo el esquema eléctrico del proyecto.
-6. Conectar la ESP32 al computador mediante un cable USB.
-7. Cargar el programa desarrollado para el sistema.
-8. Verificar el funcionamiento de la pantalla OLED, el buzzer y el motor vibrador.
+- [ ] Esquemático completo y actualizado, con tensión y corriente reales de cada módulo.
+- [ ] Comprobar puerto de entrada de carga y tipo de conector del portabaterías.
+- [ ] Confirmar dimensiones reales de las dos protoboards recibidas.
+- [ ] Fijar cables y componentes para evitar desconexiones por vibración.
+- [ ] BOM con costos unitarios y totales comprobables.
+- [ ] Fotografías del montaje **final** desde al menos tres ángulos.
+- [ ] Verificar acceso a la electrónica y apertura del encapsulado sin dañarlo.
+- [ ] Revisar las condiciones de temperatura y seguridad de las baterías; **no cargarlas bajo almohadas o ropa de cama**.
 
-### Precauciones
-- ⚠️ Verificar las conexiones eléctricas antes de alimentar el circuito.
-- ⚠️ Respetar los voltajes de funcionamiento de cada componente.
-- ⚠️ No conectar cargas que superen la capacidad de corriente de los pines de la ESP32.
-- ⚠️ Desconectar la alimentación antes de modificar las conexiones.
-- ⚠️ Manipular cuidadosamente los componentes para evitar daños en sus conexiones.
-
----
-
-## Especificaciones Técnicas
-
-**Alimentación:** 5 V
-**Consumo:** [Watts/mA]  
-**Dimensiones:** 160x160x
-**Peso:** [gramos]
-
----
-
-## Troubleshooting
-
-| Problema | Posible Causa | Solución |
-|----------|---------------|----------|
-| Baja vibración | Motor de vibración demasiado débil | Reemplazar el motor por uno más potente |
-| Muy dependiente al celular | Solo poder detener la alarma con el celular | Implementar un botón físico |
+> **Nota:** este README no presenta como verificadas mediciones de consumo, peso o dimensiones finales del aparato que el equipo todavía no ha documentado.

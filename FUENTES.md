@@ -119,3 +119,11 @@ Se adaptó un fragmento del video *Bad Apple* para reproducirlo en la pantalla O
 - **Animación de Quantum Bell:** se creó y adaptó una animación que muestra la hora programada de la alarma, acompañada de ondas y destellos.
 - **Indicación utilizada:** se solicitó que la animación de *Quantum Bell* mostrara la hora elegida para cada alarma, en lugar de una hora fija.
 - **Adaptación al proyecto:** las animaciones se integraron al programa del ESP32 y se asociaron a las melodías seleccionadas desde la interfaz de la alarma.
+
+
+## Documentación asistida por IA — catálogo de hardware (22 de noviembre de 2026)
+
+- **Herramienta:** ChatGPT (OpenAI).
+- **Uso:** estructuración y redacción del [catálogo técnico de componentes](hardware/componentes.md) usando las fotografías y descripciones aportadas por el equipo, y revisión de su ubicación respecto de la pauta TEI201 Avance #3.
+- **Imágenes:** creación de diez **ilustraciones SVG originales de referencia** en [hardware/imagenes_componentes/](hardware/imagenes_componentes/); no representan fotografías reales ni fichas exactas de los fabricantes.
+- **Control de exactitud:** características visuales corroboradas se distinguen de datos publicados por proveedores y de especificaciones pendientes de verificación. El equipo debe cotejar modelos, dimensiones, cableado, consumos y costos antes de presentar el prototipo como definitivo.
