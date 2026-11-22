@@ -16,6 +16,15 @@ El archivo BOM debe incluir las siguientes columnas:
 | Precio Total | Cantidad × Precio | $8,990 |
 | Datasheet | Link a especificaciones | [URL] |
 
+
+Componentes: 
+| elemento | especificacion | cantidad |
+| ESP32 DevKit V1 | de 30 pines, con conexión MicroUSB.| 1|
+| Pantalla OLED | 1,3 pulgadas | 1 |
+| Placa portabaterías | tipo power bank, con dos baterías recargables Li-ion de 3,7 V y conexiones USB| 1 |
+| Módulo de relé de un canal y 5 V | con relé Songle SRD-05VDC-SL-C| 1 |
+| motores redondos | 1,5 a 6 V y 3500 rpm | 2 |
+| botones | pulsadores tactiles | 2 |
 ---
 
 ## Archivos a Incluir
