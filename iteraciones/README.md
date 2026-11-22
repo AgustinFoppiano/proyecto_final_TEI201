@@ -4,7 +4,6 @@
 
 Esta carpeta documenta la evolución del prototipo a través de las diferentes versiones desarrolladas durante el curso.
 
-**CRÍTICO:** Demostrar el proceso iterativo es un requisito para obtener puntaje completo en "Integración y Refinamiento" (2.5 puntos).
 
 ---
 
