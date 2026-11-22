@@ -1,57 +1,13 @@
-# Código Fuente
+# Código fuente
 
-## Archivos Principales
+El código principal del proyecto es **[alarma_final/alarma_final.ino](alarma_final/alarma_final.ino)**. El encabezado del archivo lo identifica como `PRUEBA PROTOTIPO 4_1`.
 
-### `main.ino`
-Archivo principal del proyecto Arduino/ESP32
+Para abrirlo en Arduino IDE, descargar el repositorio y abrir `alarma_final.ino` desde la carpeta `software/src/alarma_final/`. El archivo y su carpeta tienen el mismo nombre para mantener la estructura de un proyecto Arduino.
 
-**Estructura:**
-- Setup: Inicialización del sistema
-- Loop: Ciclo principal de ejecución
+El programa reúne en un solo archivo la interfaz web, la configuración de alarmas, el control del buzzer y del relé, y los datos de las animaciones de la pantalla OLED.
 
-### Otros archivos (si aplica)
-- `config.h` - Configuraciones y constantes
-- `sensores.h` / `sensores.cpp` - Funciones de sensores
-- `actuadores.h` / `actuadores.cpp` - Control de actuadores
-- `comunicacion.h` / `comunicacion.cpp` - WiFi/Bluetooth
+En `setup()` se preparan las salidas, la memoria, la red, el servidor y la pantalla. En `loop()` se atienden las solicitudes DNS, se comprueban las alarmas y se actualizan el pulsador, las salidas y la pantalla.
 
----
+Para compilarlo se utilizan **ESP32 Dev Module**, el esquema de partición **Huge APP (3 MB No OTA / 1 MB SPIFFS)** y las dependencias indicadas en [Librerías](../librerias/README.md). Las instrucciones completas están en [Software](../README.md).
 
-## Estándares de Código
-
-### Comentarios
-```cpp
-// Comentarios en español
-// Explicar QUÉ hace y POR QUÉ (no solo el CÓMO)
-
-/**
- * Función: leerTemperatura
- * Descripción: Lee temperatura del sensor DHT22
- * Retorna: float - Temperatura en grados Celsius
- */
-float leerTemperatura() {
-  // código
-}
-```
-
-### Nombres de Variables
-- Variables: `camelCase`
-- Constantes: `UPPER_SNAKE_CASE`
-- Funciones: `camelCase()`
-
----
-
-## Testing y Debugging
-
-### Modo Debug
-Descomentar para activar modo debug:
-```cpp
-#define DEBUG true
-```
-
-### Monitor Serial
-- Baudrate: 115200
-- Mensajes informativos con prefijos:
-  - `[INFO]` - Información general
-  - `[ERROR]` - Errores
-  - `[DEBUG]` - Debug
+Las versiones previas están en [`versiones_anteriores/`](../versiones_anteriores/). El monitor serie se configura a **115200 baudios**.

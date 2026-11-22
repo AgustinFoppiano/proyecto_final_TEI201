@@ -9,12 +9,12 @@
 - **ODS Seleccionado:** 10. Reducción de las desigualdades
 - **Problema a resolver:** Las personas con discapacidad auditiva tienen dificultad para usar alarmas convencionales.
 ### Descripción del Proyecto
-Una alarma que vibre en vez de generar ruido, se colocaría debajo de la almohada y se programaría la hora deseada desde el celular.
+Alarma dirigida a personas con discapacidad auditiva, programable desde el celular mediante una red Wi-Fi local creada por el ESP32. Permite seleccionar vibración, sonido o ambos como aviso, y utiliza una pantalla OLED para mostrar animaciones asociadas a las melodías.
 
 ### Estado del Proyecto
-- **Versión actual:** v1.0
-- **Última actualización:** 26/10
-- **Estado:** Prototipo inicial
+- **Código principal:** versión 4.1 para ESP32.
+- **Archivo:** [`software/src/alarma_final/alarma_final.ino`](software/src/alarma_final/alarma_final.ino).
+- **Versiones previas:** [`software/versiones_anteriores/`](software/versiones_anteriores/).
 
 ---
 
@@ -25,7 +25,8 @@ Una alarma que vibre en vez de generar ruido, se colocaría debajo de la almohad
 ├── diseno_3d/        # Modelos Fusion 360 y renders
 ├── testing/          # Validación con usuarios
 ├── documentacion/    # Reportes y presentación
-└── iteraciones/      # Historial de versiones
+├── iteraciones/      # Historial de versiones
+└── FUENTES.md        # Fuentes y herramientas utilizadas
 ```
 
 ---
@@ -33,19 +34,21 @@ Una alarma que vibre en vez de generar ruido, se colocaría debajo de la almohad
 ##  Inicio Rápido
 
 ### Requisitos Previos
-- Arduino IDE 2.x
-- Fusion 360
-- Placa ESP32 DevKit V1.
-- ESP32 Arduino Core 3.3.12 (Espressif Systems).
-- Librería AsyncTCP 3.5.0 (ESP32Async).
-- Librería ESPAsyncWebServer 3.12.1 (ESP32Async).
+- Arduino IDE 2.3.11.
+- Placa seleccionada: ESP32 Dev Module, con el paquete esp32 by Espressif Systems 3.3.12.
+- Esquema de partición: Huge APP (3 MB No OTA / 1 MB SPIFFS).
+- Librerías: Async TCP 3.6.1, ESP Async WebServer 3.12.1 y U8g2 2.36.19.
+- Cable USB compatible para conectar el ESP32 al computador.
 - Autodesk Fusion 360 para visualizar y editar el modelo 3D.
-- Cable USB compatible para conectar la ESP32 al computador.
 
 ### Instalación
-1. Clonar el repositorio
-2. Instalar librerías (ver `software/librerias/`)
-3. Cargar código en ESP32/Arduino
+1. Descargar o clonar el repositorio.
+2. Instalar el soporte de ESP32 y las librerías indicadas en [software/librerias](software/librerias/README.md).
+3. Abrir [alarma_final.ino](software/src/alarma_final/alarma_final.ino), seleccionar la placa, el puerto y el esquema de partición indicados, y cargarlo en el ESP32.
+4. Desde el teléfono, conectarse a la red **Alarma para sordos** con la contraseña `porfavor`. Si el portal no se abre, entrar a **http://4.3.2.1**.
+5. Configurar y guardar la alarma desde la interfaz. Al abrir la página, el teléfono sincroniza la hora del ESP32.
+
+La [guía de software](software/README.md) incluye la instalación y el funcionamiento paso a paso.
 
 ---
 

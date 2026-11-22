@@ -1,736 +1,117 @@
-# Software - Documentación
+# Software de la alarma
 
-## Contenido
+El software se ejecuta en un ESP32 y permite configurar alarmas desde un teléfono conectado a la red Wi-Fi del dispositivo. Según el modo seleccionado, la alarma utiliza sonido, vibración o ambos. También controla una pantalla OLED con animaciones asociadas a las melodías.
 
-Esta carpeta contiene el código fuente y la documentación del software correspondiente al sistema de alarma accesible desarrollado con ESP32.
+## Archivos de esta carpeta
 
-El sistema permite configurar alarmas desde un teléfono mediante una interfaz web alojada directamente en el ESP32. Las alarmas pueden utilizar sonido, vibración o ambos métodos de aviso.
+| Ruta | Contenido |
+| --- | --- |
+| [`src/alarma_final/alarma_final.ino`](src/alarma_final/alarma_final.ino) | Código principal de la alarma, identificado en el archivo como versión 4.1. |
+| [`src/README.md`](src/README.md) | Ubicación y organización del código fuente. |
+| [`versiones_anteriores/`](versiones_anteriores/) | Códigos utilizados en etapas anteriores y prueba del motor. |
+| [`librerias/README.md`](librerias/README.md) | Dependencias y versiones utilizadas. |
+| [`docs/README.md`](docs/README.md) | Funcionamiento interno y comunicación entre la interfaz y el ESP32. |
 
----
+Las fuentes de librerías, recursos y herramientas se encuentran en [`FUENTES.md`](../FUENTES.md).
 
-## 📁 Estructura de Carpetas
+## Entorno utilizado
 
-### `src/`
+| Elemento | Configuración |
+| --- | --- |
+| Entorno | Arduino IDE 2.3.11 |
+| Placa seleccionada | ESP32 Dev Module |
+| Paquete de placas | esp32 by Espressif Systems 3.3.12 |
+| Esquema de partición | Huge APP (3 MB No OTA / 1 MB SPIFFS) |
+| AsyncTCP | 3.6.1, de ESP32Async |
+| ESP Async WebServer | 3.12.1, de ESP32Async |
+| U8g2 | 2.36.19, de Oliver Kraus |
 
-Contiene el código fuente principal del proyecto desarrollado para ESP32.
+El programa está escrito en C/C++ para Arduino. La interfaz utiliza HTML, CSS y JavaScript incorporados en el mismo archivo `.ino`.
 
-Archivo principal recomendado:
+## Instalación y carga del código
 
-```text
-src/pruebabuzzer_version_3_5.ino
-```
+### 1. Preparar Arduino IDE y el ESP32
 
-La versión **3.5** corresponde a la versión funcional utilizada en el proyecto, incluyendo:
+1. Instalar [Arduino IDE](https://www.arduino.cc/en/software/).
+2. En **File → Preferences**, agregar la siguiente dirección en el campo de URLs adicionales del gestor de placas, si aún no está agregada:
 
-- Interfaz web de alarmas.
-- Portal cautivo.
-- Configuración de múltiples alarmas.
-- Repetición por días.
-- Alarmas para fechas específicas.
-- Almacenamiento de alarmas en memoria.
-- Buzzer con diferentes melodías.
-- Motor vibrador sincronizado con el ritmo.
-- Modos de sonido, vibración y sonido + vibración.
+   ```text
+   https://espressif.github.io/arduino-esp32/package_esp32_index.json
+   ```
 
-### `librerias/`
+3. Abrir **Tools → Board → Boards Manager**, buscar `esp32` e instalar **esp32 by Espressif Systems**, versión **3.3.12**.
+4. Desde el gestor de librerías, instalar **Async TCP 3.6.1**, **ESP Async WebServer 3.12.1** y **U8g2 2.36.19**. Sus funciones y enlaces están en [Librerías](librerias/README.md).
+5. Conectar el ESP32 al computador con un cable USB que permita transferir datos.
+6. En **Tools → Board**, seleccionar **ESP32 Dev Module**. En **Tools → Port**, seleccionar el puerto del dispositivo.
+7. En **Tools → Partition Scheme**, seleccionar **Huge APP (3 MB No OTA / 1 MB SPIFFS)**.
 
-Carpeta destinada a librerías adicionales utilizadas por el proyecto.
+### 2. Abrir y cargar la versión final
 
-Las principales librerías externas pueden instalarse directamente desde el administrador de librerías de Arduino IDE, por lo que no es obligatorio almacenarlas manualmente en esta carpeta.
+1. Descargar el repositorio o clonarlo en el computador.
+2. Abrir en Arduino IDE el archivo [`alarma_final.ino`](src/alarma_final/alarma_final.ino), dentro de la carpeta `software/src/alarma_final/`.
+3. Presionar **Verify** para compilar el programa.
+4. Si la compilación termina correctamente, presionar **Upload** para cargarlo en el ESP32.
+5. Esperar el mensaje de carga terminada. El monitor serie puede abrirse a **115200 baudios** para revisar los mensajes de inicio y detección de la pantalla.
 
-### `docs/`
+La carpeta y el archivo principal comparten el nombre `alarma_final`, de acuerdo con la organización de proyectos de Arduino IDE.
 
-Contiene documentación técnica relacionada con:
+## Conexión desde el teléfono
 
-- Arquitectura del software.
-- Funcionamiento del portal cautivo.
-- Conexiones del hardware.
-- Funcionamiento de las alarmas.
-- Pruebas realizadas.
+1. Encender el ESP32 con el código cargado.
+2. En el teléfono, buscar y seleccionar la red **Alarma para sordos**.
+3. Ingresar la contraseña configurada en el código: `porfavor`.
+4. Si el portal no se abre automáticamente, abrir el navegador e ingresar a **http://4.3.2.1**.
+5. Al iniciar la página, el teléfono envía su hora y zona horaria al ESP32. La interfaz muestra el estado de sincronización.
+6. Crear una alarma, elegir la hora, la melodía, el modo de aviso y la repetición, y guardar los cambios.
 
----
+La interfaz se encuentra alojada en el ESP32 y se utiliza mediante su red local. El teléfono se conecta directamente al dispositivo para configurarlo.
 
-# Stack Tecnológico
+## Funciones implementadas en el código final
 
-**Microcontrolador:** ESP32 DevKit V1  
-**Plataforma:** Arduino / ESP32  
-**Lenguaje:** C/C++  
-**Interfaz:** HTML, CSS y JavaScript  
-**IDE:** Arduino IDE 2.x  
-**Comunicación:** Wi-Fi / HTTP  
-**Almacenamiento:** Memoria interna del ESP32 mediante Preferences  
+- Crear, editar, eliminar, activar y desactivar hasta **10 alarmas**.
+- Configurar una alarma para una sola vez, todos los días, días elegidos o una fecha específica.
+- Seleccionar **sonido**, **vibración** o **sonido y vibración**.
+- Elegir entre siete melodías y mostrar su animación correspondiente en la pantalla OLED.
+- Detener la alarma activa desde la interfaz web o mediante el pulsador configurado en el código.
+- Guardar la configuración de las alarmas en la memoria del ESP32 mediante `Preferences`.
 
----
+### Melodías y animaciones
 
-# Librerías principales
+| Melodía | Animación configurada |
+| --- | --- |
+| Homecoming | Reloj y tocadiscos. |
+| Quantum Bell | Hora de la alarma acompañada de ondas y destellos. |
+| Space Bell | Reloj y tocadiscos. |
+| Megalovania | Animación de Sans. |
+| Never Gonna Give You Up | Rickroll. |
+| Take On Me | Alterna el clip del presidente tocando el piano y el video de Take On Me. |
+| Bad Apple | Animación de Bad Apple. |
 
-- **ESP32 Arduino Core (Espressif Systems)** - Versión **3.3.12**
-- **AsyncTCP (ESP32Async)** - Versión **3.5.0**
-- **ESPAsyncWebServer (ESP32Async)** - Versión **3.12.1**
-- **WiFi.h** - Incluida en **ESP32 Core 3.3.12**
-- **DNSServer.h** - Incluida en **ESP32 Core 3.3.12**
-- **Preferences.h** - Incluida en **ESP32 Core 3.3.12**
-- **esp_wifi.h** - Incluida en **ESP32 Core 3.3.12**
-- **Arduino.h** - Incluida en **ESP32 Core 3.3.12**
+## Configuración de pines en el código
 
----
+| Función | Pin configurado | Uso en el programa |
+| --- | --- | --- |
+| Buzzer | GPIO18 / D18 | Generación de tonos. |
+| Control de vibración | GPIO15 / D15 | Señal de control del relé. |
+| Pulsador para detener | GPIO27 / D27 | Entrada con resistencia interna `INPUT_PULLUP`; el código considera un pulsador entre el pin y GND. |
+| OLED: SDA | GPIO21 / D21 | Datos de la comunicación I²C. |
+| OLED: SCL | GPIO22 / D22 | Reloj de la comunicación I²C. |
 
-# Función de las Librerías
+Para la pantalla se utiliza en el programa la configuración `U8G2_SH1106_128X64_NONAME_1_HW_I2C`. El programa busca la pantalla en las direcciones I²C `0x3C` y `0x3D`.
 
-### Arduino.h
+El código agrupa notas y limita los tiempos de conmutación del relé; por ello, la vibración se relaciona con la melodía, pero el relé no cambia necesariamente de estado en cada nota o pausa. Las conexiones y la alimentación del montaje se documentan en [hardware](../hardware/README.md).
 
-Proporciona las funciones principales del entorno Arduino.
+## Hora y almacenamiento
 
-En el proyecto se utiliza para:
+Al abrir la interfaz, el teléfono envía la hora local al ESP32. A partir de esa sincronización, el programa calcula el tiempo transcurrido mediante `millis()`. Tras reiniciar el ESP32 es necesario abrir la interfaz nuevamente para sincronizar la hora antes de que se comprueben las alarmas.
 
-- Configurar pines.
-- Controlar el motor vibrador.
-- Controlar el buzzer.
-- Utilizar temporizadores.
-- Leer el tiempo mediante `millis()`.
-- Utilizar comunicación Serial.
+La configuración de las alarmas se guarda en la memoria no volátil con `Preferences`. La interfaz muestra la hora sincronizada, las alarmas configuradas y el estado de la alarma. Este archivo de código guarda configuraciones de alarmas; no implementa un historial de mediciones ambientales ni gráficas históricas.
 
----
+## Si la interfaz o la alarma no responde
 
-### WiFi.h
+- Revisar que el teléfono esté conectado a **Alarma para sordos** y abrir `http://4.3.2.1` manualmente.
+- Comprobar en la página que la hora esté sincronizada y que la alarma se encuentre activada.
+- Si la pantalla no muestra la animación, revisar las conexiones I²C y los mensajes del monitor serie a 115200 baudios.
+- Si Arduino IDE informa un error de compilación, revisar la placa, las versiones de las librerías y el esquema de partición indicados arriba.
 
-Permite utilizar el sistema Wi-Fi integrado del ESP32.
-
-Se utiliza para crear una red Wi-Fi propia llamada:
-
-```text
-Alarma para sordos
-```
-
-El teléfono se conecta directamente a esta red, por lo que el sistema no necesita conectarse al router de una vivienda para funcionar.
-
----
-
-### AsyncTCP.h
-
-Proporciona la comunicación TCP asíncrona necesaria para el servidor web.
-
-Permite que el ESP32 atienda solicitudes provenientes del teléfono sin detener otras funciones importantes, como:
-
-- Comprobar las alarmas.
-- Reproducir melodías.
-- Activar el motor vibrador.
-
----
-
-### ESPAsyncWebServer.h
-
-Permite crear el servidor web alojado dentro del ESP32.
-
-Se utiliza para:
-
-- Mostrar la interfaz de alarmas.
-- Crear alarmas.
-- Editar alarmas.
-- Eliminar alarmas.
-- Activar o desactivar alarmas.
-- Detener una alarma activa.
-- Sincronizar la hora con el teléfono.
-
----
-
-### DNSServer.h
-
-Se utiliza para implementar el sistema de portal cautivo.
-
-Cuando el usuario se conecta a la red Wi-Fi creada por el ESP32, las solicitudes DNS son redirigidas hacia la interfaz del sistema.
-
----
-
-### esp_wifi.h
-
-Permite realizar configuraciones de Wi-Fi de nivel más bajo que no están disponibles directamente mediante `WiFi.h`.
-
-En este proyecto se utiliza como parte del funcionamiento especial del portal cautivo para mejorar su detección en dispositivos móviles.
-
----
-
-### Preferences.h
-
-Permite guardar información en la memoria no volátil del ESP32.
-
-Gracias a esta librería, las alarmas configuradas pueden mantenerse almacenadas incluso después de reiniciar o desconectar el ESP32.
-
----
-
-# Instalación y Configuración
-
-## 1. Instalar Arduino IDE
-
-Descargar e instalar **Arduino IDE 2.x** desde el sitio oficial de Arduino.
-
-Después de la instalación, abrir Arduino IDE.
-
----
-
-## 2. Instalar soporte para ESP32
-
-Abrir:
-
-```text
-Tools → Board → Boards Manager
-```
-
-Buscar:
-
-```text
-ESP32
-```
-
-Instalar:
-
-```text
-ESP32 by Espressif Systems
-```
-
-Versión utilizada en el proyecto:
-
-```text
-3.3.12
-```
-
----
-
-## 3. Instalar Librerías Externas
-
-Abrir:
-
-```text
-Tools → Manage Libraries
-```
-
-Instalar las siguientes librerías:
-
-```text
-AsyncTCP by ESP32Async
-Versión 3.5.0
-```
-
-```text
-ESP Async WebServer by ESP32Async
-Versión 3.12.1
-```
-
-Las librerías:
-
-```text
-Arduino.h
-WiFi.h
-DNSServer.h
-Preferences.h
-esp_wifi.h
-```
-
-ya están incluidas con el paquete de ESP32.
-
----
-
-## 4. Conectar el ESP32
-
-Conectar el ESP32 al computador mediante cable Micro-USB.
-
-En Arduino IDE seleccionar:
-
-```text
-Tools → Board → ESP32 Arduino → ESP32 Dev Module
-```
-
-Luego seleccionar el puerto correspondiente:
-
-```text
-Tools → Port
-```
-
-En el equipo utilizado durante el desarrollo, el ESP32 fue detectado mediante un puerto COM.
-
----
-
-## 5. Abrir el Código
-
-Abrir el archivo:
-
-
-
-```text
-src/pruebabuzzer_version_3_5.ino
-```
-
----
-
-## 6. Verificar el Código
-
-Presionar el botón:
-
-```text
-✓ Verify
-```
-
-Arduino IDE compilará el programa y comprobará que no existan errores.
-
----
-
-## 7. Subir el Código al ESP32
-
-Una vez compilado correctamente, presionar:
-
-```text
-→ Upload
-```
-
-Esperar hasta que Arduino IDE muestre:
-
-```text
-Done uploading
-```
-
-El ESP32 reiniciará automáticamente y comenzará a ejecutar el sistema.
-
----
-
-# Configuración Principal
-
-Las principales configuraciones se encuentran al inicio del código.
-
-## Red Wi-Fi
-
-```cpp
-const char* wifiNombre = "Alarma para sordos";
-const char* wifiContrasena = "porfavor";
-```
-
-El ESP32 crea esta red automáticamente.
-
----
-
-## Dirección del Portal
-
-```cpp
-const IPAddress ipLocal(4, 3, 2, 1);
-const IPAddress ipGateway(4, 3, 2, 1);
-```
-
-La interfaz puede abrirse manualmente desde:
-
-```text
-http://4.3.2.1
-```
-
-si el portal cautivo no aparece automáticamente.
-
----
-
-## Pines utilizados
-
-```cpp
-#define BUZZER 18
-#define MOTOR_VIBRACION 15
-```
-
-### Buzzer
-
-```text
-Positivo (+) → D18
-Negativo (-) → GND
-```
-
-### Motor Vibrador
-
-```text
-IN  → D15
-VCC → Alimentación
-GND → GND
-```
-
----
-
-# Modos de Alarma
-
-Cada alarma puede configurarse utilizando uno de tres modos.
-
-### Sonido
-
-Activa solamente el buzzer.
-
-```text
-Buzzer → activo
-Motor → apagado
-```
-
-### Vibración
-
-Activa solamente el motor vibrador.
-
-```text
-Buzzer → apagado
-Motor → activo
-```
-
-### Sonido + Vibración
-
-Activa ambos sistemas simultáneamente.
-
-```text
-Buzzer → activo
-Motor → activo
-```
-
----
-
-# Sonidos Disponibles
-
-La versión 3.5 incluye los siguientes sonidos:
-
-1. **Homecoming**
-2. **Quantum Bell**
-3. **Space Bell**
-4. **Megalovania**
-5. **Never Gonna Give You Up**
-6. **Take On Me**
-
-El buzzer reproduce las melodías mediante diferentes frecuencias.
-
-El motor vibrador utiliza las mismas duraciones y pausas de las notas para generar un patrón de vibración relacionado con el ritmo de cada melodía.
-
----
-
-# Funcionamiento de las Alarmas
-
-El sistema permite configurar hasta:
-
-```text
-10 alarmas
-```
-
-Cada alarma contiene:
-
-- Hora.
-- Minuto.
-- Sonido.
-- Modo.
-- Estado activado/desactivado.
-- Tipo de repetición.
-- Días seleccionados.
-- Fecha específica, cuando corresponde.
-
----
-
-# Tipos de Repetición
-
-El sistema soporta cuatro configuraciones:
-
-### Una vez
-
-La alarma se ejecuta una sola vez.
-
-### Todos los días
-
-La alarma permanece activa diariamente.
-
-### Elegir días
-
-El usuario puede seleccionar días específicos como:
-
-```text
-Lunes
-Martes
-Miércoles
-Jueves
-Viernes
-Sábado
-Domingo
-```
-
-### Fecha específica
-
-La alarma se activa únicamente en una fecha determinada.
-
----
-
-# Sincronización de Hora
-
-El ESP32 utilizado no incorpora un reloj RTC externo.
-
-Por esta razón, al abrir la interfaz web, el teléfono envía su hora actual al ESP32.
-
-El navegador utiliza:
-
-```javascript
-Date.now()
-```
-
-y el ESP32 utiliza posteriormente:
-
-```cpp
-millis()
-```
-
-para continuar contando el tiempo.
-
-Después de reiniciar o desconectar completamente el ESP32, es necesario abrir nuevamente la interfaz para sincronizar la hora.
-
----
-
-# Almacenamiento de Alarmas
-
-Las alarmas se almacenan utilizando:
-
-```cpp
-Preferences
-```
-
-Esto permite conservar su configuración en la memoria interna del ESP32.
-
-Los datos almacenados incluyen, entre otros:
-
-```text
-Hora
-Minuto
-Tono
-Modo
-Repetición
-Días
-Fecha
-Estado
-```
-
----
-
-# Arquitectura del Software
-
-```mermaid
-flowchart TD
-
-    A[Encendido ESP32] --> B[Inicialización]
-    B --> C[Cargar alarmas guardadas]
-    C --> D[Crear red Wi-Fi]
-    D --> E[Iniciar DNS y servidor web]
-    E --> F[Teléfono se conecta]
-
-    F --> G[Portal cautivo]
-    G --> H[Interfaz web]
-
-    H --> I[Sincronizar hora]
-    H --> J[Crear / editar alarmas]
-    H --> K[Activar / eliminar alarmas]
-
-    I --> L[Control de tiempo]
-    J --> M[Guardar en Preferences]
-
-    L --> N{¿Hora de alarma?}
-
-    N -->|No| L
-    N -->|Sí| O[Activar alarma]
-
-    O --> P{Modo}
-
-    P -->|Sonido| Q[Buzzer D18]
-    P -->|Vibración| R[Motor D15]
-    P -->|Ambos| S[Buzzer + Motor]
-
-    Q --> T[Detener alarma]
-    R --> T
-    S --> T
-```
-
----
-
-# Módulos Principales
-
-## 1. Inicialización
-
-Configura:
-
-- Buzzer.
-- Motor.
-- Memoria.
-- Wi-Fi.
-- DNS.
-- Servidor web.
-- Portal cautivo.
-
----
-
-## 2. Gestión de Tiempo
-
-Mantiene la hora sincronizada inicialmente desde el teléfono y posteriormente mediante `millis()`.
-
----
-
-## 3. Gestión de Alarmas
-
-Permite:
-
-- Crear.
-- Editar.
-- Activar.
-- Desactivar.
-- Eliminar.
-- Guardar alarmas.
-
----
-
-## 4. Reproducción de Melodías
-
-Utiliza el sistema LEDC del ESP32 para generar frecuencias mediante el buzzer.
-
-La reproducción se realiza sin bloquear completamente el programa, permitiendo mantener operativa la interfaz web mientras suena una alarma.
-
----
-
-## 5. Control de Vibración
-
-El motor se controla mediante:
-
-```cpp
-digitalWrite()
-```
-
-La vibración sigue las duraciones y pausas utilizadas por las melodías.
-
----
-
-## 6. Comunicación Web
-
-El ESP32 funciona como servidor HTTP.
-
-La interfaz está escrita directamente mediante:
-
-```text
-HTML
-CSS
-JavaScript
-```
-
-y se encuentra almacenada dentro del propio código del ESP32.
-
----
-
-# API / Endpoints
-
-La interfaz web se comunica con el ESP32 mediante los siguientes endpoints:
-
-| Endpoint | Método | Descripción |
-|---|---|---|
-| `/api/sync-time` | POST | Sincroniza la hora del ESP32 con el teléfono |
-| `/api/alarms` | GET | Obtiene todas las alarmas configuradas |
-| `/api/save` | POST | Crea o modifica una alarma |
-| `/api/toggle` | POST | Activa o desactiva una alarma |
-| `/api/delete` | POST | Elimina una alarma |
-| `/api/stop` | POST | Detiene la alarma que está sonando |
-| `/api/status` | GET | Obtiene el estado actual del sistema |
-
----
-
-# Portal Cautivo
-
-Para facilitar el acceso desde teléfonos móviles, el proyecto incorpora un portal cautivo.
-
-Se utilizan rutas compatibles con diferentes sistemas operativos, entre ellas:
-
-```text
-/generate_204
-/gen_204
-/hotspot-detect.html
-/connecttest.txt
-/ncsi.txt
-/redirect
-/canonical.html
-/success.txt
-/wpad.dat
-```
-
-Estas rutas permiten que diferentes teléfonos detecten la red como una red que requiere iniciar sesión y puedan mostrar automáticamente la interfaz.
-
----
-
-# Flujo de Uso
-
-1. Encender el ESP32.
-2. Buscar redes Wi-Fi desde el teléfono.
-3. Conectarse a:
-
-```text
-Alarma para sordos
-```
-
-4. Ingresar la contraseña configurada.
-5. Esperar la apertura del portal cautivo.
-6. Si no aparece automáticamente, abrir:
-
-```text
-http://4.3.2.1
-```
-
-7. La hora del teléfono se sincroniza con el ESP32.
-8. Crear una alarma.
-9. Seleccionar:
-   - Hora.
-   - Melodía.
-   - Repetición.
-   - Modo.
-10. Guardar la alarma.
-11. Al llegar la hora configurada, el ESP32 activa el sistema seleccionado.
-12. La alarma puede detenerse desde el botón:
-
-```text
-Detener alarma
-```
-
----
-
-# Hardware Controlado por el Software
-
-### ESP32 DevKit V1
-
-Microcontrolador principal encargado de ejecutar toda la aplicación.
-
-### Buzzer pasivo
-
-Utilizado para reproducir las melodías mediante diferentes frecuencias.
-
-### Motor vibrador PWM
-
-Utilizado como sistema de aviso mediante vibración.
-
-El módulo incluye su propia electrónica de control, permitiendo que el ESP32 utilice un pin digital únicamente como señal.
-
----
-
-# Estado Actual
-
-La **versión 3.5** utilizada en el proyecto implementa:
-
-- ✅ Red Wi-Fi propia.
-- ✅ Portal cautivo.
-- ✅ Interfaz web.
-- ✅ Sincronización de hora.
-- ✅ Creación y edición de alarmas.
-- ✅ Eliminación de alarmas.
-- ✅ Activación/desactivación.
-- ✅ Alarmas únicas.
-- ✅ Alarmas diarias.
-- ✅ Selección de días.
-- ✅ Fecha específica.
-- ✅ Memoria persistente.
-- ✅ Buzzer.
-- ✅ Motor vibrador.
-- ✅ Sonido.
-- ✅ Vibración.
-- ✅ Sonido + vibración.
-- ✅ Múltiples melodías.
-- ✅ Botón para detener alarma.
-
----
-
-# Versión
-
-```text
-Software: 3.5
-Plataforma: ESP32
-Estado: Funcional
-```
+Para la explicación del programa y de sus rutas web, consultar [Documentación de software](docs/README.md).
