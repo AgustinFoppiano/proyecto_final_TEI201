@@ -10,4 +10,4 @@ En `setup()` se preparan las salidas, la memoria, la red, el servidor y la panta
 
 Para compilarlo se utilizan **ESP32 Dev Module**, el esquema de partición **Huge APP (3 MB No OTA / 1 MB SPIFFS)** y las dependencias indicadas en [Librerías](../librerias/README.md). Las instrucciones completas están en [Software](../README.md).
 
-Las versiones previas están en [`versiones_anteriores/`](../versiones_anteriores/). El monitor serie se configura a **115200 baudios**.
+Las versiones previas están en [`versiones_anteriores/`](../versiones_anteriores/). También está documentada la [revisión 4.1 con historial y exportación CSV](prototipo_4_1_revisiones/README.md), reconstruible mediante una diferencia verificada sobre el archivo base. El monitor serie se configura a **115200 baudios**.
