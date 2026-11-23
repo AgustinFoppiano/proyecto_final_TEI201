@@ -1,215 +1,51 @@
-# Iteración 3 - Versión Final
+# Iteración 3 — Integración y registro de la alarma
 
-## Información General
+**Etapa:** preparación del Avance #3 de TEI201.  
+**Firmware documentado:** versión 4.1 y archivo **4.1 revisiones** con historial.  
+**Evidencia fechada:** 21 y 22 de noviembre de 2026.
 
-**Fecha:** [XX/XX/2025]  
-**Versión:** v3.0  
-**Estado:** Prototipo de alta resolución - Versión final  
-**Avance asociado:** Avance #3
+## Objetivo de la etapa
 
----
+Integrar el control mediante Wi-Fi local, las modalidades de vibración y sonido, pantalla OLED, apagado físico o desde la interfaz, y una forma de conservar evidencia de las activaciones del dispositivo.
 
-## Descripción
+## Hardware y montaje
 
-Versión final del prototipo, incorporando todas las mejoras y refinamientos basados en feedback de v2 y testing extensivo con usuarios. Sistema robusto, probado y listo para piloto en contexto real.
+El proyecto emplea ESP32, pantalla OLED, buzzer, módulo relé, dos motores vibratorios, botones y alimentación mediante portabaterías. Se documentaron fotografías reales desde diferentes ángulos en [hardware/fotos](../../hardware/fotos/README.md). La [lista de componentes](../../hardware/componentes.md) y la [BOM](../../hardware/bom/README.md) describen el conjunto.
 
-**Objetivos alcanzados:**
-- Prototipo completamente funcional y robusto
-- Encapsulado finalizado con todos los componentes
-- Validación con 5+ usuarios del grupo objetivo
-- Métricas de impacto ODS cuantificadas
-- Sistema instalable en contexto urbano real
+**Mejora respecto a etapas anteriores:** integración de controles de detención y sustitución del sistema vibratorio inicialmente considerado débil. La seguridad del nuevo sistema de alimentación y la fijación final deben verificarse en el montaje físico; no se afirma que estén validadas solo por existir el diseño.
 
----
+## Evolución del firmware
 
-## Cambios Respecto a v2
+El archivo principal conservado en el repositorio corresponde a [alarma_final.ino](../../software/src/alarma_final/alarma_final.ino). El equipo entregó posteriormente un archivo denominado **prototipo_4_1_revisiones.ino** que, además de las funciones de alarma, introduce:
 
-### Hardware
-**Mejoras implementadas:**
-1. [Mejora 1]
-   - Razón: [Feedback de v2 / necesidad identificada]
-   - Impacto: [Mejora cuantitativa]
+- Registro de los eventos de **inicio** y **detención** de cada alarma.
+- Distinción entre detención por **botón físico** y **página web**.
+- Almacenamiento local mediante `Preferences` en la memoria no volátil del ESP32, con un máximo de **32 activaciones**.
+- Consulta en `/api/historial`, panel web con tabla y barras por modo, y exportación CSV.
+- Gestión de eventos con cola y verificaciones de integridad en la persistencia.
 
-2. [Mejora 2]
-   - Razón: [Feedback de v2 / necesidad identificada]
-   - Impacto: [Mejora cuantitativa]
+La revisión del firmware se resguarda de forma **reconstruible y verificada** en [software/src/prototipo_4_1_revisiones](../../software/src/prototipo_4_1_revisiones/README.md). El archivo de revisiones suministrado se mantiene sin modificar.
 
-**Cambios finales:**
-- [Cambio técnico específico]
-- [Optimización final]
+## Pruebas y resultados
 
-### Software
-**Nuevas funcionalidades:**
-- [Feature final 1]
-- [Feature final 2]
+**21/11/2026 — funcionamiento:** se documentaron **10 pruebas** con tres modos y diferentes melodías, con resultados registrados en [Ficha_pruebas_alarma.pdf](../../testing/datos/Ficha_pruebas_alarma.pdf). También se documentaron pruebas de percepción de vibración sosteniendo los motores; no se midió su intensidad ni se comprobó el despertar durante el sueño.
 
-**Optimizaciones finales:**
-- [Optimización de código]
-- [Mejora de eficiencia]
+**22/11/2026 — registro histórico:** el CSV contiene **32 activaciones**: 14 en sonido + vibración, 10 en vibración y 8 en sonido. Se registraron **29 detenciones** (19 por botón físico, 10 por web); **3 entradas** carecen de detención registrada. El tiempo medio hasta la detención registrada, solo entre los 29 casos cerrados, fue **9,1 s**. Ver [análisis de resultados](../../testing/datos/analisis_historial_2026-11-22.md).
 
-**Manejo de errores:**
-- Implementado manejo robusto de casos extremos
-- Mensajes de error informativos
-- Recuperación automática ante fallas menores
+El equipo informó interrupciones de energía durante algunas pruebas. Sin alimentación, la ESP32 no puede registrar un evento final. **El CSV no permite asignar una causa definitiva a cada entrada incompleta**, por lo que no se presenta esto como una falla confirmada de vibración ni como un apagado detectado automáticamente.
 
-### Diseño Mecánico
-**Encapsulado finalizado:**
-- Diseño optimizado para impresión 3D
-- Todos los componentes integrados
-- Sistema de montaje robusto
-- Accesibilidad para mantenimiento
-- Resistencia a condiciones ambientales
+## Limitaciones y mejoras siguientes
 
----
+- Ejecutar y documentar pruebas de persistencia del historial después de reinicios y cortes de energía controlados.
+- Verificar las propiedades eléctricas y térmicas del portabaterías que se utilizará.
+- Comprobar la fijación de motores y cables y la accesibilidad de los componentes para reparaciones.
+- Validar el conjunto dentro de la carcasa 3D y con el equipo físico instalado.
+- Probar posteriormente la eficacia para despertar a usuarios del grupo objetivo; **la evidencia actual no demuestra ese resultado**.
 
-## Fotos del Prototipo Final
+## Documentos vinculados
 
-Incluir en esta carpeta:
-- `v3_prototipo_final_frontal.jpg`
-- `v3_prototipo_final_posterior.jpg`
-- `v3_interior_componentes.jpg`
-- `v3_instalado_contexto.jpg`
-- `v3_detalle_sensores.jpg`
-- `v3_testing_usuarios.jpg` (múltiples)
-
----
-
-## Resultados Finales
-
-### Funcionalidad Completa
-✅ [Todas las funciones planificadas]  
-✅ Sistema opera sin intervención manual  
-✅ Conectividad estable  
-✅ Interfaz de usuario funcional  
-✅ Manejo robusto de errores  
-
-### Testing con 5+ Usuarios
-
-**Participantes:**
-- N = [número] usuarios
-- Perfil: [Descripción del grupo objetivo]
-
-**Resultados cuantitativos:**
-| Métrica | Promedio | Desv. Std. |
-|---------|----------|------------|
-| Facilidad de uso (1-5) | [X.X] | [X.X] |
-| Satisfacción (1-5) | [X.X] | [X.X] |
-| Tiempo completar tarea (seg) | [XX] | [XX] |
-| Errores cometidos | [X.X] | [X.X] |
-
-**Feedback cualitativo más relevante:**
-- Positivo: "[Cita de usuario]"
-- Positivo: "[Cita de usuario]"
-- A mejorar: "[Cita de usuario]"
-
-### Validación de Impacto ODS
-
-**ODS Seleccionado:** [Número y nombre]
-
-**Métricas de impacto:**
-
-1. **[Métrica 1]**
-   - Baseline (sin prototipo): [Valor]
-   - Con prototipo: [Valor medido]
-   - Mejora: [% o valor absoluto]
-
-2. **[Métrica 2]**
-   - Baseline: [Valor]
-   - Con prototipo: [Valor medido]
-   - Mejora: [% o valor absoluto]
-
-**Proyección de impacto:**
-Si se despliega a escala [barrio/ciudad/región]:
-- [Impacto estimado cuantitativo]
-- [Beneficiarios potenciales]
-
----
-
-## Comparación de las 3 Iteraciones
-
-| Aspecto | v1 | v2 | v3 | Mejora Total |
-|---------|----|----|----| -------------|
-| **Sensores** | 2/3 | 3/3 | 3/3 | ✅ 100% |
-| **Actuadores** | 1/2 | 2/2 | 2/2 | ✅ 100% |
-| **Tiempo respuesta (ms)** | 500 | 200 | 100 | ↓ 80% |
-| **Consumo (mA)** | 250 | 180 | 120 | ↓ 52% |
-| **Tasa errores (%)** | 15 | 5 | 1 | ↓ 93% |
-| **Encapsulado** | ❌ | Prototipo | Finalizado | ✅ |
-| **Usuarios testeados** | 0 | 2 | 5+ | ✅ |
-| **Satisfacción (1-5)** | - | 3.8 | 4.5 | ↑ 18% |
-| **Impacto ODS validado** | ❌ | Parcial | ✅ Completo | ✅ |
-
----
-
-## Fortalezas del Prototipo Final
-
-1. **[Fortaleza 1]**
-   - Evidencia: [Datos de testing]
-
-2. **[Fortaleza 2]**
-   - Evidencia: [Feedback de usuarios]
-
-3. **[Fortaleza 3]**
-   - Evidencia: [Métricas técnicas]
-
----
-
-## Limitaciones Identificadas
-
-1. **[Limitación 1]**
-   - Descripción: [Detalles]
-   - Impacto: [Evaluación]
-   - Posible solución futura: [Ideas]
-
-2. **[Limitación 2]**
-   - Descripción: [Detalles]
-   - Impacto: [Evaluación]
-   - Posible solución futura: [Ideas]
-
----
-
-## Aprendizajes del Proceso Completo
-
-### Técnicos
-1. [Aprendizaje técnico importante]
-2. [Aprendizaje técnico importante]
-
-### De Diseño
-1. [Lección sobre proceso de diseño]
-2. [Lección sobre proceso de diseño]
-
-### De Trabajo en Equipo
-1. [Lección sobre colaboración]
-2. [Lección sobre colaboración]
-
-### De Gestión de Proyecto
-1. [Lección sobre planificación]
-2. [Lección sobre gestión de tiempo]
-
----
-
-## Trabajo Futuro Recomendado
-
-### Mejoras a Corto Plazo
-- [ ] [Mejora 1]
-- [ ] [Mejora 2]
-
-### Mejoras a Mediano Plazo
-- [ ] [Feature adicional 1]
-- [ ] [Optimización 1]
-
-### Escalabilidad
-- [ ] [Consideración para producción masiva]
-- [ ] [Modelo de negocio / sustentabilidad]
-- [ ] [Alianzas estratégicas potenciales]
-
----
-
-## Archivos en esta Carpeta
-
-- `v3_codigo_final.ino` - Código final documentado
-- `v3_esquema_final.png` - Esquema definitivo del circuito
-- `v3_modelo3d_final.f3d` - Diseño 3D completo en Fusion 360
-- `v3_fotos/` - Fotografías del prototipo final
-- `v3_testing_completo.pdf` - Reporte de testing con usuarios
-- `v3_comparativa_versiones.xlsx` - Datos comparativos v1-v2-v3
+- [Código y reconstrucción del firmware con historial](../../software/src/prototipo_4_1_revisiones/README.md).
+- [Datos originales y análisis del 22/11](../../testing/datos/analisis_historial_2026-11-22.md).
+- [Protocolo de registro propuesto](../../testing/protocolo_registro_eventos.md).
+- [Resultados previos y reporte de dificultades](../../testing/reportes/README.md).
+- [Modelo y planos existentes](../../diseno_3d/README.md).
