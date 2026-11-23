@@ -109,9 +109,8 @@ Alarma tipo despertador para personas con algun grado de discapacidad auditiva, 
 
 ---
 
-## Archivos en esta Carpeta
+## Evidencia disponible
 
-- `v1_codigo.ino` - Código de esta versión
-- `v1_esquema.png` - Esquema del circuito
-- `v1_fotos/` - Fotografías del prototipo
-- `v1_notas.txt` - Notas adicionales del equipo
+- Fotografías de la primera versión incorporadas directamente en esta página.
+- [Versiones anteriores del firmware](../../software/versiones_anteriores/README.md).
+- Las notas de fallas y mejoras figuran en este documento. No se listan aquí archivos que aún no existen en la carpeta.
