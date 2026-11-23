@@ -4,15 +4,15 @@ El prototipo corresponde a una alarma accesible para personas sordas o con dific
 
 ## Documentos principales
 
-- **[Catálogo ilustrado de los componentes](componentes.md)**: identificación técnica, fotografías de origen descritas por el equipo, fotografías comerciales de referencia y datos pendientes.
-- **[Referencias fotográficas](imagenes_componentes/README.md)**: galería de fotos reales de productos similares, enlazadas a sus publicaciones originales.
-- **[BOM — lista de materiales](bom/README.md)**: cantidades y estructura de costos; el presupuesto todavía debe completarse con precios comprobables.
+- **[Catálogo ilustrado de los componentes](componentes.md)**: identificación técnica, imágenes de referencia y fichas técnicas de cada pieza.
+- **[Referencias fotográficas](imagenes_componentes/README.md)**: galería de imágenes de referencia.
+- **[BOM — lista de materiales](bom/README.md)**: inventario de componentes y [planilla CSV editable](bom/bom_completo.csv); los precios se completan con comprobantes.
 - **[Esquemas](esquemas/README.md)**: circuito a documentar.
 - **[Fotografías reales](fotos/README.md)**: vistas del montaje y evidencia física.
 
 ## Componentes previstos y cantidades
 
-1 ESP32 DevKit V1 de 30 pines; 1 OLED I²C de 1,3″; 1 buzzer pasivo; 1 módulo relé Songle SRD-05VDC-SL-C; 2 motores de vibración DC; 1 portabaterías para 2 celdas; 2 baterías Li-ion de 3,7 V; 2 pulsadores (azul y blanco); **2 protoboards compactas de 400 puntos**; cables y conectores por contabilizar.
+1 ESP32 DevKit V1 de 30 pines; 1 OLED I²C de 1,3″; 1 buzzer pasivo; 1 módulo relé Songle SRD-05VDC-SL-C; 2 motores de vibración DC; 1 portabaterías para 2 celdas; 2 baterías Li-ion de 3,7 V; 2 pulsadores (azul y blanco); **2 protoboards compactas de 400 puntos**; **1 lote básico de cables jumper/Dupont**.
 
 ## Montaje: confirmado frente a previsto
 
