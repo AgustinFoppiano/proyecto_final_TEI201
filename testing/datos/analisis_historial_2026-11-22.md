@@ -29,6 +29,8 @@ Se analizan **32 activaciones**, registradas entre **14:56:00 y 17:00:00** del 2
 | Solo sonido | 8 | 8 | 0 |
 | **Total** | **32** | **29** | **3** |
 
+![Gráfico de activaciones por modo: 14 combinadas, 10 de vibración y 8 de sonido](../graficos/activaciones_por_modo_2026-11-22.svg)
+
 ### Medio de detención de las 29 activaciones cerradas
 
 - Botón físico: **19** (65,5 % de las detenciones registradas).
