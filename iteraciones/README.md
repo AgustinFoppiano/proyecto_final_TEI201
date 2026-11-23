@@ -1,185 +1,38 @@
-# Historial de Iteraciones
+# Evolución e iteraciones del prototipo
 
-## Propósito
+Esta carpeta documenta las decisiones y modificaciones del proyecto de **alarma para personas sordas o con dificultades auditivas**. Una **iteración** es un cambio de diseño o funcionamiento entre versiones; un **registro de eventos** es evidencia de las activaciones durante las pruebas. Ambos son complementarios, pero no equivalentes.
 
-Esta carpeta documenta la evolución del prototipo a través de las diferentes versiones desarrolladas durante el curso.
+## Etapas documentadas
 
+| Etapa | Situación observada | Cambio o decisión registrada | Evidencia |
+| --- | --- | --- | --- |
+| [Iteración 1](iteracion_1/README.md) | Primera prueba con ESP32, buzzer y vibración inicial poco intensa; cables que podían desconectarse; detención dependiente del teléfono. | Buscar motores más adecuados, mejorar fijaciones y añadir control físico. | Fotografías y notas de la iteración 1. |
+| [Iteración 2](iteracion_2/README.md) | Se incorporaron dos motores de vibración y controles físicos. Se reportó calentamiento anormal del portapilas. | Mejorar vibración y autonomía de uso; reemplazar el módulo de alimentación defectuoso y revisar seguridad. | Fotografías, anotaciones y [videos del portapilas](../testing/evidencias/README.md). |
+| [Iteración 3](iteracion_3/README.md) | Se desarrolló la versión 4.1 del firmware y después una revisión con historial local de activaciones. | Integrar y documentar modos, pantalla, parada física/web, historial persistente y CSV. | [Ficha funcional del 21/11](../testing/datos/Ficha_pruebas_alarma.pdf) y [32 activaciones del 22/11](../testing/datos/analisis_historial_2026-11-22.md). |
 
----
+La fecha concreta de cada cambio de diseño anterior debe cotejarse con el historial de versiones del equipo; no se asignan fechas ni métricas comparativas no verificadas.
 
-## Estructura de Carpetas
+## Resultados comparables que sí están documentados
 
-Cada iteración tiene su propia carpeta con documentación de esa versión:
+- En la primera iteración se identificó **vibración insuficiente** del sistema inicial. No se midió instrumentalmente su intensidad.
+- En la segunda se introdujeron **dos motores** y botones, y se observó una falla de calentamiento en el portapilas. No consta una medición comparativa de consumo ni aceleración de vibración.
+- En pruebas funcionales del **21/11/2026**, se documentaron **10 pruebas** distribuidas en los tres modos (3 vibración, 3 sonido, 4 combinadas), según [ficha de pruebas](../testing/datos/Ficha_pruebas_alarma.pdf).
+- En el **registro del 22/11/2026**, aparecen **32 activaciones**, **29 detenciones registradas** y **3 registros incompletos**. Esto documenta el uso del sistema de registro, no equivale a 32 pruebas de despertar satisfactorias.
 
-```
-iteraciones/
-├── iteracion_1/    # Concepto inicial - Prototipo alpha
-├── iteracion_2/    # Primera iteración - Avance #2
-└── iteracion_3/    # Versión final - Avance #3
-```
+No se incluyen cifras de latencia de activación, consumo en mA, tasa de errores hardware ni satisfacción de usuarios sin una fuente experimental que las respalde.
 
----
+## Versiones de software
 
-## Contenido de Cada Iteración
+- [Código de la versión previamente documentada](../software/src/alarma_final/alarma_final.ino).
+- [Revisiones 4.1 con historial y CSV](../software/src/prototipo_4_1_revisiones/README.md), reconstruibles desde el código base mediante una diferencia verificada.
+- [Otras versiones conservadas](../software/versiones_anteriores/).
 
-Cada carpeta debe incluir:
+## Próximas validaciones de diseño
 
-1. **README.md** - Descripción de la versión
-2. **Fotos** - Imágenes del prototipo en ese estado
-3. **Esquema** - Circuito de esa versión (si cambió)
-4. **Código** - Versión del software (si cambió)
-5. **Notas** - Problemas identificados y mejoras planificadas
+1. Probar la alimentación nueva y documentar voltaje, seguridad y continuidad sin cortocircuitos.
+2. Repetir la prueba de historial después de un reinicio controlado y un corte de energía intencional, con observación externa.
+3. Verificar que el encapsulado pueda abrirse para reparación y que aloje todos los componentes.
+4. Medir vibración o validar con usuarios del grupo objetivo antes de afirmar eficacia para despertar durante el sueño.
+5. Revisar que el esquema, montaje físico y versión de código presentados coincidan.
 
----
-
-## Tabla Comparativa de Iteraciones
-
-| Aspecto | v1 | v2 | v3 |
-|---------|----|----|----| 
-| **Fecha** | [fecha] | [fecha] | [fecha] |
-| **Sensores** | [lista] | [lista] | [lista] |
-| **Actuadores** | [lista] | [lista] | [lista] |
-| **Conectividad** | [tipo] | [tipo] | [tipo] |
-| **Encapsulado** | ❌ | Prototipo | Finalizado |
-| **Testing** | Solo equipo | 2 usuarios | 5+ usuarios |
-| **Funcionalidad** | 60% | 80% | 100% |
-
----
-
-## Evolución del Diseño
-
-### Versión 1 (Iteración 1) - Concepto Inicial
-**Fecha:** [23/10/2026]  
-**Estado:** Prototipo alpha - Prueba de concepto
-
-**Características:**
--Alarma despertadora diseñada para personas con discapacidad auditiva, que se coloca debajo de la almohada y utiliza vibraciones para despertar al usuario.
--Microcontrolador ESP32 DevKit V1 de 30 pines.
--Motor vibrador PWM Switch DC y buzzer pasivo como actuadores.
--Control de la alarma mediante celular.
--Circuito inicial montado en protoboard, con conexiones mediante cables puente.
--Programación mediante Arduino IDE y comunicación con la ESP32.
-
-Problemas principales identificados:
--Vibración demasiado débil del motor vibrador utilizado, insuficiente para cumplir adecuadamente el objetivo del prototipo.
--Conexiones eléctricas propensas a soltarse al mover el prototipo, debido al montaje en protoboard y la distribución de los cables.
--Dependencia del celular para detener la alarma, debido a la ausencia de un botón físico de apagado.
-
-Aprendizajes clave:
--La intensidad de vibración es fundamental para garantizar que la alarma pueda despertar al usuario.
--Es necesario asegurar las conexiones eléctricas para evitar interrupciones en el funcionamiento del dispositivo.
--La alarma debe poder controlarse de forma sencilla y accesible, sin depender exclusivamente de un celular.
-
-### Versión 2 (Iteración 2) - Primera Mejora
-**Fecha:** [20/11/2026]  
-**Estado:** Prototipo funcional mejorado
-
-
-**caracteristicas:**
-
-El dispositivo utiliza un **ESP32 DevKit V1** como controlador principal, una **pantalla OLED de 1,3 pulgadas** para visualizar la información, **dos motores vibratorios** para generar las vibraciones, un **módulo de relé de 5 V**, **dos botones pulsadores** y un **sistema de alimentación con baterías recargables de 3,7 V**.
-
-### Mejoras implementadas durante el desarrollo
-
-- **Mayor intensidad de vibración:** se reemplazó el buzzer inicial por motores vibratorios más potentes, buscando generar una vibración perceptible a través de la almohada.
-  
-- **Mayor autonomía:** se incorporaron dos botones físicos para controlar el apagado de la alarma directamente desde el dispositivo, eliminando la necesidad de utilizar un celular para esta función.
-  
-**Objetivo final:** desarrollar una solución accesible, práctica e independiente que contribuya a mejorar la autonomía de las personas con discapacidad auditiva en su vida cotidiana.
-
-
-### Versión 3 (Iteración 3) - Versión Final
-**Fecha:** [XX/XX/2025]  
-**Estado:** Prototipo de alta resolución
-
-**Mejoras finales:**
-- [Mejora 1]
-- [Mejora 2]
-
-**Resultado:**
-- Sistema robusto y probado
-- Listo para piloto en terreno
-
----
-
-## Justificación de Cambios
-
-
-### 1. Sustitución del buzzer
-- **Cambio:** Reemplazo del buzzer por dos motores vibratorios de 1,5–6 V y 3500 RPM.
-- **Razón:** La vibración del buzzer era insuficiente para transmitirse eficazmente para despertar a una persona.
-- **Impacto:** Incorporación de dos fuentes de vibración de mayor intensidad potencial, pendiente de validación cuantitativa.
-
-### 2. Incorporación de botones físicos
-- **Cambio:** Integración de dos pulsadores táctiles para controlar la alarma.
-- **Razón:** Reducir la dependencia del celular y permitir una interacción directa con el dispositivo.
-- **Impacto:** Incorporación de dos controles físicos, permitiendo operar el apagado sin necesidad de utilizar el celular.
-
-
-### Hardware
-**De v1 a v2:**
-- Cambio: [Descripción]
-- Razón: [Justificación técnica]
-- Impacto: [Mejora cuantitativa]
-
-**De v2 a v3:**
-- Cambio: [Descripción]
-- Razón: [Justificación técnica]
-- Impacto: [Mejora cuantitativa]
-
-### Software
-**De v1 a v2:**
-- [Cambios principales]
-
-**De v2 a v3:**
-- [Cambios principales]
-
-### Diseño 3D
-**De v1 a v2:**
-- [Cambios en encapsulado]
-
-**De v2 a v3:**
-- [Cambios finales]
-
----
-
-## Incorporación de Feedback
-
-### Feedback del Avance #1 → Cambios en v2
-1. [Comentario profesor/ayudante]
-   - Acción tomada: [Descripción]
-
-### Feedback del Avance #2 → Cambios en v3
-1. [Comentario profesor/ayudante]
-   - Acción tomada: [Descripción]
-
-### Feedback de Usuarios → Cambios en v3
-1. [Comentario común de usuarios]
-   - Acción tomada: [Descripción]
-
----
-
-## Métricas de Mejora
-
-| Métrica | v1 | v2 | v3 | Mejora Total |
-|---------|----|----|----| -------------|
-| Tiempo respuesta (ms) | 500 | 200 | 100 | ↓80% |
-| Consumo (mA) | 250 | 180 | 120 | ↓52% |
-| Tasa de errores (%) | 15 | 5 | 1 | ↓93% |
-| Satisfacción usuario (1-5) | 3.0 | 3.8 | 4.5 | ↑50% |
-
----
-
-## Lecciones Aprendidas
-
-### Técnicas
-- [Lección 1]
-- [Lección 2]
-
-### De Proceso
-- [Lección 1]
-- [Lección 2]
-
-### De Trabajo en Equipo
-- [Lección 1]
-- [Lección 2]
+Las evidencias del registro y el [protocolo de validación](../testing/protocolo_registro_eventos.md) se encuentran en **testing/**.
