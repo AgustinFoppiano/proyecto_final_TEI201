@@ -1,5 +1,10 @@
 # Pruebas y dificultades del prototipo
 
+## Evidencia posterior: historial de la versión con registro
+
+El 22 de noviembre de 2026 el software exportó un [historial de 32 activaciones](../datos/historial_alarmas_2026-11-22.csv). De ellas, 29 presentan evento de cierre y 3 permanecen sin detención registrada. La persona responsable de la captura señaló que durante ciertas pruebas se interrumpía la alimentación del ESP32; sin embargo, el CSV no contiene una medición independiente para confirmar la causa de cada caso. El análisis numérico y los límites de interpretación se explican en el [análisis del historial](../datos/analisis_historial_2026-11-22.md).
+
+
 ## Pruebas de funcionamiento
 
 El 21 de noviembre de 2026 se realizaron diez pruebas con la versión 4.1 del código. Se utilizaron distintas melodías y los tres modos de funcionamiento: solo vibración, solo sonido, y sonido con vibración.
