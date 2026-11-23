@@ -1,6 +1,6 @@
 # Diseño 3D del encapsulado
 
-El diseño del encapsulado reúne la cubierta y la ubicación de los componentes de la alarma. El modelo disponible muestra una carcasa de dos piezas, una abertura para la pantalla y una distribución referencial de la electrónica en el interior.
+El diseño del encapsulado reúne la cubierta y la ubicación de los componentes de la alarma. Los renders disponibles muestran una versión circular de dos piezas. Los planos de las tapas del 23 de noviembre muestran una versión ovalada con cotas generales de 187 y 271.
 
 ## Archivos
 

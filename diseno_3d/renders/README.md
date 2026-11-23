@@ -1,6 +1,6 @@
 # Vistas del diseño 3D
 
-Las imágenes muestran la forma de la carcasa y una distribución referencial de componentes en su interior.
+Las imágenes muestran una versión circular de la carcasa y una distribución referencial de componentes en su interior. Los [planos de las tapas](../planos/README.md) presentan la versión ovalada posterior.
 
 ## Vista exterior
 

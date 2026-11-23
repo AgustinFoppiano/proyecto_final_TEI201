@@ -80,4 +80,4 @@ Las imágenes aparecen directamente, una debajo de otra, con un título y un pie
 
 ---
 
-Estas fotografías documentan la etapa de pruebas con protoboard grande. La distribución definitiva prevista contempla dos protoboards compactas de 400 puntos y una carcasa circular. El esquema de conexiones eléctricas se documentará a partir de las conexiones verificadas, no solamente de los colores de cables observados en estas fotografías.
+Estas fotografías documentan la etapa de pruebas con protoboard grande. La distribución definitiva prevista contempla dos protoboards compactas de 400 puntos y una carcasa ovalada. El esquema de conexiones eléctricas se documentará a partir de las conexiones verificadas, no solamente de los colores de cables observados en estas fotografías.

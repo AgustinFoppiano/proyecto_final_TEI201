@@ -1,6 +1,6 @@
 # Modelo de Fusion 360
 
-El archivo [modelo_v1.f3d](modelo_v1.f3d) contiene la versión del diseño incorporada al repositorio. En las vistas del modelo se aprecian las dos partes de la carcasa, la ventana de la pantalla y componentes representados en el interior.
+El archivo [modelo_v1.f3d](modelo_v1.f3d) contiene una versión del diseño incorporada al repositorio. Las vistas renderizadas muestran una carcasa circular de dos partes, la ventana de la pantalla y componentes representados en el interior. Los planos de las tapas del 23 de noviembre presentan una geometría ovalada posterior.
 
 ## Abrir el archivo
 
