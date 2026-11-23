@@ -13,5 +13,5 @@
 11;Cable USB-A a Micro-USB;1;unidad;Cable corto de alimentación;Referencia de abastecimiento;424;424;Proveedores de cables · Alibaba;https://www.alibaba.com/wholesale/micro-usb-to-usb-2.0.html;Referencia mayorista · enlace a catálogo;"Referencia de cable; verificar longitud y orientación para alojarlo en la carcasa."
 12;Filamento PLA;150;gramos;Carcasa impresa (peso orientativo);Consumo por dimensionar;14;2084;TodoToner Chile;https://www.todotoner.cl/impresoras/impresoras-3d/filamentos/pla-1kg-blanco;Referencia local;Supuesto de 150 gramos, sustituir por medición del laminador
 13;TOTAL MATERIALES;1;prototipo;Electrónica y PLA estimado;Estimación;;14943;;;;Sin transporte, impuestos, mano de obra ni mermas
-14;RECARGO 10%;1;prototipo;Diez por ciento sobre costo;Cálculo;;1494;;;;Recargo sobre costo, no margen comercial sobre precio
-15;PRECIO ORIENTATIVO CON RECARGO;1;prototipo;Costo más 10%;Estimación;;16437;;;;Peso del PLA y precios por volumen aún sujetos a verificación
+14;GANANCIA 10%;1;prototipo;Ganancia del 10%;Cálculo;;1494;;;;
+15;PRECIO FINAL ESTIMADO CON GANANCIA;1;prototipo;Costo más ganancia del 10%;Estimación;;16437;;;;Peso del PLA y precios por volumen aún sujetos a verificación
