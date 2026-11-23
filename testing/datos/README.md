@@ -4,6 +4,8 @@
 
 - [Historial CSV original de 32 activaciones](historial_alarmas_2026-11-22.csv).
 - [Análisis de modos, detenciones, tiempos y tres registros sin cierre](analisis_historial_2026-11-22.md).
+- [Script para reproducir el cálculo del resumen](resumir_historial.py).
+
 
 **Este registro se generó desde el firmware de revisión y se analiza por separado de las diez pruebas funcionales del 21/11 descritas a continuación.**
 
