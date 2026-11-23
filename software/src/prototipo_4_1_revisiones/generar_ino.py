@@ -11,7 +11,7 @@ BASE = ROOT / PATCH["base"]
 TARGET = HERE / "prototipo_4_1_revisiones.ino"
 
 base_bytes = BASE.read_bytes()
-blob_id = hashlib.sha1(b"blob " + str(len(base_bytes)).encode() + b"\\x00" + base_bytes).hexdigest()
+blob_id = hashlib.sha1(b"blob " + str(len(base_bytes)).encode() + b"\x00" + base_bytes).hexdigest()
 if blob_id != PATCH["base_blob_sha"]:
     raise SystemExit("La version base cambio: se cancela la generacion para evitar un .ino incorrecto.")
 
