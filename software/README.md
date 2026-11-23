@@ -105,7 +105,7 @@ El código agrupa notas y limita los tiempos de conmutación del relé; por ello
 
 Al abrir la interfaz, el teléfono envía la hora local al ESP32. A partir de esa sincronización, el programa calcula el tiempo transcurrido mediante `millis()`. Tras reiniciar el ESP32 es necesario abrir la interfaz nuevamente para sincronizar la hora antes de que se comprueben las alarmas.
 
-La configuración de las alarmas se guarda en la memoria no volátil con `Preferences`. La interfaz muestra la hora sincronizada, las alarmas configuradas y el estado de la alarma. Este archivo de código guarda configuraciones de alarmas; no implementa un historial de mediciones ambientales ni gráficas históricas.
+La configuración de las alarmas se guarda en la memoria no volátil con `Preferences`. La interfaz muestra la hora sincronizada, las alarmas configuradas y el estado de la alarma. **Esta explicación corresponde al archivo base `alarma_final.ino`.** La [revisión 4.1 con historial](src/prototipo_4_1_revisiones/README.md) añade registro persistente de eventos, consulta web, un gráfico de barras por modo y descarga de CSV. No mide variables ambientales mediante sensores; registra eventos discretos de activación y detención.
 
 ## Si la interfaz o la alarma no responde
 
