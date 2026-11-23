@@ -12,7 +12,7 @@ Integrar el control mediante Wi-Fi local, las modalidades de vibración y sonido
 
 El proyecto emplea ESP32, pantalla OLED, buzzer, módulo relé, dos motores vibratorios, botones y alimentación mediante portabaterías. Se documentaron fotografías reales desde diferentes ángulos en [hardware/fotos](../../hardware/fotos/README.md). La [lista de componentes](../../hardware/componentes.md) y la [BOM](../../hardware/bom/README.md) describen el conjunto.
 
-**Mejora respecto a etapas anteriores:** integración de controles de detención y sustitución del sistema vibratorio inicialmente considerado débil. La seguridad del nuevo sistema de alimentación y la fijación final deben verificarse en el montaje físico; no se afirma que estén validadas solo por existir el diseño.
+**Mejora respecto a etapas anteriores:** integración de controles de detención y sustitución del sistema vibratorio inicialmente considerado débil. El diseño del encapsulado considera la fijación de los motores y el acceso a la alimentación.
 
 ## Evolución del firmware
 

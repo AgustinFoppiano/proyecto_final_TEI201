@@ -24,9 +24,9 @@ En las diez pruebas se mostró la animación y la alarma se detuvo al presionar 
 
 ## Percepción de la vibración
 
-Aproximadamente nueve personas sostuvieron los motores con las manos. Todas indicaron que sentían la vibración y que les parecía fuerte. Esta prueba fue perceptiva y no se midió la intensidad con instrumentos.
+Aproximadamente nueve personas sostuvieron los motores con las manos. Todas indicaron que sentían la vibración y que les parecía fuerte. La prueba fue perceptiva.
 
-Las pruebas muestran que la vibración puede percibirse al sostener los motores, pero no comprueban si la alarma logra despertar a una persona dormida.
+La prueba describe la percepción de la vibración al sostener los motores con las manos.
 
 ## Registro histórico de la revisión 4.1 (22/11/2026)
 

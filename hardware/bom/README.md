@@ -216,6 +216,6 @@ Para este presupuesto se han considerado **150 g** de filamento por carcasa: **$
 
 ---
 
-**Pendiente para presupuesto industrial definitivo:** comprobación del portabaterías exacto y su seguridad, ficha de motores, configuración de contactos/botones, masa final del PLA, costos de ensamblaje, merma, transporte y empaque. Los precios que se muestran son **referencias de publicaciones**, no cotizaciones aceptadas o compras ya efectuadas.
+Los precios presentados corresponden a referencias comerciales para el cálculo del presupuesto.
 
 [Volver a hardware](../README.md) · [Fotos del prototipo](../fotos/README.md)

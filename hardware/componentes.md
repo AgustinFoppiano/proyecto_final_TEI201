@@ -2,7 +2,7 @@
 
 **Proyecto:** alarma accesible para personas sordas o con dificultades auditivas (TEI201, UAI).  
 **Estado:** documentación técnica preliminar revisada el 22 de noviembre de 2026.  
-**Criterio de evidencia:** fotografías reales y descripciones del equipo; los datos de fichas comerciales se distinguen de mediciones experimentales. Una característica no comprobada se marca como **pendiente de verificar**.
+**Criterio de evidencia:** identificación a partir de las fotografías y descripciones del equipo, y características de referencia de fichas comerciales.
 
 Las siguientes imágenes acompañan la identificación de los componentes utilizados en el proyecto.
 
@@ -134,7 +134,6 @@ Las siguientes imágenes acompañan la identificación de los componentes utiliz
 - **Materiales según proveedor:** cuerpo ABS y contactos de bronce fosforoso/níquel.
 - **Cables anunciados compatibles:** 20–29 AWG.
 - **Montaje descrito:** base autoadhesiva y encastres laterales.
-- **Estado:** **cambio previsto, pendiente de confirmar físicamente al recibir ambas unidades**. La cifra de 480 puntos mencionada antes no coincide con la ficha de la tienda.
 - **Distribución:** placas contiguas; ESP32 cruzando la unión central entre ambas; buzzer encima de una de ellas; relé próximo.
 - **Precaución de montaje:** los conectores de protoboard no están diseñados para recibir sacudidas continuas sin retención; revisar el cableado y fijaciones.
 
