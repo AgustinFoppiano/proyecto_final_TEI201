@@ -15,6 +15,7 @@ Alarma dirigida a personas con discapacidad auditiva, programable desde el celul
 - **Código principal:** versión 4.1 para ESP32.
 - **Archivo:** [`software/src/alarma_final/alarma_final.ino`](software/src/alarma_final/alarma_final.ino).
 - **Versiones previas:** [`software/versiones_anteriores/`](software/versiones_anteriores/).
+- **Revisión con historial y exportación CSV:** [versión 4.1 revisiones](software/src/prototipo_4_1_revisiones/README.md), reconstruible sin modificar el código base.
 
 ---
 
