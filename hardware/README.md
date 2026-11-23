@@ -6,7 +6,7 @@ El prototipo corresponde a una alarma accesible para personas sordas o con dific
 
 - **[Catálogo ilustrado de los componentes](componentes.md)**: identificación técnica, imágenes de referencia y fichas técnicas de cada pieza.
 - **[Referencias fotográficas](imagenes_componentes/README.md)**: galería de imágenes de referencia.
-- **[BOM — lista de materiales](bom/README.md)**: inventario de componentes y [planilla CSV editable](bom/bom_completo.csv); los precios se completan con comprobantes.
+- **[BOM y presupuesto comercial](bom/README.md)**: imágenes de referencia, proveedores por volumen, enlaces de compra, cantidades, cálculo del costo por alarma y [planilla CSV editable](bom/bom_completo.csv).
 - **[Esquemas](esquemas/README.md)**: circuito a documentar.
 - **[Fotografías reales](fotos/README.md)**: vistas del montaje y evidencia física.
 
@@ -27,7 +27,8 @@ El prototipo corresponde a una alarma accesible para personas sordas o con dific
 - [ ] Comprobar puerto de entrada de carga y tipo de conector del portabaterías.
 - [ ] Confirmar dimensiones reales de las dos protoboards recibidas.
 - [ ] Fijar cables y componentes para evitar desconexiones por vibración.
-- [ ] BOM con costos unitarios y totales comprobables.
+- [x] BOM con precios de referencia y cálculo unitario de materiales (estimación de producción).
+- [ ] Sustituir referencias comerciales por cotizaciones confirmadas y validar el peso real de PLA.
 - [ ] Fotografías del montaje **final** desde al menos tres ángulos.
 - [ ] Verificar acceso a la electrónica y apertura del encapsulado sin dañarlo.
 - [ ] Revisar las condiciones de temperatura y seguridad de las baterías; **no cargarlas bajo almohadas o ropa de cama**.
