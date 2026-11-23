@@ -1,0 +1,13 @@
+﻿sep=;
+Ítem;Componente;Cantidad;Unidad;Especificación;Estado;Precio unitario (CLP);Subtotal (CLP);Proveedor;Observaciones
+1;ESP32 DevKit V1;1;unidad;30 pines, Micro-USB, Wi-Fi y Bluetooth;Identificado;;;;Verificar variante exacta
+2;Pantalla OLED;1;unidad;1,3 pulgadas, interfaz I²C, cuatro pines;Identificado;;;;Controlador SH1106 probable
+3;Buzzer pasivo;1;unidad;Dos terminales, reproducción de melodías;Identificado;;;;Tensión nominal por verificar
+4;Módulo relé;1;unidad;Un canal, Songle SRD-05VDC-SL-C, 5 V;Identificado;;;;Verificar entrada de control y consumo
+5;Motores vibratorios DC;2;unidades;1,5–6 V, 3500 RPM según anuncio comercial;Identificado;;;;Referencia comercial del par: $2.540 CLP, no costo pagado
+6;Módulo portabaterías;1;unidad;Tipo power bank, alojamiento doble 18650;Identificado;;;;Modelo, puertos y protección por verificar
+7;Baterías Li-ion;2;unidades;3,7 V nominales, formato 18650 probable;Identificado;;;;Capacidad y fabricante por verificar
+8;Pulsadores;2;unidades;Táctiles con tapa azul y blanca;Identificado;;;;"Azul detiene alarma; blanco controla encendido"
+9;Protoboards compactas;2;unidades;400 puntos cada una, 83,5 × 54,5 × 8,5 mm;Cambio previsto;;;;Sustituirán a las placas provisionales grandes
+10;Cables jumper/Dupont;1;lote básico;Juego surtido para prototipado;Identificado;;;;Lote básico para todo el montaje
+11;Filamento PLA;;gramos;Material para el encapsulado 3D;Por dimensionar;;;;Calcular consumo al laminar el diseño definitivo
