@@ -57,6 +57,8 @@ La integrante que realizó el registro informa que en las pruebas con corte de a
 - **Permite observar el uso de controles:** diferencia el botón físico del apagado por la página web.
 - **Apoya decisiones de mejora:** justificar pruebas de continuidad de alimentación, retención tras reinicio, integridad de conexiones y reducción de registros incompletos.
 
+**Reproducibilidad:** las cantidades y tiempos del resumen pueden calcularse de nuevo con el script [resumir_historial.py](resumir_historial.py) usando exclusivamente el CSV archivado.
+
 ## Funcionamiento del registro en el firmware
 
 El archivo de revisiones implementa un historial local en la memoria no volátil del ESP32 (NVS, mediante `Preferences`, espacio `hist_alarma`): hasta **32 registros**, conservando los más recientes cuando se ocupa el límite. Se registra un evento de inicio y, cuando existe, otro de detención con el origen y la duración. Las escrituras se procesan mediante una cola para reducir interferencias con sonido y vibración; también se verifican lecturas y escrituras con un checksum. El endpoint `GET /api/historial` devuelve JSON a la página web, donde el panel muestra tabla y barras por modo, con recarga aproximada cada 4 segundos mientras está abierto. El botón **Descargar CSV** exporta la tabla.
