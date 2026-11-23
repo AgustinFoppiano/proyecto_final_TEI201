@@ -1,5 +1,13 @@
 # Datos de las pruebas
 
+## Registro automatizado del 22 de noviembre de 2026
+
+- [Historial CSV original de 32 activaciones](historial_alarmas_2026-11-22.csv).
+- [Análisis de modos, detenciones, tiempos y tres registros sin cierre](analisis_historial_2026-11-22.md).
+
+**Este registro se generó desde el firmware de revisión y se analiza por separado de las diez pruebas funcionales del 21/11 descritas a continuación.**
+
+
 El 21 de noviembre de 2026 se realizaron diez pruebas de funcionamiento de la alarma con la versión 4.1 del código. Las pruebas fueron realizadas por Isidora Herrera.
 
 | Modo seleccionado | Pruebas | Resultado |
