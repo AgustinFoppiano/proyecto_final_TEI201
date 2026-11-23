@@ -28,6 +28,14 @@ Aproximadamente nueve personas sostuvieron los motores con las manos. Todas indi
 
 Las pruebas muestran que la vibración puede percibirse al sostener los motores, pero no comprueban si la alarma logra despertar a una persona dormida.
 
+## Registro histórico de la revisión 4.1 (22/11/2026)
+
+El historial exportado por el ESP32 reúne **32 activaciones**, **29 con detención registrada** (19 por botón físico y 10 por web) y **3 sin registro de cierre**. Este conjunto es distinto de las diez pruebas funcionales descritas antes; no debe sumarse como si todos los eventos representaran ensayos de eficacia para despertar.
+
+- [CSV original de activaciones](datos/historial_alarmas_2026-11-22.csv).
+- [Análisis cuantitativo, interpretación y limitaciones](datos/analisis_historial_2026-11-22.md).
+- [Protocolo propuesto para repetir y validar el registro](protocolo_registro_eventos.md).
+
 ## Archivos de esta carpeta
 
 - [Datos y resultados](datos/README.md): resumen de las pruebas y sus límites.
