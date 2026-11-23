@@ -53,6 +53,17 @@ La [guía de software](software/README.md) incluye la instalación y el funciona
 
 ---
 
+## Evidencias para el Avance #3
+
+- [Historial original de 32 activaciones (22/11/2026)](testing/datos/historial_alarmas_2026-11-22.csv).
+- [Análisis y gráfico del historial](testing/datos/analisis_historial_2026-11-22.md).
+- [Protocolo de verificación del registro](testing/protocolo_registro_eventos.md).
+- [Evolución del prototipo y tres iteraciones](iteraciones/README.md).
+- [Firmware 4.1 revisiones con historial](software/src/prototipo_4_1_revisiones/README.md).
+- [Declaración de librerías, recursos e IA](FUENTES.md).
+
+---
+
 ##  Checklist de Entrega
 
 ### Hardware ✓
