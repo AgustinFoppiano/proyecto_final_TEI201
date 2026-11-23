@@ -121,6 +121,13 @@ Se adaptó un fragmento del video *Bad Apple* para reproducirlo en la pantalla O
 - **Adaptación al proyecto:** las animaciones se integraron al programa del ESP32 y se asociaron a las melodías seleccionadas desde la interfaz de la alarma.
 
 
+## Revisión documental asistida por IA — historial y testing (22 de noviembre de 2026)
+
+- **Herramienta:** ChatGPT (OpenAI).
+- **Uso:** lectura del firmware de revisión proporcionado por el equipo, análisis descriptivo de 32 eventos exportados en CSV, redacción de un protocolo de verificación y actualización de la documentación de iteraciones y testing en GitHub.
+- **Tratamiento de datos:** se conservaron las 32 filas originales sin editar; las cifras se calcularon a partir de ese archivo. Las tres activaciones sin evento de cierre se reportan como datos incompletos, sin inferir automáticamente una causa. No se realizaron nuevas pruebas físicas ni se modificó el firmware mediante esta tarea.
+- **Versionado:** se respaldaron las diferencias reproducibles del archivo de revisiones en [software/src/prototipo_4_1_revisiones](software/src/prototipo_4_1_revisiones/README.md).
+
 ## Documentación asistida por IA — catálogo de hardware (22 de noviembre de 2026)
 
 - **Herramienta:** ChatGPT (OpenAI).
