@@ -6,7 +6,7 @@ Para el desarrollo del prototipo se adquirieron materiales en **Affel.cl** y en 
 
 **Tipo de cambio de referencia:** US$1 = **$1.008,79 CLP** (dólar observado del Banco Central de Chile del 20-11-2026). [Fuente](https://www.bcentral.cl/es/web/banco-central/inicio/-/asset_publisher/Exzd7l9NC3Y6/content/dolar-observado). **Cifras aproximadas**, sin transporte, impuestos de importación, mano de obra, energía, mermas, embalaje ni certificaciones.
 
-**[Descargar y editar la BOM en CSV](bom_completo.csv)** · [Catálogo técnico](../componentes.md)
+[Catálogo técnico](../componentes.md)
 
 ## Costo de un dispositivo
 
@@ -31,10 +31,8 @@ Para el desarrollo del prototipo se adquirieron materiales en **Affel.cl** y en 
 - **Materiales electrónicos y conexiones:** $12.859 CLP
 - **Encapsulado PLA (referencia de 150 g):** $2.084 CLP
 - **Costo estimado unitario:** **$14.943 CLP**
-- **Recargo de 10% sobre costo:** $1.494 CLP
-- **Precio orientativo con el 10% añadido:** **$16.437 CLP por alarma**
-
-> **Importante:** este 10% es un **recargo sobre el costo**, no equivale exactamente a un margen comercial del 10% sobre el precio final. La cifra es ilustrativa: el peso real de la carcasa y los costos industriales aún deben determinarse. Sin PLA, el subtotal documentado es $12.859 CLP.
+- **Ganancia del 10%:** $1.494 CLP
+- **Precio final estimado (con ganancia del 10%):** **$16.437 CLP por alarma**
 
 ### Desglose por categoría
 
