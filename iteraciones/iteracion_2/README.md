@@ -2,7 +2,7 @@
 
 ## Información General
 
-**Fecha:** [20/11/2025]  
+**Fecha:** pendiente de confirmar en el historial del equipo (el resumen de iteraciones consigna noviembre de 2026)  
 **Versión:** v2.0  
 **Estado:** Prototipo funcional mejorado  
 **Avance asociado:** Avance #2
@@ -41,13 +41,13 @@ Segunda versión de la alarma vibratoria para personas sordas o con discapacidad
 
 **Removido:**
 
-- Buzzer inicial, debido a su baja capacidad de vibración.
+- Se descartó utilizar el buzzer como fuente principal de vibración. El prototipo integrado conserva un buzzer para sonido; la vibración recae en los motores.
 
 ### Software
 
 **Nuevas funcionalidades:**
 
-- Control del apagado mediante botones físicos.
+- Control de detención por pulsador físico; el otro pulsador se destinó a encendido/apagado mediante el módulo de alimentación.
 - Adaptación de la lógica de activación para los motores vibratorios.
 
 **Optimizaciones:**
@@ -116,11 +116,9 @@ Segunda versión de la alarma vibratoria para personas sordas o con discapacidad
 
 ---
 
-## Archivos en esta Carpeta
+## Evidencias y documentación
 
-- `v2_codigo.ino` - Código utilizado en la segunda versión del prototipo.
-- `v2_esquema.png` - Esquema de conexiones eléctricas de la versión 2.
-Esquema del circuito actualizado
-- `v2_modelo3d.f3d` - Primer diseño en Fusion 360
-- `v2_fotos/` - Fotografías del prototipo
-- `v2_feedback.pdf` - Compilación de comentarios recibidos
+- Fotografía de esta iteración mostrada en esta página.
+- [Versiones del firmware conservadas](../../software/versiones_anteriores/README.md).
+- [Registro de pruebas y dificultades](../../testing/reportes/README.md).
+- El código final, modelo 3D y fotografías posteriores están organizados en sus carpetas del proyecto; no se listan como archivos propios de esta carpeta cuando no existen aquí.
