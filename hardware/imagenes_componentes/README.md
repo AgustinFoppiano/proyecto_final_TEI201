@@ -16,7 +16,7 @@ Galería de imágenes de referencia para los componentes del [catálogo técnico
 
 ## 3. Buzzer pasivo, sin módulo
 
-<img src="https://cdn11.bigcommerce.com/s-yo2n39m6g3/products/361/images/6316/146-2__77705.1632222872.500.750.jpg?c=2" alt="Fotografía real de buzzer pasivo cilíndrico de dos terminales" width="260">
+<img src="https://cdn11.bigcommerce.com/s-yo2n39m6g3/products/361/images/6316/146-2__77705.1632222872.500.750.jpg?c=2" alt="Imagen de referencia de buzzer pasivo cilíndrico de dos terminales" width="260">
 
 *Imagen de referencia.*
 
@@ -50,7 +50,7 @@ Galería de imágenes de referencia para los componentes del [catálogo técnico
 
 *Imagen de referencia.*
 
-<img src="https://laelectronica.com.gt/image/cache/catalog/Productos/Switches%20Y%20PushButtons/Push%20Buttons/push12mmblanco-1200x1200.jpg" alt="Fotografía real de pulsador blanco de cuatro terminales" width="260">
+<img src="https://laelectronica.com.gt/image/cache/catalog/Productos/Switches%20Y%20PushButtons/Push%20Buttons/push12mmblanco-1200x1200.jpg" alt="Imagen de referencia de pulsador blanco de cuatro terminales" width="260">
 
 *Imagen de referencia.*
 

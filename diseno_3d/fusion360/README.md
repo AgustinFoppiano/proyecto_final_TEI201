@@ -1,60 +1,11 @@
-# Archivos Fusion 360
+# Modelo de Fusion 360
 
-## Archivos Requeridos
+El archivo [modelo_v1.f3d](modelo_v1.f3d) contiene la versión del diseño incorporada al repositorio. En las vistas del modelo se aprecian las dos partes de la carcasa, la ventana de la pantalla y componentes representados en el interior.
 
-### `modelo_completo_v3.f3d`
-Archivo principal con **historial de cambios completo**
+## Abrir el archivo
 
-**DEBE INCLUIR:**
--  Todos los componentes modelados
--  Ensamble completo funcional
--  Historial de diseño (timeline)
--  Materiales asignados
--  Constraints y relaciones
+1. Descargar el repositorio o el archivo `.f3d`.
+2. Abrir Autodesk Fusion 360.
+3. Abrir el archivo desde el computador y revisar las piezas y vistas del ensamble.
 
----
-
-## Estructura del Modelo
-
-### Componentes (Components)
-```
-Ensamble_Principal
-├── Encapsulado_Inferior
-├── Encapsulado_Superior
-├── ESP32_DevKit
-├── Sensor_DHT22
-├── LED_Indicador
-├── Soporte_Bateria
-├── Bracket_Montaje
-└── Tornilleria
-```
-
-### Uniones (Joints)
-Documentar las juntas principales y sus restricciones
-
-### Parámetros
-Listar parámetros principales utilizados:
-- `ancho_total = 120mm`
-- `alto_total = 80mm`
-- `grosor_pared = 2mm`
-
----
-
-## Instrucciones de Apertura
-
-1. Abrir Fusion 360
-2. File > Open > Seleccionar archivo `.f3d`
-3. Verificar que todas las referencias están cargadas
-4. Revisar timeline para ver historial
-
----
-
-## Versiones
-
-| Versión | Fecha | Cambios Principales |
-|---------|-------|---------------------|
-| v3.0 | [Fecha] | Versión final para Avance #3 |
-| v2.1 | [Fecha] | Ajustes post Avance #2 |
-| v1.0 | [Fecha] | Primera versión funcional |
-
----
+Las imágenes exportadas están en [renders](../renders/README.md) y los planos en [planos](../planos/README.md). Las [fotografías del hardware](../../hardware/fotos/README.md) muestran el montaje utilizado en las pruebas.

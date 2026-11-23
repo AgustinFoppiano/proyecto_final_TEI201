@@ -1,49 +1,34 @@
 # Funcionamiento del software
 
-La versión final reúne la interfaz, la lógica de alarmas y el control de las salidas en [`alarma_final.ino`](../src/alarma_final/alarma_final.ino).
+El programa de la [versión 4.1 revisiones](../src/prototipo_4_1_revisiones/prototipo_4_1_revisiones.ino) reúne la interfaz web, la lógica de alarmas, las animaciones y el registro de eventos.
 
-## Organización general
+## Secuencia de funcionamiento
 
-1. Al iniciar, el ESP32 configura las salidas, recupera las alarmas guardadas y crea su red Wi-Fi.
-2. El servidor HTTP entrega al teléfono una página con la interfaz para configurar y consultar las alarmas.
-3. Al abrir la página, el teléfono envía la hora local al ESP32.
-4. Las alarmas creadas o modificadas se guardan con `Preferences`.
-5. El programa comprueba las alarmas activas y, cuando corresponde, inicia el sonido, la vibración o ambos, junto con la animación asociada.
-6. La alarma en curso puede detenerse desde la página o desde el pulsador definido en el programa.
+1. El ESP32 inicia las salidas, recupera las alarmas guardadas y crea su red Wi-Fi.
+2. Un teléfono conectado abre la página y sincroniza la hora del dispositivo.
+3. La persona configura una alarma, seleccionando hora, melodía, modo y repetición.
+4. El programa guarda la configuración y comprueba cuándo corresponde activar la alarma.
+5. La alarma activa el modo seleccionado y su animación. El pulsador azul o la página permiten detenerla.
+6. El historial guarda la activación y su detención y los presenta en la página.
 
-## Módulos principales
+## Funciones principales
 
 | Función o grupo | Responsabilidad |
 | --- | --- |
 | `crearRedWifi()` | Configura la red Wi-Fi local del ESP32. |
-| `configurarServidor()` | Define las rutas que recibe la interfaz y las respuestas del servidor. |
-| `guardarAlarmasEnMemoria()` y `cargarAlarmasDeMemoria()` | Guardan y recuperan la configuración de las alarmas mediante `Preferences`. |
-| `obtenerHoraLocal()` y `comprobarAlarmas()` | Calculan la hora desde la sincronización y revisan si una alarma debe activarse. |
-| `iniciarAlarma()` y `detenerAlarmaActual()` | Inician y detienen la alarma en curso. |
-| `actualizarMusica()` y `actualizarReleRitmico()` | Actualizan la reproducción de tonos y el control de vibración. |
-| `actualizarBotonDetener()` | Lee el pulsador configurado para detener la alarma y filtra rebotes. |
-| `iniciarPruebaOLED()` y `actualizarPruebaOLED()` | Preparan la pantalla y actualizan la animación de la alarma. |
+| `configurarServidor()` | Define las rutas que usa la interfaz. |
+| `guardarAlarmasEnMemoria()` y `cargarAlarmasDeMemoria()` | Guardan y recuperan la configuración de alarmas con `Preferences`. |
+| `obtenerHoraLocal()` y `comprobarAlarmas()` | Calculan la hora sincronizada y revisan las alarmas. |
+| `iniciarAlarma()` y `detenerAlarmaActual()` | Inician y detienen la alarma activa. |
+| `actualizarMusica()` y `actualizarReleRitmico()` | Controlan la reproducción y la salida del relé. |
+| `actualizarBotonDetener()` | Lee el pulsador y filtra rebotes. |
+| `histNotificarInicio()` y `histNotificarFin()` | Preparan los eventos del historial. |
+| `histProcesarEvento()` | Actualiza y guarda los registros de inicio y detención. |
 
-## Comunicación con la interfaz web
+## Interfaz e historial
 
-El teléfono se conecta a la red del ESP32 y utiliza la dirección local `http://4.3.2.1`. El portal cautivo intenta abrir la página automáticamente; también se puede ingresar la dirección en el navegador.
+La página se abre en `http://4.3.2.1` mientras el teléfono está conectado a la red del ESP32. Las rutas `/api/alarms`, `/api/save`, `/api/toggle`, `/api/delete`, `/api/stop` y `/api/status` permiten consultar y controlar las alarmas; `/api/sync-time` sincroniza la hora. La ruta `GET /api/historial` entrega los eventos al panel.
 
-| Ruta | Método | Función |
-| --- | --- | --- |
-| `/api/sync-time` | POST | Envía la hora y el desfase horario del teléfono. |
-| `/api/alarms` | GET | Entrega las alarmas configuradas. |
-| `/api/save` | POST | Crea o modifica una alarma. |
-| `/api/toggle` | POST | Activa o desactiva una alarma. |
-| `/api/delete` | POST | Elimina una alarma. |
-| `/api/stop` | POST | Detiene la alarma en curso. |
-| `/api/status` | GET | Entrega el estado de sincronización, la hora y el estado de la alarma. |
+El historial conserva hasta 32 activaciones en una zona de memoria separada de las configuraciones. La interfaz presenta la tabla, el estado de la alarma y un gráfico por modo; también permite descargar un CSV. El registro describe eventos y tiempos hasta la detención de la alarma.
 
-La página consulta el estado periódicamente y muestra información como la hora sincronizada y el último evento. La memoria persistente conserva la configuración de las alarmas; en el código final no se implementa un registro histórico de mediciones ambientales.
-
-## Pantalla y salidas
-
-La pantalla está configurada por I²C en los pines D21 y D22. Durante una alarma, el programa selecciona una animación según la melodía; en Quantum Bell representa la hora configurada para esa alarma.
-
-El buzzer se controla desde D18 y la señal del relé desde D15. El programa limita la frecuencia de conmutación del relé y permite interrumpir la salida al detener la alarma. El pulsador definido en D27 se lee con `INPUT_PULLUP` y un filtro de rebote de 35 ms.
-
-La instalación y el uso desde el teléfono se explican en [Software](../README.md). Las versiones de las dependencias están en [Librerías](../librerias/README.md).
+Los pines se detallan en [conexiones configuradas](../../hardware/esquemas/README.md), y la instalación en la [guía de software](../README.md).

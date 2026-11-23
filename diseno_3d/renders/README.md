@@ -1,54 +1,17 @@
-# Renders de Alta Calidad
+# Vistas del diseño 3D
 
-## Renders Requeridos (Mínimo 4 ángulos)
+Las imágenes muestran la forma de la carcasa y una distribución referencial de componentes en su interior.
 
-### 1. Vista Isométrica Frontal
-`01_isometrica_frontal.png`
-- Muestra exterior completo
-- Iluminación clara
-- Resolución: 1920×1080 mínimo
+## Vista exterior
 
-### Renders Opcionales (Recomendados)
-- `02_detalle_sensores.png` - Close-up de sensores
-- `03_ensamble_explosionado.png` - Componentes separados
-- `04_variantes_color.png` - Si hay opciones de diseño
+![Vista exterior de las dos piezas del encapsulado](01_isometrica_frontal.png)
 
----
+[Abrir imagen exterior](01_isometrica_frontal.png)
 
-## Configuración de Render en Fusion 360
+## Vista interior
 
-### Settings Recomendados
-- **Render Engine:** Local / Cloud
-- **Environment:** [Tipo de iluminación]
-- **Resolution:** 1920×1080 o superior
-- **Quality:** High
-- **Exposure:** [Ajustado para visibilidad]
-- **Effects:** Ambient Occlusion ON
+![Vista interior con componentes representados](02_isometrica_trasera.png)
 
-### Materiales y Apariencias
-Asignar materiales realistas:
-- Plástico: PLA/ABS mate o satinado
-- Electrónica: PCB verde, componentes negros
-- Metales: Tornillos acero inoxidable
+[Abrir imagen interior](02_isometrica_trasera.png)
 
----
-
-## Nomenclatura de Archivos
-```
-[numero]_[descripcion]_[version].png
-
-Ejemplo:
-01_isometrica_frontal_v3.png
-```
-
----
-
-## Checklist de Calidad
-
-- [ ] Resolución mínima 1920×1080
-- [ ] Formato PNG (con transparencia si aplica)
-- [ ] Iluminación sin sombras excesivas
-- [ ] Componentes internos visibles en corte
-- [ ] Fondo neutro o contextual apropiado
-- [ ] Sin aliasing o bordes pixelados
-- [ ] Todos los componentes críticos visibles
+El modelo editable y los planos se encuentran en [Fusion 360](../fusion360/README.md) y [planos](../planos/README.md).

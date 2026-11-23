@@ -38,6 +38,7 @@ El historial exportado por el ESP32 reúne **32 activaciones**, **29 con detenci
 
 ## Archivos de esta carpeta
 
+- [Protocolo de pruebas funcionales](protocolo_pruebas.md): objetivo, procedimiento, criterio y resultados.
 - [Datos y resultados](datos/README.md): resumen de las pruebas y sus límites.
 - [Ficha de pruebas](datos/Ficha_pruebas_alarma.pdf): horarios, melodías y comprobaciones de la interfaz.
 - [Reporte de pruebas y dificultades](reportes/README.md): resultados, conexiones y falla del portapilas.

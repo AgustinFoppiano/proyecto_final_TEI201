@@ -24,23 +24,15 @@ El archivo principal conservado en el repositorio corresponde a [alarma_final.in
 - Consulta en `/api/historial`, panel web con tabla y barras por modo, y exportación CSV.
 - Gestión de eventos con cola y verificaciones de integridad en la persistencia.
 
-La revisión del firmware se resguarda de forma **reconstruible y verificada** en [software/src/prototipo_4_1_revisiones](../../software/src/prototipo_4_1_revisiones/README.md). El archivo de revisiones suministrado se mantiene sin modificar.
+La revisión del firmware se encuentra en [prototipo_4_1_revisiones.ino](../../software/src/prototipo_4_1_revisiones/prototipo_4_1_revisiones.ino), junto con su [guía y respaldo reproducible](../../software/src/prototipo_4_1_revisiones/README.md).
 
 ## Pruebas y resultados
 
-**21/11/2026 — funcionamiento:** se documentaron **10 pruebas** con tres modos y diferentes melodías, con resultados registrados en [Ficha_pruebas_alarma.pdf](../../testing/datos/Ficha_pruebas_alarma.pdf). También se documentaron pruebas de percepción de vibración sosteniendo los motores; no se midió su intensidad ni se comprobó el despertar durante el sueño.
+**21/11/2026 — funcionamiento:** se documentaron **10 pruebas** con tres modos y diferentes melodías, con resultados registrados en [Ficha_pruebas_alarma.pdf](../../testing/datos/Ficha_pruebas_alarma.pdf). También se documentó la percepción de vibración al sostener los motores con las manos.
 
 **22/11/2026 — registro histórico:** el CSV contiene **32 activaciones**: 14 en sonido + vibración, 10 en vibración y 8 en sonido. Se registraron **29 detenciones** (19 por botón físico, 10 por web); **3 entradas** carecen de detención registrada. El tiempo medio hasta la detención registrada, solo entre los 29 casos cerrados, fue **9,1 s**. Ver [análisis de resultados](../../testing/datos/analisis_historial_2026-11-22.md).
 
 El equipo informó interrupciones de energía durante algunas pruebas. Sin alimentación, la ESP32 no puede registrar un evento final. **El CSV no permite asignar una causa definitiva a cada entrada incompleta**, por lo que no se presenta esto como una falla confirmada de vibración ni como un apagado detectado automáticamente.
-
-## Limitaciones y mejoras siguientes
-
-- Ejecutar y documentar pruebas de persistencia del historial después de reinicios y cortes de energía controlados.
-- Verificar las propiedades eléctricas y térmicas del portabaterías que se utilizará.
-- Comprobar la fijación de motores y cables y la accesibilidad de los componentes para reparaciones.
-- Validar el conjunto dentro de la carcasa 3D y con el equipo físico instalado.
-- Probar posteriormente la eficacia para despertar a usuarios del grupo objetivo; **la evidencia actual no demuestra ese resultado**.
 
 ## Documentos vinculados
 

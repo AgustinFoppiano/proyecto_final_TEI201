@@ -1,124 +1,23 @@
-# Iteración 2 - Primera Mejora Significativa
+# Iteración 2 — mejoras del prototipo
 
-## Información General
+## Objetivo
 
-**Fecha:** pendiente de confirmar en el historial del equipo (el resumen de iteraciones consigna noviembre de 2026)  
-**Versión:** v2.0  
-**Estado:** Prototipo funcional mejorado  
-**Avance asociado:** Avance #2
+Mejorar el aviso por vibración e incorporar controles físicos para reducir la dependencia del teléfono durante el uso de la alarma.
 
----
+## Cambios
 
+- Se incorporaron dos motores vibratorios. La referencia comercial indica un rango de 1,5–6 V y 3500 rpm.
+- Se añadieron pulsadores físicos para la detención de la alarma y el control del módulo de alimentación.
+- Se adaptó el software para controlar los motores y atender la detención mediante el pulsador.
 
----
+Durante las pruebas se observó una vibración más intensa respecto del actuador inicial y se comprobó la respuesta de los controles físicos.
 
-# Iteración 2 – Mejoras del prototipo
+## Calentamiento del portapilas
 
-## Descripción
+Durante una prueba se desprendió un cable de su soldadura. Al revisar el conjunto y colocar las pilas, el portapilas se calentó incluso estando desconectado del resto del circuito. Ante un posible cortocircuito en ese componente, se decidió reemplazarlo.
 
-Segunda versión de la alarma vibratoria para personas sordas o con discapacidad auditiva, enfocada en aumentar la intensidad de vibración y mejorar la autonomía del usuario.
+## Fotografía de la iteración
 
-**Objetivos de esta iteración:**
+<img width="600" alt="Prototipo de alarma durante la segunda iteración" src="https://github.com/user-attachments/assets/d2945ed1-0ebf-4ee3-84c4-bbba9afbd767" />
 
-- Mejorar el sistema de vibración.
-- Incorporar controles físicos.
-- Reducir la dependencia del celular.
-
----
-
-## Cambios respecto a v1
-
-### Hardware
-
-**Agregado:**
-
-- Dos motores vibratorios de 1,5–6 V y 3500 RPM.
-- Dos pulsadores táctiles.
-
-**Modificado:**
-
-- Sistema de activación de la alarma: incorporación de motores vibratorios para aumentar la intensidad del estímulo.
-
-**Removido:**
-
-- Se descartó utilizar el buzzer como fuente principal de vibración. El prototipo integrado conserva un buzzer para sonido; la vibración recae en los motores.
-
-### Software
-
-**Nuevas funcionalidades:**
-
-- Control de detención por pulsador físico; el otro pulsador se destinó a encendido/apagado mediante el módulo de alimentación.
-- Adaptación de la lógica de activación para los motores vibratorios.
-
-**Optimizaciones:**
-
-- Reducción de la dependencia del celular para controlar la alarma.
-
-### Diseño mecánico
-
-...
-
----
-
-## Fotos del Prototipo v2
-
-<img width="1200" height="1600" alt="Prototipo de alarma vibratoria v2" src="https://github.com/user-attachments/assets/d2945ed1-0ebf-4ee3-84c4-bbba9afbd767" />
-
----
-
-## Resultados de Testing
-
-### Funcionalidad lograda
-
-✅ **Sistema de vibración:** Se observó una vibración notoriamente más intensa respecto al buzzer inicial.
-
-✅ **Botones físicos:** Se comprobó el funcionamiento de los pulsadores para controlar la alarma.
-
-⚠️ **Sistema de alimentación:** Se observó calentamiento en el portapilas. Ante un posible cortocircuito, se decidió reemplazarlo.
-
----
-
-## Dificultad detectada
-
-### Problema 1: Calentamiento del portapilas
-
-- **Descripción:** Se desprendió una conexión que debió ser soldada nuevamente. Al colocar las pilas, el portapilas se calentó, incluso estando desconectado del resto del circuito.
-- **Prioridad:** Alta.
-- **Acción definida:** Se decidió reemplazar el portapilas. El proyecto funcionó en las pruebas realizadas.
-
----
-
-## Plan para Iteración 3 (Versión Final)
-
-### Mejoras críticas
-
-**Hardware:**
-
-- Se decidió reemplazar el portapilas.
-- [ ] Verificar la seguridad de las conexiones eléctricas.
-
-**Software:**
-
-- [ ] Comprobar el funcionamiento integrado de los botones y motores.
-- [ ] Verificar la correcta activación y desactivación de la alarma.
-
-**Diseño:**
-
-- [ ] Refinar encapsulado.
-- [ ] Finalizar sistema de montaje.
-
-**Testing:**
-
-- [ ] Realizar pruebas de vibración bajo la almohada.
-- [ ] Evaluar el funcionamiento autónomo del dispositivo.
-- [ ] Registrar resultados de las pruebas realizadas.
-- [ ] Validar el prototipo con usuarios de la población objetivo en una etapa posterior.
-
----
-
-## Evidencias y documentación
-
-- Fotografía de esta iteración mostrada en esta página.
-- [Versiones del firmware conservadas](../../software/versiones_anteriores/README.md).
-- [Registro de pruebas y dificultades](../../testing/reportes/README.md).
-- El código final, modelo 3D y fotografías posteriores están organizados en sus carpetas del proyecto; no se listan como archivos propios de esta carpeta cuando no existen aquí.
+Las [evidencias de la revisión del portapilas](../../testing/evidencias/README.md), las [versiones del software](../../software/versiones_anteriores/README.md) y el [reporte de pruebas](../../testing/reportes/README.md) complementan esta etapa.

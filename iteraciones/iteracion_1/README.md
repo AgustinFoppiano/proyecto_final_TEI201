@@ -2,7 +2,7 @@
 
 ## Información General
 
-**Fecha:** [23/10/2026]  
+**Fecha:** 23/10/2026  
 **Versión:** v1.0  
 **Estado:** Prototipo alpha - Prueba de concepto  
 **Avance asociado:** Planificación inicial / Avance #1
@@ -14,7 +14,7 @@
 Alarma tipo despertador para personas con algun grado de discapacidad auditiva, se coloca bajo la almohada y vibra cuando se activa la alarma
 
 **Objetivo de esta iteración:**
-- Probar conexión de sensores básicos
+- Probar las conexiones entre el ESP32 y los actuadores
 - Validar comunicación con microcontrolador
 - Demostrar concepto de actuación
 - Circuito básico en protoboard
@@ -57,7 +57,7 @@ Alarma tipo despertador para personas con algun grado de discapacidad auditiva, 
 ## Resultados de Testing Inicial
 
 ### Funcionalidad Lograda
-✅ Conexión de sensores básicos y correcta comunicación con el microcontrolador Esp32. 
+✅ Conexión y comunicación entre el ESP32 y los actuadores. 
 
 ✅ Codigo corriendo, actuadores funcionando.
 

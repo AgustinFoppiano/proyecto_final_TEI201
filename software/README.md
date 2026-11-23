@@ -6,7 +6,8 @@ El software se ejecuta en un ESP32 y permite configurar alarmas desde un teléfo
 
 | Ruta | Contenido |
 | --- | --- |
-| [`src/alarma_final/alarma_final.ino`](src/alarma_final/alarma_final.ino) | Código principal de la alarma, identificado en el archivo como versión 4.1. |
+| [`src/prototipo_4_1_revisiones/prototipo_4_1_revisiones.ino`](src/prototipo_4_1_revisiones/prototipo_4_1_revisiones.ino) | Versión 4.1 revisiones: alarma con historial, gráfico y exportación CSV. |
+| [`src/alarma_final/alarma_final.ino`](src/alarma_final/alarma_final.ino) | Versión 4.1 anterior, conservada como respaldo. |
 | [`src/README.md`](src/README.md) | Ubicación y organización del código fuente. |
 | [`versiones_anteriores/`](versiones_anteriores/) | Códigos utilizados en etapas anteriores y prueba del motor. |
 | [`librerias/README.md`](librerias/README.md) | Dependencias y versiones utilizadas. |
@@ -48,19 +49,19 @@ El programa está escrito en C/C++ para Arduino. La interfaz utiliza HTML, CSS y
 ### 2. Abrir y cargar la versión final
 
 1. Descargar el repositorio o clonarlo en el computador.
-2. Abrir en Arduino IDE el archivo [`alarma_final.ino`](src/alarma_final/alarma_final.ino), dentro de la carpeta `software/src/alarma_final/`.
+2. Abrir en Arduino IDE el archivo [`prototipo_4_1_revisiones.ino`](src/prototipo_4_1_revisiones/prototipo_4_1_revisiones.ino), dentro de `software/src/prototipo_4_1_revisiones/`.
 3. Presionar **Verify** para compilar el programa.
 4. Si la compilación termina correctamente, presionar **Upload** para cargarlo en el ESP32.
 5. Esperar el mensaje de carga terminada. El monitor serie puede abrirse a **115200 baudios** para revisar los mensajes de inicio y detección de la pantalla.
 
-La carpeta y el archivo principal comparten el nombre `alarma_final`, de acuerdo con la organización de proyectos de Arduino IDE.
+La carpeta y el archivo principal comparten el nombre `prototipo_4_1_revisiones`, de acuerdo con la organización de proyectos de Arduino IDE. La [versión 4.1 anterior](src/alarma_final/alarma_final.ino) se conserva por separado.
 
 ## Conexión desde el teléfono
 
 1. Encender el ESP32 con el código cargado.
 2. En el teléfono, buscar y seleccionar la red **Alarma para sordos**.
 3. Ingresar la contraseña configurada en el código: `porfavor`.
-4. Si el portal no se abre automáticamente, abrir el navegador e ingresar a **http://4.3.2.1**.
+4. Seleccionar **Iniciar sesión** en el aviso de la red para abrir el portal. También se puede abrir el navegador e ingresar a **http://4.3.2.1**.
 5. Al iniciar la página, el teléfono envía su hora y zona horaria al ESP32. La interfaz muestra el estado de sincronización.
 6. Crear una alarma, elegir la hora, la melodía, el modo de aviso y la repetición, y guardar los cambios.
 
@@ -74,6 +75,7 @@ La interfaz se encuentra alojada en el ESP32 y se utiliza mediante su red local.
 - Elegir entre siete melodías y mostrar su animación correspondiente en la pantalla OLED.
 - Detener la alarma activa desde la interfaz web o mediante el pulsador configurado en el código.
 - Guardar la configuración de las alarmas en la memoria del ESP32 mediante `Preferences`.
+- Registrar las activaciones y detenciones, consultar el historial y descargarlo en CSV.
 
 ### Melodías y animaciones
 
@@ -105,7 +107,7 @@ El código agrupa notas y limita los tiempos de conmutación del relé; por ello
 
 Al abrir la interfaz, el teléfono envía la hora local al ESP32. A partir de esa sincronización, el programa calcula el tiempo transcurrido mediante `millis()`. Tras reiniciar el ESP32 es necesario abrir la interfaz nuevamente para sincronizar la hora antes de que se comprueben las alarmas.
 
-La configuración de las alarmas se guarda en la memoria no volátil con `Preferences`. La interfaz muestra la hora sincronizada, las alarmas configuradas y el estado de la alarma. **Esta explicación corresponde al archivo base `alarma_final.ino`.** La [revisión 4.1 con historial](src/prototipo_4_1_revisiones/README.md) añade registro persistente de eventos, consulta web, un gráfico de barras por modo y descarga de CSV. No mide variables ambientales mediante sensores; registra eventos discretos de activación y detención.
+La configuración de las alarmas se guarda con `Preferences`. La [revisión 4.1](src/prototipo_4_1_revisiones/README.md) guarda por separado un historial de hasta **32 activaciones**; al alcanzar ese límite conserva las más recientes. La página muestra una tabla con hora, melodía, modo y detención registrada, un gráfico por modo y la opción de descargar los datos en CSV. El historial registra eventos de la alarma y el tiempo hasta detenerla.
 
 ## Si la interfaz o la alarma no responde
 

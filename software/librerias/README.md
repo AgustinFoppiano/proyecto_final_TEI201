@@ -30,7 +30,7 @@ Estos archivos se incluyen en el código final y se utilizan con el paquete ESP3
 | `WiFi.h` | Creación de la red Wi-Fi del ESP32. |
 | `DNSServer.h` | Redirección DNS utilizada por el portal cautivo. |
 | `esp_wifi.h` | Configuración de la conexión Wi-Fi del ESP32. |
-| `Preferences.h` | Almacenamiento de la configuración de las alarmas en memoria no volátil. |
+| `Preferences.h` | Almacenamiento de la configuración de las alarmas y del historial de eventos en memoria no volátil. |
 | `Wire.h` | Comunicación I²C con la pantalla OLED. |
 | `freertos/FreeRTOS.h` y `freertos/semphr.h` | Mecanismos de sincronización utilizados para controlar las salidas. |
 | `math.h` | Funciones matemáticas utilizadas en la animación Quantum Bell. |

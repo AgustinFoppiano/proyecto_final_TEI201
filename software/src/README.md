@@ -1,13 +1,12 @@
 # Código fuente
 
-El código principal del proyecto es **[alarma_final/alarma_final.ino](alarma_final/alarma_final.ino)**. El encabezado del archivo lo identifica como `PRUEBA PROTOTIPO 4_1`.
+| Versión | Archivo | Descripción |
+| --- | --- | --- |
+| **4.1 revisiones** | [prototipo_4_1_revisiones.ino](prototipo_4_1_revisiones/prototipo_4_1_revisiones.ino) | Alarma con historial de activaciones, panel y descarga CSV. |
+| **4.1** | [alarma_final.ino](alarma_final/alarma_final.ino) | Versión anterior de la alarma, con modos de aviso, pantalla y botón físico. |
 
-Para abrirlo en Arduino IDE, descargar el repositorio y abrir `alarma_final.ino` desde la carpeta `software/src/alarma_final/`. El archivo y su carpeta tienen el mismo nombre para mantener la estructura de un proyecto Arduino.
+Cada archivo `.ino` se encuentra en una carpeta con el mismo nombre para abrirlo en Arduino IDE. Las [versiones de desarrollo](../versiones_anteriores/README.md) se conservan por separado.
 
-El programa reúne en un solo archivo la interfaz web, la configuración de alarmas, el control del buzzer y del relé, y los datos de las animaciones de la pantalla OLED.
+El programa reúne la interfaz web, la configuración de alarmas, el control del buzzer y el relé, y los datos de las animaciones de la pantalla OLED. La revisión incorpora el historial persistente y su consulta desde la página.
 
-En `setup()` se preparan las salidas, la memoria, la red, el servidor y la pantalla. En `loop()` se atienden las solicitudes DNS, se comprueban las alarmas y se actualizan el pulsador, las salidas y la pantalla.
-
-Para compilarlo se utilizan **ESP32 Dev Module**, el esquema de partición **Huge APP (3 MB No OTA / 1 MB SPIFFS)** y las dependencias indicadas en [Librerías](../librerias/README.md). Las instrucciones completas están en [Software](../README.md).
-
-Las versiones previas están en [`versiones_anteriores/`](../versiones_anteriores/). También está documentada la [revisión 4.1 con historial y exportación CSV](prototipo_4_1_revisiones/README.md), reconstruible mediante una diferencia verificada sobre el archivo base. El monitor serie se configura a **115200 baudios**.
+Las [instrucciones de instalación](../README.md) detallan la placa, la partición y las librerías. La [guía de la revisión](prototipo_4_1_revisiones/README.md) describe el registro y su respaldo reproducible.

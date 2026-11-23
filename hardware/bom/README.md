@@ -1,8 +1,8 @@
 # Presupuesto de materiales — alarma accesible
 
-Para el desarrollo del prototipo se adquirieron materiales en **Affel.cl** y en comercios presenciales, como el sector del **Persa Biobío**; algunos elementos se obtuvieron en préstamo desde el **DEC**. Para estimar el costo de una posible fabricación comercial se presenta además una selección de **precios de referencia por volumen**, con proveedores nacionales e internacionales. Son dos escenarios distintos: compras realizadas para el proyecto y estimaciones para producción.
+Para estimar el costo de fabricación se presenta una selección de precios de referencia de proveedores nacionales e internacionales. Las cantidades corresponden a los materiales considerados para una alarma.
 
-**Criterio del cálculo:** se toma la oferta unitaria más baja publicada por cada proveedor y se multiplica por las cantidades requeridas para **una alarma**. Los precios mayoristas inferiores dependen de comprar lotes grandes; **no son precios garantizados al comprar una sola unidad**. El valor de los motores procede de un paquete comercial y el PLA se estima con un supuesto de consumo. La selección comercial requiere confirmar las variantes antes de comprar.
+**Criterio del cálculo:** se multiplican precios unitarios de referencia por las cantidades consideradas para **una alarma**. Algunos precios corresponden a tramos de compra por volumen diferentes entre proveedores; el valor de los motores se prorratea desde un paquete comercial y el PLA se calcula con un supuesto de consumo de 150 g. La estimación permite comparar escenarios de producción y está sujeta a cotizaciones y cantidades efectivas.
 
 **Tipo de cambio de referencia:** US$1 = **$1.008,79 CLP** (dólar observado del Banco Central de Chile del 20-11-2026). [Fuente](https://www.bcentral.cl/es/web/banco-central/inicio/-/asset_publisher/Exzd7l9NC3Y6/content/dolar-observado). **Cifras aproximadas**, sin transporte, impuestos de importación, mano de obra, energía, mermas, embalaje ni certificaciones.
 
@@ -30,9 +30,13 @@ Para el desarrollo del prototipo se adquirieron materiales en **Affel.cl** y en 
 
 - **Materiales electrónicos y conexiones:** $12.859 CLP
 - **Encapsulado PLA (referencia de 150 g):** $2.084 CLP
-- **Costo estimado unitario:** **$14.943 CLP**
-- **Ganancia del 10%:** $1.494 CLP
-- **Precio final estimado (con ganancia del 10%):** **$16.437 CLP por alarma**
+- **Costo estimado de materiales:** **$14.943 CLP**.
+- **Reserva orientativa para imprevistos (10 % de materiales):** $1.494 CLP.
+- **Materiales más reserva:** $16.437 CLP.
+- **Ganancia orientativa (10 % del subtotal):** $1.644 CLP.
+- **Precio de referencia calculado:** **$18.081 CLP por alarma**.
+
+El cálculo aplica dos incrementos consecutivos, con redondeo a pesos. La reserva del 10 % es una hipótesis para comparar costos; el precio debe ajustarse con transporte, importación, impuestos aplicables, mano de obra, embalaje, mermas y otros costos de comercialización.
 
 ### Desglose por categoría
 
@@ -72,7 +76,7 @@ DevKit V1, 30 pines; confirmar chip USB-serial y variante antes de comprar.
 
 **Proveedor:** Reaper · Made-in-China · [Ver compra o cotización](https://reaper88.en.made-in-china.com/product/LAsRNucKHxph/China-1-3-Inch-OLED-Screen-128-64-Iic-Interface-Sh1106-White-Blue-1-3inch-OLED-Display-Module.html).
 
-Pedir el módulo completo de PCB azul y cuatro conexiones; el precio bajo corresponde al tramo mayorista.
+La referencia de $1.513 utiliza US$1,50 y el tipo de cambio indicado arriba. Una versión de la publicación mostraba ese precio para pedidos desde 10.000 unidades; la disponibilidad y el tramo deben consultarse al proveedor.
 
 ### 3. Buzzer pasivo
 

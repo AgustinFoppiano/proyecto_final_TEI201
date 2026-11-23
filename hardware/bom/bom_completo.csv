@@ -11,7 +11,9 @@
 9;Protoboards compactas 400 puntos;2;unidad;BB-801 · 400 contactos por placa;Cambio previsto;525;1050;Proveedor BB-801 · Alibaba;https://www.alibaba.com/product-introduction/400-Ties-Mini-Solderless-Breadboard-Universal_1600900235173.html;Al por mayor;Son dos placas por alarma. Confirmar medida 83,5×54,5×8,5 mm y contactos al recibir.
 10;Cables Dupont/jumper;1;lote básico;Lote básico de cables 120 piezas;Referencia de abastecimiento;827;827;Inventor Electronic · Alibaba;https://www.alibaba.com/wholesale/electronic-dupont.html;Referencia de lote mayorista;"Se presupuesta un lote básico completo por prototipo; para fabricación en serie puede optimizarse."
 11;Cable USB-A a Micro-USB;1;unidad;Cable corto de alimentación;Referencia de abastecimiento;424;424;Proveedores de cables · Alibaba;https://www.alibaba.com/wholesale/micro-usb-to-usb-2.0.html;Referencia mayorista · enlace a catálogo;"Referencia de cable; verificar longitud y orientación para alojarlo en la carcasa."
-12;Filamento PLA;150;gramos;Carcasa impresa (peso orientativo);Consumo por dimensionar;14;2084;TodoToner Chile;https://www.todotoner.cl/impresoras/impresoras-3d/filamentos/pla-1kg-blanco;Referencia local;Supuesto de 150 gramos, sustituir por medición del laminador
+12;Filamento PLA;150;gramos;Carcasa impresa (peso orientativo);Consumo por dimensionar;13,89;2084;TodoToner Chile;https://www.todotoner.cl/impresoras/impresoras-3d/filamentos/pla-1kg-blanco;Referencia local;Supuesto de 150 gramos, sustituir por medición del laminador
 13;TOTAL MATERIALES;1;prototipo;Electrónica y PLA estimado;Estimación;;14943;;;;Sin transporte, impuestos, mano de obra ni mermas
-14;GANANCIA 10%;1;prototipo;Ganancia del 10%;Cálculo;;1494;;;;
-15;PRECIO FINAL ESTIMADO CON GANANCIA;1;prototipo;Costo más ganancia del 10%;Estimación;;16437;;;;Peso del PLA y precios por volumen aún sujetos a verificación
+14;RESERVA 10%;1;prototipo;Reserva sobre materiales;Hipótesis;;1494;;;;Reserva orientativa para imprevistos
+15;MATERIALES MÁS RESERVA;1;prototipo;Costo de materiales más reserva;Estimación;;16437;;;;Importes redondeados a pesos
+16;GANANCIA 10%;1;prototipo;Ganancia sobre subtotal;Cálculo;;1644;;;;10% del subtotal de 16437
+17;PRECIO DE REFERENCIA;1;prototipo;Materiales más reserva y ganancia;Estimación;;18081;;;;Cálculo orientativo sin cotización integral de gastos

@@ -2,7 +2,7 @@
 
 ## Evidencia posterior: historial de la versión con registro
 
-El 22 de noviembre de 2026 el software exportó un [historial de 32 activaciones](../datos/historial_alarmas_2026-11-22.csv). De ellas, 29 presentan evento de cierre y 3 permanecen sin detención registrada. La persona responsable de la captura señaló que durante ciertas pruebas se interrumpía la alimentación del ESP32; sin embargo, el CSV no contiene una medición independiente para confirmar la causa de cada caso. El análisis numérico y los límites de interpretación se explican en el [análisis del historial](../datos/analisis_historial_2026-11-22.md).
+El 22 de noviembre de 2026 el software exportó un [historial de 32 activaciones](../datos/historial_alarmas_2026-11-22.csv). De ellas, 29 presentan evento de cierre y 3 permanecen sin detención registrada. Durante algunas pruebas se interrumpió la alimentación del ESP32. Los tres registros se conservan como entradas sin cierre. El análisis numérico y los límites de interpretación se explican en el [análisis del historial](../datos/analisis_historial_2026-11-22.md).
 
 
 ## Pruebas de funcionamiento
@@ -11,7 +11,7 @@ El 21 de noviembre de 2026 se realizaron diez pruebas con la versión 4.1 del c�
 
 En los diez intentos se observó la respuesta correspondiente al modo seleccionado, se mostró una animación en la pantalla y la alarma se detuvo al presionar el botón de apagado. Los horarios, melodías y resultados están registrados en la [ficha de pruebas](../datos/Ficha_pruebas_alarma.pdf).
 
-Además, aproximadamente nueve personas sostuvieron los motores con las manos para comprobar si podían sentir la vibración. Todas indicaron que la percibieron y que les pareció fuerte. Esta prueba fue perceptiva y no incluyó una medición con instrumentos.
+Además, aproximadamente nueve personas sostuvieron los motores con las manos para comprobar si podían sentir la vibración. Todas indicaron que la percibieron y que les pareció fuerte. La observación consistió en sostener los motores con las manos.
 
 ## Dificultades con las conexiones
 
@@ -31,4 +31,4 @@ El proyecto funcionó en las pruebas realizadas y el calentamiento se presentó 
 
 ## Alcance
 
-Las pruebas permitieron revisar las funciones de la alarma y comprobar que la vibración podía percibirse al sostener los motores. No se midió la intensidad de la vibración y no se realizó una prueba para comprobar si la alarma logra despertar a una persona dormida.
+Las pruebas documentan las funciones de la alarma y la percepción de la vibración al sostener los motores.

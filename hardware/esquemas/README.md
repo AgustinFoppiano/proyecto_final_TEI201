@@ -1,25 +1,31 @@
-# Esquemas de Circuito
+# Conexiones configuradas en el software
 
-## Archivos Requeridos
+La siguiente tabla identifica los pines definidos en el firmware para controlar la alarma y la pantalla.
 
-### Formato Fritzing
-- `circuito_completo.fzz` - Archivo fuente Fritzing
-- `esquema_circuito.png` - Exportación del esquema
-- `pcb_layout.png` - (opcional) Layout de PCB
+## Diagrama funcional
 
-### Formato Wokwi
-- `wokwi_diagram.json` - Archivo de proyecto Wokwi
-- `wokwi_screenshot.png` - Captura del circuito
-- `wokwi_link.txt` - URL del proyecto online
+```mermaid
+flowchart TD
+    telefono["Teléfono"] -->|"Wi-Fi local"| esp["ESP32"]
+    boton["Pulsador azul"] -->|"GPIO27"| esp
+    esp -->|"GPIO21 y GPIO22"| pantalla["Pantalla OLED"]
+    esp -->|"GPIO18"| buzzer["Buzzer"]
+    esp -->|"GPIO15"| rele["Relé"]
+    rele --> motores["Dos motores vibratorios"]
+```
 
----
+El diagrama representa la relación funcional entre los elementos de control y aviso.
 
-## Nomenclatura de Archivos
-- Usar nombres descriptivos
-- Incluir versión: `v3_esquema_final.fzz`
-- Fecha en formato: `YYYYMMDD_descripcion`
+## Pines
 
----
+| Elemento | Pin del ESP32 | Función |
+| --- | --- | --- |
+| Buzzer | GPIO18 / D18 | Reproducción de tonos y melodías. |
+| Entrada de control del relé | GPIO15 / D15 | Control de la salida asociada a los motores vibratorios. |
+| Pulsador azul | GPIO27 / D27 | Detención de la alarma; el programa utiliza `INPUT_PULLUP` y un pulsador hacia GND. |
+| Pantalla OLED: SDA | GPIO21 / D21 | Datos de la comunicación I²C. |
+| Pantalla OLED: SCL | GPIO22 / D22 | Reloj de la comunicación I²C. |
 
-## Notas de Diseño
-[Explicar decisiones importantes de diseño del circuito]
+El programa usa la configuración `U8G2_SH1106_128X64_NONAME_1_HW_I2C` y busca la pantalla en las direcciones I²C `0x3C` y `0x3D`. El relé controla la alimentación de los motores; el botón blanco se utiliza con el módulo de alimentación.
+
+La tabla recoge las señales definidas en el firmware. Las fotografías del cableado se encuentran en [hardware/fotos](../fotos/README.md) y las características de los componentes en el [catálogo](../componentes.md).

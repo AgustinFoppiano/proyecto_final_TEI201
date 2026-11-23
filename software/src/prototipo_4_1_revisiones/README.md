@@ -1,33 +1,32 @@
-# Firmware 4.1 revisiones — historial persistente
+# Firmware 4.1 revisiones — historial de alarmas
 
-Esta carpeta respalda la revisión entregada por el equipo como **`prototipo_4_1_revisiones(1).ino`**. A diferencia del archivo base `alarma_final.ino`, incorpora una función de historial local de activaciones y detenciones.
+Esta es la versión de la alarma que incorpora el registro de activaciones y detenciones, junto con su visualización y descarga desde la página web.
 
-## Archivos
+## Abrir el código
 
-- [`cambios_historial.json`](cambios_historial.json): diferencias exactas respecto de [`alarma_final.ino`](../alarma_final/alarma_final.ino), verificadas al comparar los dos archivos.
-- [`generar_ino.py`](generar_ino.py): aplica las diferencias al código base y **verifica el SHA-256** del resultado antes de escribir el archivo completo.
+1. Descargar o clonar el repositorio.
+2. Abrir [`prototipo_4_1_revisiones.ino`](prototipo_4_1_revisiones.ino) desde esta carpeta en Arduino IDE.
+3. Seleccionar **ESP32 Dev Module**, el puerto correspondiente y **Huge APP (3 MB No OTA / 1 MB SPIFFS)**.
+4. Instalar las librerías indicadas en la [guía de software](../../README.md), compilar y cargar el programa.
 
-El archivo de código completo es demasiado grande para la operación de subida de esta integración; se guarda la diferencia reproducible, de manera que **no se modifica el archivo base**. El código fuente Arduino original del equipo se conserva íntegramente al reconstruirlo, sin generar ni simular partes nuevas.
+El archivo y su carpeta comparten el mismo nombre, como requiere la organización de proyectos de Arduino IDE. La [versión 4.1 anterior](../alarma_final/alarma_final.ino) se conserva por separado.
 
-## Generar el archivo listo para Arduino IDE
+## Historial
 
-Desde la carpeta raíz del repositorio clonado, ejecutar una sola vez:
+- Guarda hasta **32 activaciones** en la memoria local del ESP32; al llegar al límite conserva las más recientes.
+- Registra la hora programada, la activación, el modo y la melodía. Para los eventos cerrados agrega la detención, su origen y el tiempo transcurrido.
+- El panel **Historial de alarmas** muestra una tabla y un gráfico de activaciones por modo, y permite descargar un CSV.
+- La página obtiene los registros mediante la ruta `GET /api/historial` y actualiza el panel aproximadamente cada cuatro segundos mientras está abierto.
+- Las configuraciones de las alarmas y el historial se guardan por separado con `Preferences`.
+
+El [registro del 22/11/2026](../../../testing/datos/historial_alarmas_2026-11-22.csv) y su [análisis](../../../testing/datos/analisis_historial_2026-11-22.md) documentan el uso de esta revisión.
+
+## Respaldo reproducible
+
+También se conservan [`cambios_historial.json`](cambios_historial.json) y [`generar_ino.py`](generar_ino.py). El script permite reconstruir la revisión desde la versión 4.1 y comprueba la integridad de los archivos:
 
 ```bash
 python software/src/prototipo_4_1_revisiones/generar_ino.py
 ```
 
-El script crea `software/src/prototipo_4_1_revisiones/prototipo_4_1_revisiones.ino`. Luego puede abrirse directamente desde Arduino IDE. Si el archivo base cambia o hay un error de integridad, **se cancela la generación**.
-
-**SHA-256 de la revisión aportada por el equipo:** `208315bc108a2254ccd5680eb2847651c3794a65b03475199f48c6160c0e1201`.
-
-## Funciones documentadas
-
-- Memoria persistente NVS mediante `Preferences`, con máximo de **32 activaciones** y sustitución de la más antigua cuando está lleno.
-- Almacenamiento de fecha/hora de inicio, alarma programada, modo, melodía, fecha/hora de detención, origen y duración, cuando se registra el cierre.
-- Consulta web `GET /api/historial`, visualización básica con barras por modo y descarga CSV.
-- Cuando la alimentación se corta abruptamente, un evento de cierre puede no guardarse.
-
-**Evidencia real:** [registro del 22/11/2026](../../../testing/datos/historial_alarmas_2026-11-22.csv) y [análisis cuantitativo](../../../testing/datos/analisis_historial_2026-11-22.md).
-
-No se ha verificado la compilación y ejecución del archivo reconstruido en un ESP32 desde esta actualización de GitHub; se verificó que las diferencias reproducen exactamente el contenido aportado.
+SHA-256 del archivo de revisión: `208315bc108a2254ccd5680eb2847651c3794a65b03475199f48c6160c0e1201`.

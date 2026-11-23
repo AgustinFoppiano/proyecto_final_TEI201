@@ -42,7 +42,7 @@ El código también utiliza los siguientes archivos de la plataforma ESP32 o del
 - **Arduino.h:** proporciona funciones básicas para trabajar con el ESP32, como la configuración y el control de pines.
 - **WiFi.h:** permite crear la red Wi-Fi a la que se conecta el teléfono.
 - **DNSServer.h:** se utiliza para dirigir la conexión hacia la interfaz de la alarma mediante un portal cautivo.
-- **Preferences.h:** permite guardar las alarmas configuradas en la memoria del ESP32.
+- **Preferences.h:** permite guardar las alarmas configuradas y el historial de eventos en la memoria del ESP32.
 - **Wire.h:** permite la comunicación con la pantalla OLED mediante I²C.
 - **esp_wifi.h:** se utiliza para realizar configuraciones de la red Wi-Fi del ESP32.
 - **FreeRTOS.h y semphr.h:** proporcionan mecanismos de sincronización que ayudan a coordinar el control de las salidas de sonido y vibración.
@@ -119,13 +119,15 @@ Se adaptó un fragmento del video *Bad Apple* para reproducirlo en la pantalla O
 - **Animación de Quantum Bell:** se creó y adaptó una animación que muestra la hora programada de la alarma, acompañada de ondas y destellos.
 - **Indicación utilizada:** se solicitó que la animación de *Quantum Bell* mostrara la hora elegida para cada alarma, en lugar de una hora fija.
 - **Adaptación al proyecto:** las animaciones se integraron al programa del ESP32 y se asociaron a las melodías seleccionadas desde la interfaz de la alarma.
+- **Revisión 4.1 con historial:** se utilizó ChatGPT para añadir al código existente el registro de activaciones y detenciones, el panel de historial y la descarga CSV. Se conservaron las funciones de configuración de alarmas, sonido, vibración y animaciones del proyecto.
+- **Indicación utilizada para el historial:** se solicitó agregar los registros a la versión 4.1 manteniendo sus funciones, guardar fecha, modo, melodía y detención, y mostrar los datos en la página local del ESP32.
 
 
 ## Revisión documental asistida por IA — historial y testing (22 de noviembre de 2026)
 
 - **Herramienta:** ChatGPT (OpenAI).
 - **Uso:** lectura del firmware de revisión proporcionado por el equipo, análisis descriptivo de 32 eventos exportados en CSV, redacción de un protocolo de verificación y actualización de la documentación de iteraciones y testing en GitHub.
-- **Tratamiento de datos:** se conservaron las 32 filas originales sin editar; las cifras se calcularon a partir de ese archivo. Las tres activaciones sin evento de cierre se reportan como datos incompletos, sin inferir automáticamente una causa. No se realizaron nuevas pruebas físicas ni se modificó el firmware mediante esta tarea.
+- **Tratamiento de datos:** se conservaron las 32 filas originales sin editar; las cifras se calcularon a partir de ese archivo. Las tres activaciones sin evento de cierre se reportan como datos incompletos, conservando la información presente en el archivo.
 - **Versionado:** se respaldaron las diferencias reproducibles del archivo de revisiones en [software/src/prototipo_4_1_revisiones](software/src/prototipo_4_1_revisiones/README.md).
 
 ## Documentación asistida por IA — catálogo de hardware (22 de noviembre de 2026)

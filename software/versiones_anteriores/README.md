@@ -14,4 +14,4 @@ Esta carpeta reúne archivos de etapas anteriores al código principal. Se conse
 
 Los encabezados internos de los archivos 3.6 y 3.7 conservan la etiqueta `VERSION 3.2`; los nombres de sus carpetas corresponden a los nombres con que se recibieron esos archivos.
 
-El código principal actual está en [`src/alarma_final/alarma_final.ino`](../src/alarma_final/alarma_final.ino). Cada archivo `.ino` se guarda en una carpeta con el mismo nombre para facilitar su apertura en Arduino IDE.
+La versión 4.1 anterior se encuentra en [`src/alarma_final/alarma_final.ino`](../src/alarma_final/alarma_final.ino), y la revisión con registro en [`src/prototipo_4_1_revisiones/`](../src/prototipo_4_1_revisiones/README.md). Cada archivo `.ino` se guarda en una carpeta con el mismo nombre para facilitar su apertura en Arduino IDE.

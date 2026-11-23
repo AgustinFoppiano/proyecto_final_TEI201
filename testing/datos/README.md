@@ -1,35 +1,27 @@
 # Datos de las pruebas
 
-## Registro automatizado del 22 de noviembre de 2026
+## Pruebas funcionales del 21 de noviembre de 2026
 
-- [Historial CSV original de 32 activaciones](historial_alarmas_2026-11-22.csv).
-- [Análisis de modos, detenciones, tiempos y tres registros sin cierre](analisis_historial_2026-11-22.md).
-- [Script para reproducir el cálculo del resumen](resumir_historial.py).
+Isidora Herrera realizó diez pruebas de la alarma con la versión 4.1. Para cada una se seleccionó una melodía, una hora y un modo de aviso.
 
+| Modo seleccionado | Pruebas | Resultado observado |
+| --- | ---: | --- |
+| Solo vibración | 3 | Vibró sin emitir sonido. |
+| Solo sonido | 3 | Emitió sonido sin vibrar. |
+| Sonido y vibración | 4 | Emitió sonido y vibró. |
 
-**Este registro se generó desde el firmware de revisión y se analiza por separado de las diez pruebas funcionales del 21/11 descritas a continuación.**
-
-
-El 21 de noviembre de 2026 se realizaron diez pruebas de funcionamiento de la alarma con la versión 4.1 del código. Las pruebas fueron realizadas por Isidora Herrera.
-
-| Modo seleccionado | Pruebas | Resultado |
-|---|---:|---|
-| Solo vibración | 3 | En las tres pruebas, la alarma vibró y no emitió sonido. |
-| Solo sonido | 3 | En las tres pruebas, la alarma emitió sonido y no vibró. |
-| Sonido y vibración | 4 | En las cuatro pruebas, la alarma emitió sonido y vibró. |
-
-En las diez pruebas se mostró una animación en la pantalla y la alarma se detuvo al presionar el botón de apagado.
-
-También se revisaron funciones de la página, como la conexión a la red, la configuración de alarmas y su apagado desde la interfaz.
-
-Los resultados completos, con los horarios y melodías utilizados, están en la [ficha de pruebas](Ficha_pruebas_alarma.pdf).
+En las diez pruebas la pantalla mostró una animación y el pulsador azul detuvo la alarma. Los horarios y melodías están en la [ficha de pruebas](Ficha_pruebas_alarma.pdf); el procedimiento y criterio de funcionamiento están en el [protocolo](../protocolo_pruebas.md).
 
 ## Percepción de la vibración
 
-Además, aproximadamente nueve personas sostuvieron los motores con las manos para comprobar si podían sentir la vibración sin depender del sonido. Todas indicaron que la sintieron y que les pareció fuerte. Durante la prueba podía haber ruido de fondo.
+Aproximadamente nueve personas sostuvieron los motores con las manos. Todas indicaron que sentían la vibración y que les parecía fuerte. Durante la prueba podía haber ruido de fondo.
 
-## Limitaciones de las pruebas
+## Registro de eventos del 22 de noviembre de 2026
 
-No se contó con instrumentos para medir la intensidad de la vibración ni con un voltímetro para comprobar el voltaje del montaje. El dato de referencia de 6 V para el motor corresponde al voltaje y no indica por sí solo cuánta vibración produce.
+La revisión con historial generó un CSV con **32 activaciones**. En 29 de ellas figura una detención y 3 quedaron sin registro de cierre.
 
-La prueba de percepción se realizó sosteniendo los motores con las manos. No se realizaron pruebas para comprobar si la alarma logra despertar a una persona mientras duerme.
+- [Historial CSV](historial_alarmas_2026-11-22.csv).
+- [Análisis de modos, detenciones y tiempos](analisis_historial_2026-11-22.md).
+- [Script para reproducir el resumen](resumir_historial.py).
+
+La ficha funcional y el historial corresponden a dos registros diferentes: la primera reúne la observación de sonido, vibración y pantalla; el segundo registra las activaciones y detenciones de la alarma.

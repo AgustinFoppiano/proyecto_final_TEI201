@@ -1,36 +1,28 @@
-# Hardware — documentación del prototipo
+# Hardware de la alarma
 
-El prototipo corresponde a una alarma accesible para personas sordas o con dificultades auditivas que combina **vibración, sonido y una pantalla OLED** con control central por ESP32.
+El ESP32 coordina la pantalla, el sonido, la vibración y los controles. La pantalla entrega información visual; los dos motores proporcionan el aviso por vibración, y el buzzer permite agregar sonido cuando se selecciona ese modo.
 
-## Documentos principales
+## Componentes
 
-- **[Catálogo ilustrado de los componentes](componentes.md)**: identificación técnica, imágenes de referencia y fichas técnicas de cada pieza.
-- **[Referencias fotográficas](imagenes_componentes/README.md)**: galería de imágenes de referencia.
-- **[BOM y presupuesto comercial](bom/README.md)**: imágenes de referencia, proveedores por volumen, enlaces de compra, cantidades y cálculo del costo por alarma.
-- **[Esquemas](esquemas/README.md)**: circuito a documentar.
-- **[Fotografías reales](fotos/README.md)**: vistas del montaje y evidencia física.
+| Componente | Cantidad | Función |
+| --- | ---: | --- |
+| ESP32 DevKit V1 | 1 | Control del sistema y red Wi-Fi local. |
+| Pantalla OLED I²C de 1,3 pulgadas | 1 | Muestra la hora y las animaciones. |
+| Buzzer pasivo | 1 | Reproduce las melodías. |
+| Módulo de relé de un canal | 1 | Controla la alimentación de los motores. |
+| Motores vibratorios | 2 | Generan el aviso por vibración. |
+| Pulsadores azul y blanco | 2 | Detención de la alarma y control del módulo de alimentación, respectivamente. |
+| Módulo portabaterías y celdas | 1 módulo y 2 celdas | Alimentación portátil. |
+| Protoboard, cables y conectores | Según montaje | Unión y organización del circuito. |
 
-## Componentes previstos y cantidades
+Se contempla la utilización de dos protoboards compactas de 400 puntos en la distribución del encapsulado. Las fotografías muestran el montaje de pruebas con una protoboard grande.
 
-1 ESP32 DevKit V1 de 30 pines; 1 OLED I²C de 1,3″; 1 buzzer pasivo; 1 módulo relé Songle SRD-05VDC-SL-C; 2 motores de vibración DC; 1 portabaterías para 2 celdas; 2 baterías Li-ion de 3,7 V; 2 pulsadores (azul y blanco); **2 protoboards compactas de 400 puntos**; **1 lote básico de cables jumper/Dupont**.
+## Documentación
 
-## Montaje: confirmado frente a previsto
+- [Catálogo de componentes](componentes.md): identificación y función de cada pieza.
+- [BOM y presupuesto](bom/README.md): cantidades, referencias comerciales y estimación de costos.
+- [Conexiones configuradas](esquemas/README.md): pines utilizados por el firmware.
+- [Fotografías del montaje](fotos/README.md): vistas reales del circuito desde distintos ángulos.
+- [Diseño 3D](../diseno_3d/README.md): modelo, vistas y planos del encapsulado.
 
-- **Montaje fotografiado:** ESP32 y buzzer en protoboard de pruebas grande; OLED cableada; relé; dos motores; portabaterías y pulsadores. Corresponde a la fase provisional del prototipo.
-- **Cambio previsto:** reemplazo de protoboards grandes por dos compactas **juntas** (83,5 × 54,5 × 8,5 mm por unidad, según ficha comercial).
-- **Encapsulado en revisión:** dos mitades circulares, curvadas por ambas caras; OLED visible desde arriba; pulsadores protegidos en los costados; los dos motores en un mismo costado; portabaterías desmontable y guía para el conector de carga verificado.
-- **Distribución propuesta:** ESP32 entre las dos protoboards, buzzer encima de una de ellas y relé próximo al buzzer. La posición prevista no equivale a una instalación física ya comprobada.
-
-## Verificaciones críticas antes de presentar el ensamble como terminado
-
-- [ ] Esquemático completo y actualizado, con tensión y corriente reales de cada módulo.
-- [ ] Comprobar puerto de entrada de carga y tipo de conector del portabaterías.
-- [ ] Confirmar dimensiones reales de las dos protoboards recibidas.
-- [ ] Fijar cables y componentes para evitar desconexiones por vibración.
-- [x] BOM con precios de referencia y cálculo unitario de materiales (estimación de producción).
-- [ ] Sustituir referencias comerciales por cotizaciones confirmadas y validar el peso real de PLA.
-- [ ] Fotografías del montaje **final** desde al menos tres ángulos.
-- [ ] Verificar acceso a la electrónica y apertura del encapsulado sin dañarlo.
-- [ ] Revisar las condiciones de temperatura y seguridad de las baterías; **no cargarlas bajo almohadas o ropa de cama**.
-
-> **Nota:** este README no presenta como verificadas mediciones de consumo, peso o dimensiones finales del aparato que el equipo todavía no ha documentado.
+El ESP32 facilita la configuración desde el teléfono mediante su propia red Wi-Fi. La OLED utiliza comunicación I²C y el relé permite controlar la alimentación de los motores. La [guía de software](../software/README.md) explica la configuración de las señales y la secuencia de funcionamiento.
