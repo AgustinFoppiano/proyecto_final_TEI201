@@ -21,13 +21,17 @@ En ocasiones, la pantalla solo mostraba la animación después de acomodar sus c
 
 Los cables de los motores también podían soltarse por el movimiento producido al vibrar. Durante las pruebas fue necesario sujetarlos o volver a conectarlos para continuar.
 
-En la versión final, los motores quedaron soldados y mantienen su conexión al vibrar. La pantalla también permanece funcionando al moverla. Los motores aún se desplazan por la vibración, por lo que se contempla sujetarlos dentro del encapsulado.
+En la versión final, los motores quedaron soldados y mantienen su conexión al vibrar. En esas pruebas, la pantalla también funcionaba al moverla. Los motores aún se desplazan por la vibración, por lo que se contempla sujetarlos dentro del encapsulado.
 
 ## Falla del portapilas
 
 Durante una prueba, un cable se soltó de su soldadura. Al volver a conectarlo, se produjo una falla en el portapilas y se observó calentamiento. Se revisaron las conexiones y la soldadura, pero el portapilas volvió a calentarse al insertar las pilas, incluso estando desconectado del resto del circuito.
 
 El proyecto funcionó en las pruebas realizadas y el calentamiento se presentó en el portapilas. Se consideró que podía tratarse de un cortocircuito en ese componente y, como solución, se decidió reemplazarlo. Se grabaron videos durante la revisión del portapilas.
+
+## Falla de la pantalla OLED
+
+Después de las pruebas en las que mostraba las animaciones, la pantalla OLED dejó de funcionar. Es posible que la falla esté relacionada con la soldadura de sus conexiones. Se plantea revisar las soldaduras y, si es necesario, reemplazar la pantalla.
 
 ## Alcance
 
